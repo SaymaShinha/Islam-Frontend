@@ -19,7 +19,8 @@ export default function Contact() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/send", {
+      const apiUrl = import.meta.env.VITE_API_URL;
+      const res = await fetch(`${apiUrl}/send`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
