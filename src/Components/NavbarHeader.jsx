@@ -3,14 +3,7 @@ import NamazNavList from "./NamazNavList";
 import { useState, useEffect } from "react";
 
 function NavbarHeader() {
-    const urlLocation = useHref();
-
-    const value = urlLocation.split("/").at(length - 1).toLocaleUpperCase();
-
     const navigate = useNavigate();
-
-
-
 
     const [theme, setTheme] = useState("islamic");
 
