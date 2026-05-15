@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* ✅ Load DaisyUI ONCE with config */
+@plugin "daisyui" {
+  themes: islamic --default, islamic-dark --prefersdark;
+}
+
+/* 🌿 Light Theme */
+@plugin "daisyui/theme" {
+  name: "islamic";
+  default: true;
+
+  --color-base-100: #ffffff;
+  --color-base-200: #f8fafc;
+  --color-base-300: #e5e7eb;
+  --color-base-content: #1f2937;
+
+  --color-primary: #166534;
+  --color-primary-content: #ecfdf5;
+
+  --color-secondary: #059669;
+  --color-secondary-content: #ecfdf5;
+
+  --color-accent: #d4a017;
+  --color-accent-content: #1f2937;
+
+  --color-neutral: #374151;
+  --color-neutral-content: #f9fafb;
+}
+
+/* 🌙 Dark Theme */
+@plugin "daisyui/theme" {
+  name: "islamic-dark";
+  prefersdark: true;
+
+  --color-base-100: #0b1220;
+  --color-base-200: #111827;
+  --color-base-300: #1f2937;
+  --color-base-content: #e5e7eb;
+
+  --color-primary: #22c55e;
+  --color-primary-content: #052e16;
+
+  --color-secondary: #34d399;
+  --color-secondary-content: #052e16;
+
+  --color-accent: #fbbf24;
+  --color-accent-content: #1f2937;
+
+  --color-neutral: #020617;
+  --color-neutral-content: #d1d5db;
+}

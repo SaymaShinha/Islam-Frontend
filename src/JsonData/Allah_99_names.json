@@ -1,0 +1,765 @@
+[
+  {
+    "No": 0,
+    "Ar_name": "الله",
+    "Ar_transliteration": "(allāh)",
+    "Pronunciation": "‎ IPA(key): /aɫ.ɫaːh/",
+    "Meaning(En)": "God"
+  },
+  {
+    "No": 1,
+    "Ar_name": "اَلرَّحْمَـٰن‎",
+    "Ar_transliteration": "(ar-raḥmān)",
+    "Pronunciation": "IPA(key): /ar.raħ.maːn/",
+    "Meaning(En)": "The ِBeneficient/ The All-Compassionate/ The Most Gracious"
+  },
+  {
+    "No": 2,
+    "Ar_name": "اَلرَّحِيم‎",
+    "Ar_transliteration": "(ar-raḥīm)",
+    "Pronunciation": "IPA(key): /ar.ra.ħiːm/",
+    "Meaning(En)": "The Most Merciful/ The Ever-Merciful/ The Merciful/ The Most Clement"
+  },
+  {
+    "No": 3,
+    "Ar_name": "اَلْمَلِك‎",
+    "Ar_transliteration": "(al-malik)",
+    "Pronunciation": "IPA(key): /al.ma.lik/",
+    "Meaning(En)": "The King/ The Lord/ The Sovereign/ The Dominion/ The Master"
+  },
+  {
+    "No": 4,
+    "Ar_name": "اَلْقُدُّوس‎",
+    "Ar_transliteration": "(al-quddūs)",
+    "Pronunciation": "IPA(key): /al.qud.duːs/",
+    "Meaning(En)": "The Holy/ The All-Holy/ The All-Pure/ The Sacred/ The All-Sacred"
+  },
+  {
+    "No": 5,
+    "Ar_name": "اَلسَّلَام‎",
+    "Ar_transliteration": "(as-salām)",
+    "Pronunciation": "IPA(key): /as.sa.laːm/",
+    "Meaning(En)": "The Giver of Peace/ The Peace/ The All-Calm/ The Ever-Tranquil"
+  },
+  {
+    "No": 6,
+    "Ar_name": "اَلْمُؤْمِن‎",
+    "Ar_transliteration": "(al-muʾmin)",
+    "Pronunciation": "IPA(key): /al.muʔ.min/",
+    "Meaning(En)": "The Granter of Security/ The Giver/ The Faith/ The Supreme Believer/ The Giver of Belief/ The All-Assurer"
+  },
+  {
+    "No": 7,
+    "Ar_name": "اَلْمُهَيْمِن‎",
+    "Ar_transliteration": "(al-muhaymin)",
+    "Pronunciation": "IPA(key): /al.mu.haj.min/",
+    "Meaning(En)": "The Controller/ The Absolute Authority Over All/ The Guardian Over All/ The Protector/ The Absolute Master/ The Eternal Dominating"
+  },
+  {
+    "No": 8,
+    "Ar_name": "اَلْعَزِيز‎",
+    "Ar_transliteration": "(al-ʿazīz)",
+    "Pronunciation": "IPA(key): /al.ʕa.ziːz/",
+    "Meaning(En)": "The Exalted in Might and Power/ The Exalted/ The Powerful/ The Almighty/ The Mighty"
+  },
+  {
+    "No": 9,
+    "Ar_name": "اَلْجَبَّار‎",
+    "Ar_transliteration": "(al-jabbār)",
+    "Pronunciation": "IPA(key): /al.d͡ʒab.baːr/",
+    "Meaning(En)": "The Omnipotent/ The Supreme Power/ The Possessor of Having All Power/ The Strong/ The Compleller"
+  },
+  {
+    "No": 10,
+    "Ar_name": "اَلْمُتَكَبِّر‎",
+    "Ar_transliteration": "(al-mutakabbir)",
+    "Pronunciation": "IPA(key): /al.mu.ta.kab.bir/",
+    "Meaning(En)": "The Possessor of Greatness/ The Supreme/ The Justly Proud/ The Majestic"
+  },
+  {
+    "No": 11,
+    "Ar_name": "اَلْخَالِق‎",
+    "Ar_transliteration": "(al-ḵāliq)",
+    "Pronunciation": "IPA(key): /al.xaː.liq/",
+    "Meaning(En)": "The Creator/ The Creator of the Universe/ The Maker/ The True Originator/ The Absolute Author"
+  },
+  {
+    "No": 12,
+    "Ar_name": "اَلْبَارِئ‎",
+    "Ar_transliteration": "(al-bāriʾ)",
+    "Pronunciation": "IPA(key): /al.baː.riʔ/",
+    "Meaning(En)": "The Initiator/ The Evolver/ The Eternal Spirit Worshipped By All/ Have Absolute Power Over All Matters/ Nature and Events"
+  },
+  {
+    "No": 13,
+    "Ar_name": "اَلْمُصَوِّر‎",
+    "Ar_transliteration": "(al-muṣawwir)",
+    "Pronunciation": "IPA(key): /al.mu.sˤaw.wir/",
+    "Meaning(En)": "The Fashioner/ The Shaper/ The Designer/ The Artist"
+  },
+  {
+    "No": 14,
+    "Ar_name": "اَلْغَفَّار‎",
+    "Ar_transliteration": "(al-ḡaffār)",
+    "Pronunciation": "IPA(key): /al.ɣaf.faːr/",
+    "Meaning(En)": "The Repeatedly Forgiving/ The Absolute Forgiver/ The Pardoner/ The Condoner"
+  },
+  {
+    "No": 15,
+    "Ar_name": "اَلْقَهَّار‎",
+    "Ar_transliteration": "(al-qahhār)",
+    "Pronunciation": "IPA(key): /al.qah.haːr/",
+    "Meaning(En)": "The Subduer/ The Overcomer/ The Conqueror/ The Absolute Vanquisher"
+  },
+  {
+    "No": 16,
+    "Ar_name": "اَلْوَهَّاب‎",
+    "Ar_transliteration": "(al-wahhāb)",
+    "Pronunciation": "IPA(key): /al.wah.haːb/",
+    "Meaning(En)": "The Absolute Bestower/ The Giver/ The Grantor/ The Great Donor"
+  },
+  {
+    "No": 17,
+    "Ar_name": "اَلرَّزَّاق‎",
+    "Ar_transliteration": "(ar-razzāq)",
+    "Pronunciation": "IPA(key): /ar.raz.zaːq/",
+    "Meaning(En)": "The Provider/ The Sustainer/ The Bestower of Sustenance/ The All-Provider"
+  },
+  {
+    "No": 18,
+    "Ar_name": "اَلْفَتَّاح‎",
+    "Ar_transliteration": "(al-fattāḥ)",
+    "Pronunciation": "IPA(key): /al.fat.taːħ/",
+    "Meaning(En)": "The Opener/ The Opener of the Gates of Profits/ The Reliever/ The Victory Giver"
+  },
+  {
+    "No": 19,
+    "Ar_name": "اَلْعَلِيم‎",
+    "Ar_transliteration": "(al-ʿalīm)",
+    "Pronunciation": "IPA(key): /al.ʕa.liːm/",
+    "Meaning(En)": "The Knowing/ The All-Knower/ The Omniscient/ The All-Knowledgeable/ The Possessor of Knowing Much of Ever Thing/ The All-Knowing"
+  },
+  {
+    "No": 20,
+    "Ar_name": "اَلْقَابِض‎",
+    "Ar_transliteration": "(al-qābiḍ)",
+    "Pronunciation": "IPA(key): /al.qaː.bidˤ/",
+    "Meaning(En)": "The Restrainer/ The Constrictor/ The Withholder/ The Straightener/ The Absolute Seizer"
+  },
+  {
+    "No": 21,
+    "Ar_name": "اَلْبَاسِط‎",
+    "Ar_transliteration": "(al-bāsiṭ)",
+    "Pronunciation": "IPA(key): /al.baː.sitˤ/",
+    "Meaning(En)": "The Extender/ The Expander/ The Generous Provider"
+  },
+  {
+    "No": 22,
+    "Ar_name": "اَلْخَافِض‎",
+    "Ar_transliteration": "(al-ḵāfiḍ)",
+    "Pronunciation": "IPA(key): /al.xaː.fidˤ/",
+    "Meaning(En)": "The Abaser/ The Humiliator/ The Downgrader"
+  },
+  {
+    "No": 23,
+    "Ar_name": "اَلرَّافِع‎",
+    "Ar_transliteration": "(ar-rāfiʿ)",
+    "Pronunciation": "IPA(key): /ar.raː.fiʕ/",
+    "Meaning(En)": "The Exalter/ The Upgrader"
+  },
+  {
+    "No": 24,
+    "Ar_name": "اَلْمُعِزّ‎",
+    "Ar_transliteration": "(al-muʿizz)",
+    "Pronunciation": "IPA(key): /al.mu.ʕizz/",
+    "Meaning(En)": "The Giver of Honor/ The Bestower of Honor/ The Empowerer"
+  },
+  {
+    "No": 25,
+    "Ar_name": "اَلْمُذِلّ‎",
+    "Ar_transliteration": "(al-muḏill)",
+    "Pronunciation": "IPA(key): /al.mu.ðill/",
+    "Meaning(En)": "The Giver of Dishonor/ The Giver of Disgrace"
+  },
+  {
+    "No": 26,
+    "Ar_name": "اَلسَّمِيع‎",
+    "Ar_transliteration": "(as-samīʿ)",
+    "Pronunciation": "IPA(key): /as.sa.miːʕ/",
+    "Meaning(En)": "The Hearing/ The All-Hearing/ The Hearer of Invocation"
+  },
+  {
+    "No": 27,
+    "Ar_name": "اَلْبَصِير‎",
+    "Ar_transliteration": "(al-baṣīr)",
+    "Pronunciation": "IPA(key): /al.ba.sˤiːr/",
+    "Meaning(En)": "The All-Seeing/ The All-Seer/ The Ever-Clairvoyant/ The Clear-Sighted/ The Clear-Seeing"
+  },
+  {
+    "No": 28,
+    "Ar_name": "اَلْحَكَم‎",
+    "Ar_transliteration": "(al-ḥakam)",
+    "Pronunciation": "IPA(key): /al.ħa.kam/",
+    "Meaning(En)": "The Judge/ The Arbitrator/ The Arbiter/ The All-Decree/ The Possessor of Authority of Decisions and Judgment"
+  },
+  {
+    "No": 29,
+    "Ar_name": "اَلْعَدْل‎",
+    "Ar_transliteration": "(al-ʿadl)",
+    "Pronunciation": "IPA(key): /al.ʕadl/",
+    "Meaning(En)": "The Just/ The Authorized and Straightforward Judge of Dealing Justly"
+  },
+  {
+    "No": 30,
+    "Ar_name": "اَللَّطِيف‎",
+    "Ar_transliteration": "(al-laṭīf)",
+    "Pronunciation": "IPA(key): /al.la.tˤiːf/",
+    "Meaning(En)": "The Gentle/ The Benignant/ The Subtly Kind/ The All-Subtle"
+  },
+  {
+    "No": 31,
+    "Ar_name": "اَلْخَبِير‎",
+    "Ar_transliteration": "(al-ḵabīr)",
+    "Pronunciation": "IPA(key): /al.xa.biːr/",
+    "Meaning(En)": "The All-Aware/ The Well-Acquainted/ The Ever-Adept"
+  },
+  {
+    "No": 32,
+    "Ar_name": "اَلْحَلِيم‎",
+    "Ar_transliteration": "(al-ḥalīm)",
+    "Pronunciation": "IPA(key): /al.ħa.liːm/",
+    "Meaning(En)": "The Forbearing/ The Indulgent/ The Oft Forbearing/ The All-Enduring"
+  },
+  {
+    "No": 33,
+    "Ar_name": "اَلْعَظِيم‎",
+    "Ar_transliteration": "(al-ʿaẓīm)",
+    "Pronunciation": "IPA(key): /al.ʕa.ðˤiːm/",
+    "Meaning(En)": "The Most Great/ The Ever-Magnificent/ The Most Supreme/ The Exalted/ The Absolute Dignified"
+  },
+  {
+    "No": 34,
+    "Ar_name": "اَلْغَفُور‎",
+    "Ar_transliteration": "(al-ḡafūr)",
+    "Pronunciation": "IPA(key): /al.ɣa.fuːr/",
+    "Meaning(En)": "The Ever-Forgiving/ The Oft-Forgiving"
+  },
+  {
+    "No": 35,
+    "Ar_name": "اَلشَّكُور‎",
+    "Ar_transliteration": "(aš-šakūr)",
+    "Pronunciation": "IPA(key): /aʃ.ʃa.kuːr/",
+    "Meaning(En)": "The Grateful/ The Appreciative/ The Multiplier of Rewards"
+  },
+  {
+    "No": 36,
+    "Ar_name": "اَلْعَلِيّ‎",
+    "Ar_transliteration": "(al-ʿaliyy)",
+    "Pronunciation": "IPA(key): /al.ʕa.lijj/",
+    "Meaning(En)": "The Sublime/ The Ever-Exalted/ The Supreme/ The Most High/ The Most Lofty"
+  },
+  {
+    "No": 37,
+    "Ar_name": "اَلْكَبِير‎",
+    "Ar_transliteration": "(al-kabīr)",
+    "Pronunciation": "IPA(key): /al.ka.biːr/",
+    "Meaning(En)": "The Great/ The Ever-Great/ The Grand/ The Most Great/ The Greatly Abundant of Extent/ Capacity and Importance"
+  },
+  {
+    "No": 38,
+    "Ar_name": "اَلْحَفِيظ‎",
+    "Ar_transliteration": "(al-ḥafīẓ)",
+    "Pronunciation": "IPA(key): /al.ħa.fiːðˤ/",
+    "Meaning(En)": "The Preserver/ The Ever-Preserving/ The All-Watching/ The Protector/ The Guardian/ The Oft-Conservator"
+  },
+  {
+    "No": 39,
+    "Ar_name": "اَلْمُقِيت‎",
+    "Ar_transliteration": "(al-muqīt)",
+    "Pronunciation": "IPA(key): /al.mu.qiːt/",
+    "Meaning(En)": "The Nourisher/ The Feeder"
+  },
+  {
+    "No": 40,
+    "Ar_name": "اَلْحَسِيب‎",
+    "Ar_transliteration": "(al-ḥasīb)",
+    "Pronunciation": "IPA(key): /al.ħa.siːb/",
+    "Meaning(En)": "The Bringer of Judgment/ The Ever-Reckoner"
+  },
+  {
+    "No": 41,
+    "Ar_name": "اَلْجَلِيل‎",
+    "Ar_transliteration": "(al-jalīl)",
+    "Pronunciation": "IPA(key): /al.d͡ʒa.liːl/",
+    "Meaning(En)": "The Majestic/ The Exalted/ The Oft-Important/ The Splendid/ The Sublime"
+  },
+  {
+    "No": 42,
+    "Ar_name": "اَلْكَرِيم‎",
+    "Ar_transliteration": "(al-karīm)",
+    "Pronunciation": "IPA(key): /al.ka.riːm/",
+    "Meaning(En)": "The Noble/ The Bountiful/ The Generous/ The Precious/ The Honored/ The Benefactor"
+  },
+  {
+    "No": 43,
+    "Ar_name": "اَلرَّقِيب‎",
+    "Ar_transliteration": "(ar-raqīb)",
+    "Pronunciation": "IPA(key): /ar.ra.qiːb/",
+    "Meaning(En)": "The Watchful/ The Observer/ The Ever-Watchful/ The Watcher"
+  },
+  {
+    "No": 44,
+    "Ar_name": "اَلْمُجِيب‎",
+    "Ar_transliteration": "(al-mujīb)",
+    "Pronunciation": "IPA(key): /al.mu.d͡ʒiːb/",
+    "Meaning(En)": "The Responsive/ The Answerer/ The Supreme Answerer/ The Accepter of Invocation"
+  },
+  {
+    "No": 45,
+    "Ar_name": "اَلْوَاسِع‎",
+    "Ar_transliteration": "(al-wāsiʿ)",
+    "Pronunciation": "IPA(key): /al.waː.siʕ/",
+    "Meaning(En)": "The Vast/ The All-Embracing/ The Omnipresent/ The Boundless/ The All-Encompassing"
+  },
+  {
+    "No": 46,
+    "Ar_name": "اَلْحَكِيم‎",
+    "Ar_transliteration": "(al-ḥakīm)",
+    "Pronunciation": "IPA(key): /al.ħa.kiːm/",
+    "Meaning(En)": "The Wise/ The Ever-Wise/ The Endowed with Sound Judgment"
+  },
+  {
+    "No": 47,
+    "Ar_name": "اَلْوَدُود‎",
+    "Ar_transliteration": "(al-wadūd)",
+    "Pronunciation": "IPA(key): /al.wa.duːd/",
+    "Meaning(En)": "The Affectionate/ The Ever-Affectionate/ The Loving One/ The Loving/ The Lover/ The One Who Tenders and Warms Hearts"
+  },
+  {
+    "No": 48,
+    "Ar_name": "اَلْمَجِيد‎",
+    "Ar_transliteration": "(al-majīd)",
+    "Pronunciation": "IPA(key): /al.ma.d͡ʒiːd/",
+    "Meaning(En)": "The All-Glorious/ The Majestic/ The Ever-Illustrious"
+  },
+  {
+    "No": 49,
+    "Ar_name": "اَلْبَاعِث‎",
+    "Ar_transliteration": "(al-bāʿiṯ)",
+    "Pronunciation": "IPA(key): /al.baː.ʕiθ/",
+    "Meaning(En)": "The Resurrector/ The Awakener/ The Arouser/ The Dispatcher"
+  },
+  {
+    "No": 50,
+    "Ar_name": "اَلشَّهِيد‎",
+    "Ar_transliteration": "(aš-šahīd)",
+    "Pronunciation": "IPA(key): /aʃ.ʃa.hiːd/",
+    "Meaning(En)": "The Witness/ The Testifier/ The Ever-Witnessing"
+  },
+  {
+    "No": 51,
+    "Ar_name": "اَلْحَقّ‎",
+    "Ar_transliteration": "(al-ḥaqq)",
+    "Pronunciation": "IPA(key): /al.ħaqq/",
+    "Meaning(En)": "The Truth/ The Reality/ The Only One Certainly Sound and Genuine in Truth"
+  },
+  {
+    "No": 52,
+    "Ar_name": "اَلْوَكِيل‎",
+    "Ar_transliteration": "(al-wakīl)",
+    "Pronunciation": "IPA(key): /al.wa.kiːl/",
+    "Meaning(En)": "The Trustee/ The Dependable/ The Advocate"
+  },
+  {
+    "No": 53,
+    "Ar_name": "اَلْقَوِيّ‎",
+    "Ar_transliteration": "(al-qawiyy)",
+    "Pronunciation": "IPA(key): /al.qa.wijj/",
+    "Meaning(En)": "The Strong"
+  },
+  {
+    "No": 54,
+    "Ar_name": "اَلْمَتِين‎",
+    "Ar_transliteration": "(al-matīn)",
+    "Pronunciation": "IPA(key): /al.ma.tiːn/",
+    "Meaning(En)": "The Firm/ The Steadfast"
+  },
+  {
+    "No": 55,
+    "Ar_name": "اَلْوَلِيّ‎",
+    "Ar_transliteration": "(al-waliyy)",
+    "Pronunciation": "IPA(key): /al.wa.lijj/",
+    "Meaning(En)": "The Friend/ The Helper"
+  },
+  {
+    "No": 56,
+    "Ar_name": "اَلْحَمِيد‎",
+    "Ar_transliteration": "(al-ḥamīd)",
+    "Pronunciation": "IPA(key): /al.ħa.miːd/",
+    "Meaning(En)": "The All-Praiseworthy"
+  },
+  {
+    "No": 57,
+    "Ar_name": "اَلْمُحْصِي‎",
+    "Ar_transliteration": "(al-muḥṣī)",
+    "Pronunciation": "IPA(key): /al.muħ.sˤiː/",
+    "Meaning(En)": "The Accounter/ The Numberer of All"
+  },
+  {
+    "No": 58,
+    "Ar_name": "اَلْمُبْدِئ‎",
+    "Ar_transliteration": "(al-mubdiʾ)",
+    "Pronunciation": "IPA(key): /al.mub.diʔ/",
+    "Meaning(En)": "The Originator/ The Producer/ The Initiator"
+  },
+  {
+    "No": 59,
+    "Ar_name": "اَلْمُعِيد‎",
+    "Ar_transliteration": "(al-muʿīd)",
+    "Pronunciation": "IPA(key): /al.mu.ʕiːd/",
+    "Meaning(En)": "The Restorer/ The Reinstater Who Brings Back All"
+  },
+  {
+    "No": 60,
+    "Ar_name": "اَلْمُحْيِي‎",
+    "Ar_transliteration": "(al-muḥyī)",
+    "Pronunciation": "IPA(key): /al.muħ.jiː/",
+    "Meaning(En)": "The Giver of Life"
+  },
+  {
+    "No": 61,
+    "Ar_name": "اَلْمُمِيت‎",
+    "Ar_transliteration": "(al-mumīt)",
+    "Pronunciation": "IPA(key): /al.mu.miːt/",
+    "Meaning(En)": "The Bringer of Death"
+  },
+  {
+    "No": 62,
+    "Ar_name": "اَلْحَيّ‎",
+    "Ar_transliteration": "(al-ḥayy)",
+    "Pronunciation": "IPA(key): /al.ħajj/",
+    "Meaning(En)": "The Living"
+  },
+  {
+    "No": 63,
+    "Ar_name": "اَلْقَيُّوم‎",
+    "Ar_transliteration": "(al-qayyūm)",
+    "Pronunciation": "IPA(key): /al.qaj.juːm/",
+    "Meaning(En)": "The Subsisting/ The Independent"
+  },
+  {
+    "No": 64,
+    "Ar_name": "اَلْوَاجِد‎",
+    "Ar_transliteration": "(al-wājid)",
+    "Pronunciation": "IPA(key): /al.waː.d͡ʒid/",
+    "Meaning(En)": "The Preceiver/ The Finder/ The Unfailing"
+  },
+  {
+    "No": 65,
+    "Ar_name": "اَلْمَاجِد‎",
+    "Ar_transliteration": "(al-mājid)",
+    "Pronunciation": "IPA(key): /al.maː.d͡ʒid/",
+    "Meaning(En)": "The Illustrious/ The Magnificent/ The Noble"
+  },
+  {
+    "No": 66,
+    "Ar_name": "اَلْوَاحِد‎",
+    "Ar_transliteration": "(al-wāḥid)",
+    "Pronunciation": "IPA(key): /al.waː.ħid/",
+    "Meaning(En)": "The Unique/ The Single"
+  },
+  {
+    "No": 67,
+    "Ar_name": "اَلْأَحَد‎",
+    "Ar_transliteration": "(al-ʾaḥad)",
+    "Pronunciation": "IPA(key): /al.ʔa.ħad/",
+    "Meaning(En)": "The One/ The Indivisible"
+  },
+  {
+    "No": 68,
+    "Ar_name": "اَلصَّمَد‎",
+    "Ar_transliteration": "(aṣ-ṣamad)",
+    "Pronunciation": "IPA(key): /asˤ.sˤa.mad/",
+    "Meaning(En)": "The Eternal/ The Absolute/ The Self-Sufficient"
+  },
+  {
+    "No": 69,
+    "Ar_name": "اَلْقَادِر‎",
+    "Ar_transliteration": "(al-qādir)",
+    "Pronunciation": "IPA(key): /al.qaː.dir/",
+    "Meaning(En)": "The All-Powerful/ He Who is able to do Everything"
+  },
+  {
+    "No": 70,
+    "Ar_name": "اَلْمُقْتَدِر‎",
+    "Ar_transliteration": "(al-muqtadir)",
+    "Pronunciation": "IPA(key): /al.muq.ta.dir/",
+    "Meaning(En)": "The Determiner/ The Dominant"
+  },
+  {
+    "No": 71,
+    "Ar_name": "اَلْمُقَدِّم‎",
+    "Ar_transliteration": "(al-muqaddim)",
+    "Pronunciation": "IPA(key): /al.mu.qad.dim/",
+    "Meaning(En)": "The Expediter/ He Who Brings Forward"
+  },
+  {
+    "No": 72,
+    "Ar_name": "اَلْمُؤَخِّر‎",
+    "Ar_transliteration": "(al-muʾaḵḵir)",
+    "Pronunciation": "IPA(key): /al.mu.ʔax.xir/",
+    "Meaning(En)": "The Delayer/ He Who Puts Far Away"
+  },
+  {
+    "No": 73,
+    "Ar_name": "اَلْأَوَّل‎",
+    "Ar_transliteration": "(al-ʾawwal)",
+    "Pronunciation": "IPA(key): /al.ʔaw.wal/",
+    "Meaning(En)": "The First/ The Beginning-less"
+  },
+  {
+    "No": 74,
+    "Ar_name": "اَلْأَخِر‎",
+    "Ar_transliteration": "(al-ʾaḵir)",
+    "Pronunciation": "IPA(key): /al.ʔa.xir/",
+    "Meaning(En)": "The Last/ The Endless"
+  },
+  {
+    "No": 74,
+    "Ar_name": "اَلْآخِر‎",
+    "Ar_transliteration": "(al-ʾāḵir)",
+    "Pronunciation": "IPA(key): /al.ʔaː.xir/",
+    "Meaning(En)": "The Last/ The Endless"
+  },
+  {
+    "No": 75,
+    "Ar_name": "اَلظَّاهِر‎",
+    "Ar_transliteration": "(aẓ-ẓāhir)",
+    "Pronunciation": "IPA(key): /aðˤ.ðˤaː.hir/",
+    "Meaning(En)": "The Manifest/ The Evident/ The Outer"
+  },
+  {
+    "No": 76,
+    "Ar_name": "اَلْبَاطِن‎",
+    "Ar_transliteration": "(al-bāṭin)",
+    "Pronunciation": "IPA(key): /al.baː.tˤin/",
+    "Meaning(En)": "The Hidden/ The Unmanifest/ The Inner"
+  },
+  {
+    "No": 77,
+    "Ar_name": "اَلْوَالِي‎",
+    "Ar_transliteration": "(al-wālī)",
+    "Pronunciation": "IPA(key): /al.waː.liː/",
+    "Meaning(En)": "The Patron/ The Protecting Friend/ The Friendly Lord"
+  },
+  {
+    "No": 78,
+    "Ar_name": "اَلْمُتَعَالِي‎",
+    "Ar_transliteration": "(al-mutaʿālī)",
+    "Pronunciation": "IPA(key): /al.mu.ta.ʕaː.liː/",
+    "Meaning(En)": "The Supremely Exalted/ The Most High"
+  },
+  {
+    "No": 79,
+    "Ar_name": "اَلْبَرّ‎",
+    "Ar_transliteration": "(al-barr)",
+    "Pronunciation": "IPA(key): /al.barr/",
+    "Meaning(En)": "The Good/ The Beneficent/ The Source of All Goodness"
+  },
+  {
+    "No": 80,
+    "Ar_name": "اَلتَّوَّاب‎",
+    "Ar_transliteration": "(at-tawwāb)",
+    "Pronunciation": "IPA(key): /at.taw.waːb/",
+    "Meaning(En)": "The Ever-Returning/ Ever-Relenting/ The Acceptor of Repentance"
+  },
+  {
+    "No": 81,
+    "Ar_name": "اَلْمُنْتَقِم‎",
+    "Ar_transliteration": "(al-muntaqim)",
+    "Pronunciation": "IPA(key): /al.mun.ta.qim/",
+    "Meaning(En)": "The Avenger"
+  },
+  {
+    "No": 82,
+    "Ar_name": "اَلْعَفُوّ‎",
+    "Ar_transliteration": "(al-ʿafuww)",
+    "Pronunciation": "IPA(key): /al.ʕa.fuww/",
+    "Meaning(En)": "The Pardoner/ The Effacer/ The Forgiver"
+  },
+  {
+    "No": 83,
+    "Ar_name": "اَلرَّؤُوف‎",
+    "Ar_transliteration": "(ar-raʾūf)",
+    "Pronunciation": "IPA(key): /ar.ra.ʔuːf/",
+    "Meaning(En)": "The Kind/ The Pitying/ The Compassionate"
+  },
+  {
+    "No": 84,
+    "Ar_name": "مَالِك الْمُلْك‎",
+    "Ar_transliteration": "(mālik al-mulk)",
+    "Pronunciation": "IPA(key): /maː.lik al.mulk/",
+    "Meaning(En)": "The Owner of all Sovereignty"
+  },
+  {
+    "No": 85,
+    "Ar_name": "ذُو ٱلْجَلَالِ وَٱلْإِكْرَام‎",
+    "Ar_transliteration": "(ḏū l-jalāli wal-ʾikrām)",
+    "Pronunciation": "IPA(key): /ðu‿l.d͡ʒa.laː.li wal.ʔik.raːm/",
+    "Meaning(En)": "The Owner/ Lord of Majesty and Honour"
+  },
+  {
+    "No": 86,
+    "Ar_name": "اَلْمُقْسِط‎",
+    "Ar_transliteration": "(al-muqsiṭ)",
+    "Pronunciation": "IPA(key): /al.muq.sitˤ/",
+    "Meaning(En)": "The Equitable/ The Requiter"
+  },
+  {
+    "No": 87,
+    "Ar_name": "اَلْجَامِع‎",
+    "Ar_transliteration": "(al-jāmiʿ)",
+    "Pronunciation": "IPA(key): /al.d͡ʒaː.miʕ/",
+    "Meaning(En)": "The Gatherer/ The Unifier"
+  },
+  {
+    "No": 88,
+    "Ar_name": "اَلْغَنِيّ‎",
+    "Ar_transliteration": "(al-ḡaniyy)",
+    "Pronunciation": "IPA(key): /al.ɣa.nijj/",
+    "Meaning(En)": "The Rich/ The Independent/ The Self-Sufficient"
+  },
+  {
+    "No": 89,
+    "Ar_name": "اَلْمُغْنِي‎",
+    "Ar_transliteration": "(al-muḡnī)",
+    "Pronunciation": "IPA(key): /al.muɣ.niː/",
+    "Meaning(En)": "The Enricher/ The Emancipator"
+  },
+  {
+    "No": 90,
+    "Ar_name": "اَلْمَانِع‎",
+    "Ar_transliteration": "(al-māniʿ)",
+    "Pronunciation": "IPA(key): /al.maː.niʕ/",
+    "Meaning(En)": "The Preventer/ The Withholder/ The Shielder/ The Defender"
+  },
+  {
+    "No": 91,
+    "Ar_name": "اَلضَّار‎",
+    "Ar_transliteration": "(aḍ-ḍār)",
+    "Pronunciation": "IPA(key): /adˤ.dˤaːr/",
+    "Meaning(En)": "The Distressor/ The Harmer/ The Afflictor"
+  },
+  {
+    "No": 92,
+    "Ar_name": "اَلنَّافِع‎",
+    "Ar_transliteration": "(an-nāfiʿ)",
+    "Pronunciation": "IPA(key): /an.naː.fiʕ/",
+    "Meaning(En)": "The Propitious/ The Benefactor/ The Source of Good"
+  },
+  {
+    "No": 93,
+    "Ar_name": "اَلنُّور‎",
+    "Ar_transliteration": "(an-nūr)",
+    "Pronunciation": "IPA(key): /an.nuːr/",
+    "Meaning(En)": "The Light"
+  },
+  {
+    "No": 94,
+    "Ar_name": "اَلْهَادِي‎",
+    "Ar_transliteration": "(al-hādī)",
+    "Pronunciation": "IPA(key): /al.haː.diː/",
+    "Meaning(En)": "The Guide/ The Way"
+  },
+  {
+    "No": 95,
+    "Ar_name": "اَلْبَدِيع‎",
+    "Ar_transliteration": "(al-badīʿ)",
+    "Pronunciation": "IPA(key): /al.ba.diːʕ/",
+    "Meaning(En)": "The Originator/ The Incomparable/ The Unattainable/ The Beautiful"
+  },
+  {
+    "No": 96,
+    "Ar_name": "اَلْبَاقِي‎",
+    "Ar_transliteration": "(al-bāqī)",
+    "Pronunciation": "IPA(key): /al.baː.qiː/",
+    "Meaning(En)": "The Immutable/ The Infinite/ The Everlasting"
+  },
+  {
+    "No": 97,
+    "Ar_name": "اَلْوَارِث‎",
+    "Ar_transliteration": "(al-wāriṯ)",
+    "Pronunciation": "IPA(key): /al.waː.riθ/",
+    "Meaning(En)": "The Heir/ The Inheritor of All"
+  },
+  {
+    "No": 98,
+    "Ar_name": "اَلرَّشِيد‎",
+    "Ar_transliteration": "(ar-rašīd)",
+    "Pronunciation": "IPA(key): /ar.ra.ʃiːd/",
+    "Meaning(En)": "The Guide to the Right Path"
+  },
+  {
+    "No": 99,
+    "Ar_name": "اَلصَّبُور‎",
+    "Ar_transliteration": "(aṣ-ṣabūr)",
+    "Pronunciation": "IPA(key): /asˤ.sˤa.buːr/",
+    "Meaning(En)": "The Timeless/ The Patient"
+  },
+  {
+    "No": "XX",
+    "Ar_name": "اَلْجَمِيل‎",
+    "Ar_transliteration": "(al-jamīl)",
+    "Pronunciation": "IPA(key): /al.d͡ʒa.miːl/",
+    "Meaning(En)": "The Beautiful"
+  },
+  {
+    "No": "XX",
+    "Ar_name": "اَلْكَافِي‎",
+    "Ar_transliteration": "(al-kāfī)",
+    "Pronunciation": "IPA(key): /al.kaː.fiː/",
+    "Meaning(En)": "The All-sufficient"
+  },
+  {
+    "No": "XX",
+    "Ar_name": "اَلْمَنَّان‎",
+    "Ar_transliteration": "(al-mannān)",
+    "Pronunciation": "IPA(key): /al.man.naːn/",
+    "Meaning(En)": "The Benevolent"
+  },
+  {
+    "No": "XX",
+    "Ar_name": "اَلنَّاصِر‎",
+    "Ar_transliteration": "(an-nāṣir)",
+    "Pronunciation": "IPA(key): /an.naː.sˤir/",
+    "Meaning(En)": "The Helper/ The Protector"
+  },
+  {
+    "No": "XX",
+    "Ar_name": "اَلْقَاهِر‎",
+    "Ar_transliteration": "(al-qāhir)",
+    "Pronunciation": "IPA(key): /al.qaː.hir/",
+    "Meaning(En)": "The Subduer/ The Conqueror"
+  },
+  {
+    "No": "XX",
+    "Ar_name": "اَلرَّبّ‎",
+    "Ar_transliteration": "(ar-rabb)",
+    "Pronunciation": "IPA(key): /ar.rabb/",
+    "Meaning(En)": "The Lord"
+  },
+  {
+    "No": "XX",
+    "Ar_name": "اَلسَّتَّار‎",
+    "Ar_transliteration": "(as-sattār)",
+    "Pronunciation": "IPA(key): /as.sat.taːr/",
+    "Meaning(En)": "The Veiler of Sin/ The one Who Covers Sins"
+  },
+  {
+    "No": "XX",
+    "Ar_name": "اَلسُّلْطَان‎",
+    "Ar_transliteration": "(as-sulṭān)",
+    "Pronunciation": "IPA(key): /as.sul.tˤaːn/",
+    "Meaning(En)": "The Sovereign/ The Ruler/"
+  }
+]
