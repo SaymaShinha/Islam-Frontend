@@ -20,6 +20,7 @@ export default function Contact() {
 
     try {
       const apiUrl = import.meta.env.VITE_API_URL;
+
       const res = await fetch(`${apiUrl}/send`, {
         method: "POST",
         headers: {
@@ -33,14 +34,14 @@ export default function Contact() {
         alert("Message sent successfully!");
         setForm({ name: "", email: "", message: "" });
       } else {
+        setLoading(false);
         alert("Failed to send message.");
       }
     } catch (error) {
+      setLoading(false);
       throw error;
     } finally {
-      
     }
-
   };
 
   return (
@@ -76,13 +77,14 @@ export default function Contact() {
           required
         />
 
-        <button disabled={loading} className="bg-blue-600 text-white px-4 py-2 rounded">
+        <button
+          disabled={loading}
+          className="bg-blue-600 text-white px-4 py-2 rounded"
+        >
           {loading ? "Sending..." : "Send"}
         </button>
 
-        {loading && (
-          <Spinner text="Sending message..."></Spinner>
-        )}
+        {loading && <Spinner text="Sending message..."></Spinner>}
       </form>
 
       <h1>Furqan life</h1>
