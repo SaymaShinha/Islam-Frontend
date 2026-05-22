@@ -20,8 +20,9 @@ export default function Contact() {
 
     try {
       const apiUrl = import.meta.env.VITE_API_URL;
+      const port = import.meta.env.PORT;
 
-      const res = await fetch(`${apiUrl}/send`, {
+      const res = await fetch(`${apiUrl}:port/send`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
