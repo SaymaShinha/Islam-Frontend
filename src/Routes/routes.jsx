@@ -10,12 +10,25 @@ import Contact from "../Pages/Contact.jsx";
 import PrivacyPolicy from "../Pages/PrivacyPolicy.jsx";
 import Disclaimer from "../Pages/Disclaimer.jsx";
 import TermsOfUse from "../Pages/TermsOfUse.jsx";
-import { getQuranData, getSurahData } from "../Functions/getDataFromJsonFile.js";
+import {
+  getQuranData,
+  getSurahData,
+} from "../Functions/getDataFromJsonFile.js";
 import Farz from "../Pages/Namaz/Farz.jsx";
 
-{/* Namaz */ }
+{
+  /* Namaz */
+}
 import NamazHome from "../Pages/Namaz/NamazHome.jsx";
 
+{
+  /* user */
+}
+import ProtectedRoute from "./ProtectedRoute.jsx";
+import AuthLayout from "../auth/AuthLayout.jsx";
+import LoginForm from "../auth/LoginForm.jsx";
+import RegistrationForm from "../auth/RegistrationForm.jsx";
+import UserProfile from "../auth/UserProfile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,22 +38,28 @@ const router = createBrowserRouter([
       { index: true, Component: Home },
       { path: "asmaul-husna", Component: AsmaulHusna },
       {
-        path: "/quran", loader: async () => {
+        path: "/quran",
+        loader: async () => {
           const quranData = await getQuranData();
           return { quranData };
-        }, Component: Quran
+        },
+        Component: Quran,
       },
       {
-        path: "/surah/:surahNumber", loader: async ({ params }) => {
+        path: "/surah/:surahNumber",
+        loader: async ({ params }) => {
           const surahData = await getSurahData(params.surahNumber);
           return { surahData };
-        }, Component: Surah
+        },
+        Component: Surah,
       },
       {
-        path: "/surah/:surahNumber/:ayahNumber", loader: async ({ params }) => {
+        path: "/surah/:surahNumber/:ayahNumber",
+        loader: async ({ params }) => {
           const surahData = await getSurahData(params.surahNumber);
           return { surahData };
-        }, Component: Surah
+        },
+        Component: Surah,
       },
       { path: "/prophets", Component: Prophets },
       { path: "/about", Component: About },
@@ -50,8 +69,25 @@ const router = createBrowserRouter([
       { path: "/terms-of-use", Component: TermsOfUse },
       { path: "/namaz", Component: NamazHome },
       { path: "/farz", Component: Farz },
+
+      {
+        path: "/user-profile",
+        element: (
+          <ProtectedRoute>
+            <UserProfile></UserProfile>
+          </ProtectedRoute>
+        )
+      },
+      {
+        path: "/auth",
+        Component: AuthLayout,
+        children: [
+          { index: true, Component: RegistrationForm },
+          { path: "login", Component: LoginForm },
+        ],
+      },
     ],
-  }
+  },
 ]);
 
 export default router;
