@@ -1,5 +1,6 @@
 import { useHref, useNavigate } from "react-router";
-import NamazNavList from "./NamazNavList";
+import NamazNavList from "./NamazNavList.jsx";
+import UserProfileNavList from "./UserProfileNavList.jsx";
 import { useState, useEffect } from "react";
 
 function NavbarHeader() {
@@ -27,10 +28,10 @@ function NavbarHeader() {
         {/* Desktop Menu */}
         <div className="hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li href="/user-profile">User</li>
             <li>
               <a href="/">Home</a>
             </li>
+            <UserProfileNavList></UserProfileNavList>
             <li>
               <a href="/asmaul-husna">
                 <img className="w-5 h-5" src="/allah.svg" alt="allah" />
@@ -128,11 +129,9 @@ function NavbarHeader() {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a href="/user-profile">User</a>
-              </li>
-              <li>
                 <a href="/">Home</a>
               </li>
+              <UserProfileNavList></UserProfileNavList>
               <li>
                 <a href="/asmaul-husna">
                   <img className="w-5 h-5" src="/allah.svg" alt="allah" />

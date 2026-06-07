@@ -4,7 +4,7 @@ export default function UserProfile() {
   const [user, setUser] = useState({
     name: "",
     email: "",
-    Native_Language: "",
+    nativeLanguage: "",
     addresses: [],
   });
   const token = localStorage.getItem("token");
@@ -25,6 +25,8 @@ export default function UserProfile() {
 
         if (res.ok) {
           setUser(data.data);
+          localStorage.setItem("userName", data.data.name);
+          localStorage.setItem("userEmail", data.data.email);
           console.log("Success:", data);
         } else {
           console.log("Error:", data.message);
@@ -75,8 +77,9 @@ export default function UserProfile() {
                 <div className="flex items-center gap-5">
                   {/* Avatar */}
                   <div className="avatar placeholder">
-                    <div className="bg-primary text-primary-content rounded-full w-20">
+                    <div className="text-primary-content rounded-full w-20 p-2">
                       <span className="text-3xl font-bold">
+                        <img src="./bead.png" alt={user?.name?.charAt(0).toUpperCase()} />
                         {user?.name?.charAt(0).toUpperCase()}
                       </span>
                     </div>
@@ -120,10 +123,10 @@ export default function UserProfile() {
                         }
                       >
                         <option value="">Select Native Language</option>
-                        <option value="bn">Bangla</option>
-                        <option value="tr">Turkish</option>
-                        <option value="en">English</option>
-                        <option value="ur">Urdu</option>
+                        <option value="bangla">Bangla</option>
+                        <option value="turkish">Turkish</option>
+                        <option value="english">English</option>
+                        <option value="urdu">Urdu</option>
                       </select>
                     </div>
                   </div>

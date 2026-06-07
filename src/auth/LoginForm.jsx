@@ -43,8 +43,38 @@ export default function LoginForm() {
       }
     } catch (error) {
       throw error;
+      setLoading(false);
     }
   };
+
+
+  
+    const handleGoogleLogin = () => {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          console.log(result.user);
+          const user = result.user;
+  
+          const res = fetch(`${API}/api/auth/login`, {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({
+              email: user.email,
+            }),
+          });
+  
+          console.log(res);
+  
+          if (res.ok) {
+            navigate("/");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
 
   return (
     <>
@@ -70,7 +100,6 @@ export default function LoginForm() {
       )}
 
       <div data-theme="islamic" className="relative min-h-screen">
-
         {/* Optional dark overlay */}
         <div className="absolute inset-0 bg-green-500/10"></div>
 
@@ -100,6 +129,7 @@ export default function LoginForm() {
               Login
             </button>
           </form>
+
         </div>
       </div>
     </>

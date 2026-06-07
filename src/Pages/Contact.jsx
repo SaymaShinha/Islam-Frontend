@@ -2,6 +2,10 @@ import { useState } from "react";
 import Spinner from "../Components/Spinner";
 
 export default function Contact() {
+  const userName = localStorage.getItem("userName");
+  const userEmail = localStorage.getItem("userEmail");
+
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -50,7 +54,7 @@ export default function Contact() {
         <input
           type="text"
           name="name"
-          value={form.name}
+          value={userName}
           onChange={handleChange}
           placeholder="Your Name"
           className="w-full border border-l p-2 rounded bg-blue-100"
@@ -60,7 +64,7 @@ export default function Contact() {
         <input
           type="email"
           name="email"
-          value={form.email}
+          value={userEmail}
           onChange={handleChange}
           placeholder="Your Email"
           className="w-full border p-2 bg-blue-100"
