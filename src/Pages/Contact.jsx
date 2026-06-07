@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Spinner from "../Components/Spinner";
+import Spinner from "../Components/Spinner.jsx";
 
 export default function Contact() {
   const userName = localStorage.getItem("userName");
