@@ -1,3 +1,39 @@
 .highlight{
   color:green;
 }
+
+@media print {
+  /* Hide elements marked no-print */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Hide the entire page */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Show only the print content */
+  .print-content,
+  .print-content * {
+    visibility: visible;
+  }
+
+  /* Position print content at the top of the paper */
+  .print-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Make each Quran result print nicely */
+  .print-result {
+    box-shadow: none !important;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+    break-inside: avoid;
+  }
+}

@@ -155,85 +155,193 @@ function Quran() {
 
 
     return (
-        <>
-            <div className="drawer lg:drawer-open">
-                <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content">
-                    {/* Navbar */}
-                    <nav className="navbar w-full bg-base-300 grid grid-cols-2">
-                        <label htmlFor="my-drawer-4" aria-label="open sidebar" className="btn btn-square btn-ghost">
-                            {/* Sidebar toggle icon */}
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeLinejoin="round" strokeLinecap="round" strokeWidth="2" fill="none" stroke="currentColor" className="my-1.5 inline-block size-4"><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M9 4v16"></path><path d="M14 10l2 2l-2 2"></path></svg>
+      <>
+        <div className="drawer lg:drawer-open">
+          <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
 
-                        </label>
+          <div className="drawer-content">
+            {/* Navbar */}
+            <nav className="navbar w-full bg-base-300 grid grid-cols-2 no-print">
+              <label
+                htmlFor="my-drawer-4"
+                aria-label="open sidebar"
+                className="btn btn-square btn-ghost"
+              >
+                {/* Sidebar toggle icon */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                  strokeWidth="2"
+                  fill="none"
+                  stroke="currentColor"
+                  className="my-1.5 inline-block size-4"
+                >
+                  <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+                  <path d="M9 4v16"></path>
+                  <path d="M14 10l2 2l-2 2"></path>
+                </svg>
+              </label>
 
-                        <select defaultValue="en" onChange={(e) => setLang(e.target.value)} className="select select-primary pl-3 rounded-lg justify-content-end">
-                            <option value="en">English</option>
-                            <option value="bn">Bangla</option>
-                        </select>
-                    </nav>
-                    {/* Page content here */}
+              <ul className="md:flex gap-2 float-end">
+                <li>
+                  <select
+                    defaultValue="en"
+                    onChange={(e) => setLang(e.target.value)}
+                    className="select select-primary pl-3 rounded-lg justify-content-end"
+                  >
+                    <option value="en">English</option>
+                    <option value="bn">Bangla</option>
+                  </select>
+                </li>
+                <li>
+                  <button
+                    onClick={() => window.print()}
+                    className="btn btn-info no-print"
+                  >
+                    🖨️ Print
+                  </button>
+                </li>
+              </ul>
+            </nav>
+            {/* Page content here */}
 
-                    <div className="p-4">
-                        <input type="text" onChange={(e) => searchWordAyah(e)} placeholder="Search Ayah" className="justify-end content-end input bg-green-100 rounded-lg t m-3 p-3 w-20% justify-content-center" />
+            <div className="p-4">
+              <input
+                type="text"
+                onChange={(e) => searchWordAyah(e)}
+                placeholder="Search Ayah"
+                className="justify-end content-end input bg-green-100 rounded-lg t m-3 p-3 w-20% justify-content-center"
+              />
+              <div className="print-content">
+                {searchedWord !== "" && (
+                  <h2>
+                    <span className="text-red-600">
+                      {searchedQuranAyah.length}
+                    </span>{" "}
+                    Quran Ayah found with{" "}
+                    <span className="text-primary font-bold">
+                      "{searchedWord}"
+                    </span>{" "}
+                  </h2>
+                )}
 
-                        {searchedWord !== "" && <h2><span className="text-red-600">{searchedQuranAyah.length}</span> Quran Ayah found with <span className="text-primary font-bold">"{searchedWord}"</span> </h2>}
-
-
-                        {loading && (<Spinner text="Loading..."></Spinner>)}
-                        {searchedQuranAyah.map((ayah) => (
-                            <div className="row rounded-lg shadow-md m-3 p-5 hover:bg-green-700" key={ayah.id} onClick={() => navigate(`/Surah/${ayah.surah_number}/${ayah.ayah_number}`)}>
-                                <div className="grid grid-cols-l">
-                                    <h2 className="">{ayah.surah_number}. {ayah.surah_en_name} ( {ayah.ayah_number} )</h2>
-                                    <p>{ayah.text}</p>
-                                </div>
-                            </div>
-                        ))}
-
+                {loading && <Spinner text="Loading..."></Spinner>}
+                {searchedQuranAyah.map((ayah) => (
+                  <div
+                    className="row rounded-lg shadow-md m-3 p-5 hover:bg-green-700"
+                    key={ayah.id}
+                    onClick={() =>
+                      navigate(
+                        `/Surah/${ayah.surah_number}/${ayah.ayah_number}`,
+                      )
+                    }
+                  >
+                    <div className="grid grid-cols-l">
+                      <h2 className="">
+                        {ayah.surah_number}. {ayah.surah_en_name} ({" "}
+                        {ayah.ayah_number} )
+                      </h2>
+                      <p>{ayah.text}</p>
                     </div>
-                </div>
-
-                <div className="drawer-side z-50">
-                    <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <div className="flex min-h-full flex-col items-start bg-base-100 shadow-xl is-drawer-close:w-0 is-drawer-open:w-64">
-                        {/* Sidebar content here */}
-                        <ul className="menu w-full grow p-4">
-                            <li>
-                                <details>
-                                    <summary>Sort by</summary>
-                                    <ul>
-                                        <li onClick={() => getSurahByTraditionalOrder()}><a>Traditional Order</a></li>
-                                        <li><a as="button" onClick={() => getSurahAccordingToRevelation()}>According To Revelation</a></li>
-                                        <li><a as="button" onClick={() => getSurahByDescSurahName()}>A-Z Surah Name</a></li>
-                                        <li><a as="button" onClick={() => getSurahByMinToMaxSurahTotalAyah()}>Surah Total Ayah Min Max</a></li>
-                                        <li><a as="button" onClick={() => getSurahByMaxToMinSurahTotalAyah()}>Surah Total Ayah Max to Min</a></li>
-                                        <li><a as="button" onClick={() => getMeccanSurah()}>Meccan Surah</a></li>
-                                        <li><a as="button" onClick={() => getMedinanSurah()}>Medinan Surah</a></li>
-                                    </ul>
-                                </details>
-                            </li>
-                            <li>
-                                <input type="text" onChange={(e) => searchQuran(e)} style={{ padding: "5px" }} placeholder="Search Surah" />
-                            </li>
-
-                            {surahData.map((surah) => (
-                                <li key={surah.id}><a href={`/surah/${surah.surah_number}`}>{surah.surah_number}. {surah.surah_ar_name} <br></br>
-                                    {surah.surah_en_name} ( {surah.total_ayah} )<br></br>
-                                    {surah.surah_en_name_translation} : {surah.revelation_type}<br></br>
-                                    <span className="highlight">{surah.note}</span> </a></li>
-                            ))}
-
-                            {/* List item */}
-                        </ul>
-                    </div>
-                </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <hr />
+          </div>
 
+          <div className="drawer-side z-50">
+            <label
+              htmlFor="my-drawer-4"
+              aria-label="close sidebar"
+              className="drawer-overlay"
+            ></label>
+            <div className="flex min-h-full flex-col items-start bg-base-100 shadow-xl is-drawer-close:w-0 is-drawer-open:w-64">
+              {/* Sidebar content here */}
+              <ul className="menu w-full grow p-4">
+                <li>
+                  <details>
+                    <summary>Sort by</summary>
+                    <ul>
+                      <li onClick={() => getSurahByTraditionalOrder()}>
+                        <a>Traditional Order</a>
+                      </li>
+                      <li>
+                        <a
+                          as="button"
+                          onClick={() => getSurahAccordingToRevelation()}
+                        >
+                          According To Revelation
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          as="button"
+                          onClick={() => getSurahByDescSurahName()}
+                        >
+                          A-Z Surah Name
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          as="button"
+                          onClick={() => getSurahByMinToMaxSurahTotalAyah()}
+                        >
+                          Surah Total Ayah Min Max
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          as="button"
+                          onClick={() => getSurahByMaxToMinSurahTotalAyah()}
+                        >
+                          Surah Total Ayah Max to Min
+                        </a>
+                      </li>
+                      <li>
+                        <a as="button" onClick={() => getMeccanSurah()}>
+                          Meccan Surah
+                        </a>
+                      </li>
+                      <li>
+                        <a as="button" onClick={() => getMedinanSurah()}>
+                          Medinan Surah
+                        </a>
+                      </li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <input
+                    type="text"
+                    onChange={(e) => searchQuran(e)}
+                    style={{ padding: "5px" }}
+                    placeholder="Search Surah"
+                  />
+                </li>
 
+                {surahData.map((surah) => (
+                  <li key={surah.id}>
+                    <a href={`/surah/${surah.surah_number}`}>
+                      {surah.surah_number}. {surah.surah_ar_name} <br></br>
+                      {surah.surah_en_name} ( {surah.total_ayah} )<br></br>
+                      {surah.surah_en_name_translation} :{" "}
+                      {surah.revelation_type}
+                      <br></br>
+                      <span className="highlight">{surah.note}</span>{" "}
+                    </a>
+                  </li>
+                ))}
 
-        </>
-    )
+                {/* List item */}
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </>
+    );
 }
 
 export default Quran;
