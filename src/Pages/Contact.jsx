@@ -7,8 +7,8 @@ export default function Contact() {
 
 
   const [form, setForm] = useState({
-    name: "",
-    email: "",
+    name: userName,
+    email: userEmail,
     message: "",
   });
   const [loading, setLoading] = useState(false);
