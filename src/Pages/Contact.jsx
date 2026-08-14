@@ -54,7 +54,7 @@ export default function Contact() {
         <input
           type="text"
           name="name"
-          value={userName}
+          value={form.name}
           onChange={handleChange}
           placeholder="Your Name"
           className="w-full border border-l p-2 rounded bg-blue-100"
@@ -64,7 +64,7 @@ export default function Contact() {
         <input
           type="email"
           name="email"
-          value={userEmail}
+          value={form.email}
           onChange={handleChange}
           placeholder="Your Email"
           className="w-full border p-2 bg-blue-100"
