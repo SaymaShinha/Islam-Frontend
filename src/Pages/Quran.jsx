@@ -2,6 +2,7 @@ import { useLoaderData, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
 import { getEnglishTranslationQuran, getBanglaTranslationQuran } from "../Functions/getDataFromJsonFile.js";
 import Spinner from "../Components/Spinner.jsx";
+import Surah from "./Surah.jsx";
 
 
 function Quran() {
@@ -47,6 +48,10 @@ function Quran() {
         }
 
     };
+
+    useEffect (() => {
+        localStorage.setItem("transLang", lang);
+    }, [lang]);
 
     {/* Get surah by Desc Surah Name*/ }
     const getSurahByDescSurahName = () => {
@@ -168,6 +173,7 @@ function Quran() {
                         </select>
                     </nav>
                     {/* Page content here */}
+
                     <div className="p-4">
                         <input type="text" onChange={(e) => searchWordAyah(e)} placeholder="Search Ayah" className="justify-end content-end input bg-green-100 rounded-lg t m-3 p-3 w-20% justify-content-center" />
 
@@ -183,8 +189,6 @@ function Quran() {
                                 </div>
                             </div>
                         ))}
-
-
 
                     </div>
                 </div>

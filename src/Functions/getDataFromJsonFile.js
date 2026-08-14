@@ -33,17 +33,15 @@ const getSurahData = async (id) => {
     }
 }
 
-const getTransSurahData = async (transLang = "bn__muhiuddin__khan", id = 1) => {
+const getTransSurahData = async (transLang, id = 1) => {
   try {
-    const res = await fetch(
-      `https://raw.githubusercontent.com/SaymaShinha/islamDB/master/${transLang}/${id}.json`
-    );
+    console.log(transLang, id);
 
-    if (!res.ok) {
-      throw new Error("Failed to fetch Surah data");
-    }
+    const getTransSurah =
+    transLang === "en"
+        ? await getEnglishTranslationSurah(id)
+        : await getBanglaTranslationSurah(id);
 
-    const getTransSurah = await res.json();
     return { getTransSurah };
   } catch (error) {
     console.error("API Error:", error);
@@ -72,10 +70,10 @@ const getEnglishTransliteration = async (id) => {
 
 }
 
-const getEnglishTranslationQuran = async () => {
+const getEnglishTranslationSurah = async (id) => {
   try {
     const res = await fetch(
-      `https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/add_audio_2/islam_public_en__saheeh__international.json`
+      `https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/master/en__saheeh__international/${id}.json`,
     );
 
     if (!res.ok) {
@@ -91,11 +89,49 @@ const getEnglishTranslationQuran = async () => {
   }
 
 }
+
+const getBanglaTranslationSurah = async (id) => {
+  try {
+    const res = await fetch(
+      `https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/master/bn__muhiuddin__khan/${id}.json`,
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch Surah data");
+    }
+
+    const quranData = await res.json();
+    return { quranData };
+  }
+  catch (error) {
+    console.error("API Error:", error);
+    throw error;
+  }
+
+}
+
+const getEnglishTranslationQuran = async () => {
+  try {
+    const res = await fetch(
+      `https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/add_audio_2/islam_public_en__saheeh__international.json`,
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch Surah data");
+    }
+
+    const quranData = await res.json();
+    return { quranData };
+  } catch (error) {
+    console.error("API Error:", error);
+    throw error;
+  }
+};
 
 const getBanglaTranslationQuran = async () => {
   try {
     const res = await fetch(
-      `https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/add_audio_2/islam_public_bn__muhiuddin__khan.json`
+      `https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/add_audio_2/islam_public_bn__muhiuddin__khan.json`,
     );
 
     if (!res.ok) {
@@ -104,12 +140,10 @@ const getBanglaTranslationQuran = async () => {
 
     const quranData = await res.json();
     return { quranData };
-  }
-  catch (error) {
+  } catch (error) {
     console.error("API Error:", error);
     throw error;
   }
-
-}
+};
 
 export { getQuranData, getSurahData, getTransSurahData, getEnglishTransliteration, getEnglishTranslationQuran, getBanglaTranslationQuran };

@@ -47,34 +47,32 @@ export default function LoginForm() {
     }
   };
 
+  const handleGoogleLogin = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log(result.user);
+        const user = result.user;
 
-  
-    const handleGoogleLogin = () => {
-      signInWithPopup(auth, provider)
-        .then((result) => {
-          console.log(result.user);
-          const user = result.user;
-  
-          const res = fetch(`${API}/api/auth/login`, {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify({
-              email: user.email,
-            }),
-          });
-  
-          console.log(res);
-  
-          if (res.ok) {
-            navigate("/");
-          }
-        })
-        .catch((error) => {
-          console.log(error);
+        const res = fetch(`${API}/api/auth/login`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            email: user.email,
+          }),
         });
-    };
+
+        console.log(res);
+
+        if (res.ok) {
+          navigate("/");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <>
@@ -129,7 +127,6 @@ export default function LoginForm() {
               Login
             </button>
           </form>
-
         </div>
       </div>
     </>
