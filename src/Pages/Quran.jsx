@@ -207,7 +207,7 @@ function Quran() {
             </nav>
             {/* Page content here */}
 
-            <div className="p-4">
+            <div className="p-4 flex-column">
               <input
                 type="text"
                 onChange={(e) => searchWordAyah(e)}
@@ -230,7 +230,7 @@ function Quran() {
                 {loading && <Spinner text="Loading..."></Spinner>}
                 {searchedQuranAyah.map((ayah) => (
                   <div
-                    className="row rounded-lg shadow-md m-3 p-5 hover:bg-green-700"
+                    className="row rounded-lg shadow-md m-3 p-5 hover:bg-green-500"
                     key={ayah.id}
                     onClick={() =>
                       navigate(
@@ -239,7 +239,7 @@ function Quran() {
                     }
                   >
                     <div className="grid grid-cols-l">
-                      <h2 className="">
+                      <h2 className="text-green-800 font-bold">
                         {ayah.surah_number}. {ayah.surah_en_name} ({" "}
                         {ayah.ayah_number} )
                       </h2>

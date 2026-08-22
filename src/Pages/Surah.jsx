@@ -155,7 +155,7 @@ const Surah = () => {
                       </p>
 
                       {/* Transliteration */}
-                      <p className="text-sm text-success italic">
+                      <p className="text-sm text-green-600 italic">
                         {englishTransliterationData[i]?.text}
                       </p>
 
