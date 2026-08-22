@@ -98,7 +98,7 @@ function NavbarHeader() {
                 Prophets
               </a>
             </li>
-            <NamazNavList></NamazNavList>
+            <NamazNavList className="relative z-50"></NamazNavList>
             <li>
               <a href="/about">
                 <img className="w-5 h-5" src="/about.svg" alt="contact" />
@@ -110,9 +110,6 @@ function NavbarHeader() {
                 <img className="w-5 h-5" src="/contact.png" alt="contact" />
                 Contact
               </a>
-            </li>
-            <li>
-              <a>Hadith</a>
             </li>
           </ul>
         </div>

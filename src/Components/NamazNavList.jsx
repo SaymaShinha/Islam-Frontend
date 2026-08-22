@@ -27,22 +27,15 @@ export default function NamazNavList() {
                         Namaz
                     </summary>
                     <li>
-                        <a href="/namaz">
+                        <a href="/namaz w-28">
                             Introductory
                         </a>
                     </li>
-                    <ul>
+                    <ul className="z-50 w-28">
                         <li>
                             <a href="/farz">Farz</a>
                         </li>
-                        <li>
-                            <a href="/"></a>
-                        </li>
-                        <li>
-                            <a href="/">
-                                Fix Mistakes in Prayer
-                            </a>
-                        </li>
+                        
                     </ul>
                 </details>
             </li>

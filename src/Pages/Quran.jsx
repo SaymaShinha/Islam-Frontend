@@ -161,7 +161,7 @@ function Quran() {
 
           <div className="drawer-content">
             {/* Navbar */}
-            <nav className="navbar w-full bg-base-300 grid grid-cols-2 no-print">
+            <nav className="navbar w-full bg-base-300 grid grid-cols-2 no-print relative z-10">
               <label
                 htmlFor="my-drawer-4"
                 aria-label="open sidebar"
@@ -184,7 +184,7 @@ function Quran() {
                 </svg>
               </label>
 
-              <ul className="md:flex gap-2 float-end">
+              <ul className="md:flex gap-2 ml-auto">
                 <li>
                   <select
                     defaultValue="en"

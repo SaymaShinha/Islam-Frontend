@@ -34,13 +34,10 @@ function Prophets() {
                 <h2 className="mt-3">Prophets Name Mentioned in Quran</h2>
                 <div className="grid xl:grid-cols-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 m-4 p-3">
                     {prophets.map((prophet) => (
-                        <div className="card card-border bg-gray-600 shadow-md m-4" key={prophet.id}>
+                        <div className="card card-border bg-green-300 shadow-md m-4" key={prophet.id}>
                             <div className="card-body">
                                 <h2 className="card-title">{prophet.name}</h2>
                                 <p></p>
-                                <div className="justify-end card-actions">
-                                    <button className="btn btn-primary"></button>
-                                </div>
                             </div>
                         </div>
                     ))}
