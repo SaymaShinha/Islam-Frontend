@@ -15,10 +15,8 @@ function Quran() {
     const [searchedWord, setSearchedWord] = useState("");
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
-    const language = localStorage.getItem("transLang");
 
     useEffect(() => {
-        setLang(language);
         setSurahData(data);
     }, [])
 
