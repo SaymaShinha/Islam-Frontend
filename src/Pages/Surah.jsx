@@ -27,11 +27,11 @@ const Surah = () => {
 
 
     useEffect(() => {
-        const lang =localStorage.getItem("transLang");
+        const lang = localStorage.getItem("transLang");
         setTranslang(lang);
 
         const fetchData = async () => {
-            const getTransSurah = await getTransSurahData(transLang, surahNumber);
+            const getTransSurah = await getTransSurahData(lang, surahNumber);
             console.log(getTransSurah["getTransSurah"]["quranData"]);
             getTransSurah &&
               setTransSurah(getTransSurah["getTransSurah"]["quranData"]);
@@ -39,9 +39,7 @@ const Surah = () => {
 
         fetchData();
 
-        console.log(transSurah);
-
-    }, [transLang, getSurah, surahNumber]);
+    }, [surahNumber]);
 
     useEffect(() => {
         if (ayahNumber) {

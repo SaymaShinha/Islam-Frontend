@@ -1,59 +1,66 @@
 const getQuranData = async () => {
-    try{
+  try {
     const res = await fetch(
-        "https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/master/islam_public_quran__info.json"
+      "https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/master/islam_public_quran__info.json",
     );
 
     if (!res.ok) {
-        throw new Error("Failed to fetch Quran data");
+      throw new Error("Failed to fetch Quran data");
     }
 
     const data = await res.json();
     return { data };
-    } catch(error){
-        throw error;
-    }
-
+  } catch (error) {
+    throw error;
+  }
 };
 
 const getSurahData = async (id) => {
-    try{
+  try {
     const res = await fetch(
-        `https://raw.githubusercontent.com/SaymaShinha/islamDB/master/ar__uthmani/${id}.json`
+      `https://raw.githubusercontent.com/SaymaShinha/islamDB/master/ar__uthmani/${id}.json`,
     );
 
     if (!res.ok) {
-        throw new Error("Failed to fetch Surah data");
+      throw new Error("Failed to fetch Surah data");
     }
 
     const getSurah = await res.json();
     return { getSurah };
-    } catch(error){
-        throw error;
-    }
-}
+  } catch (error) {
+    throw error;
+  }
+};
 
 const getTransSurahData = async (transLang, id = 1) => {
   try {
     console.log(transLang, id);
 
-    const getTransSurah =
-    transLang === "en"
-        ? await getEnglishTranslationSurah(id)
-        : await getBanglaTranslationSurah(id);
+    let getTransSurah = [];
+
+    switch (transLang) {
+      case "en":
+        getTransSurah = await getEnglishTranslationSurah(id);
+        break;
+      case "bn":
+        getTransSurah = await getBanglaTranslationSurah(id);
+        break;
+      default:
+        getTransSurah = await getEnglishTranslationSurah(id);
+        break;
+    }
 
     return { getTransSurah };
   } catch (error) {
     console.error("API Error:", error);
     throw error;
   }
-}
-
+};
 
 const getEnglishTransliteration = async (id) => {
   try {
     const res = await fetch(
-      `https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/add_audio_2/en__english__transliteration/${id}.json`
+      `https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/add_audio_2/en__english__transliteration/${id}.json`,
     );
 
     if (!res.ok) {
@@ -62,13 +69,11 @@ const getEnglishTransliteration = async (id) => {
 
     const englishTransliteration = await res.json();
     return { englishTransliteration };
-  }
-  catch (error) {
+  } catch (error) {
     console.error("API Error:", error);
     throw error;
   }
-
-}
+};
 
 const getEnglishTranslationSurah = async (id) => {
   try {
@@ -82,13 +87,11 @@ const getEnglishTranslationSurah = async (id) => {
 
     const quranData = await res.json();
     return { quranData };
-  }
-  catch (error) {
+  } catch (error) {
     console.error("API Error:", error);
     throw error;
   }
-
-}
+};
 
 const getBanglaTranslationSurah = async (id) => {
   try {
@@ -102,13 +105,11 @@ const getBanglaTranslationSurah = async (id) => {
 
     const quranData = await res.json();
     return { quranData };
-  }
-  catch (error) {
+  } catch (error) {
     console.error("API Error:", error);
     throw error;
   }
-
-}
+};
 
 const getEnglishTranslationQuran = async () => {
   try {
@@ -146,4 +147,11 @@ const getBanglaTranslationQuran = async () => {
   }
 };
 
-export { getQuranData, getSurahData, getTransSurahData, getEnglishTransliteration, getEnglishTranslationQuran, getBanglaTranslationQuran };
+export {
+  getQuranData,
+  getSurahData,
+  getTransSurahData,
+  getEnglishTransliteration,
+  getEnglishTranslationQuran,
+  getBanglaTranslationQuran,
+};
