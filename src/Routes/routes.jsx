@@ -14,12 +14,21 @@ import {
   getQuranData,
   getSurahData,
 } from "../Functions/getDataFromJsonFile.js";
-import Farz from "../Pages/Namaz/Farz.jsx";
+
 
 {
   /* Namaz */
 }
 import NamazHome from "../Pages/Namaz/NamazHome.jsx";
+import FarzNamaz from "../Pages/Namaz/Farz.jsx";
+import WajibNamaz from "../Pages/Namaz/WajibNamaz.jsx";
+import NaflNamaz from "../Pages/Namaz/NaflNamaz.jsx";
+import OtherNamaz from "../Pages/Namaz/OtherNamaz.jsx";
+import EidNamaz from "../Pages/Namaz/Wajib/EidNamaz.jsx";
+import WatibNamaz from "../Pages/Namaz/Wajib/WatibNamaz.jsx";
+import TahajjudNamaz from "../Pages/Namaz/Nafl/TahajjudNamaz.jsx";
+import IshraqNamaz from "../Pages/Namaz/Nafl/IshraqNamaz.jsx";
+import IstikharaNamaz from "../Pages/Namaz/Nafl/IstikharaNamaz.jsx";
 
 {
   /* user */
@@ -29,6 +38,7 @@ import AuthLayout from "../auth/AuthLayout.jsx";
 import LoginForm from "../auth/LoginForm.jsx";
 import RegistrationForm from "../auth/RegistrationForm.jsx";
 import UserProfile from "../auth/UserProfile.jsx";
+import FixMistakesOfPrayer from "../Pages/Namaz/FixMistakesOfPrayer.jsx";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +46,7 @@ const router = createBrowserRouter([
     Component: App,
     children: [
       { index: true, Component: Home },
-      { path: "asmaul-husna", Component: AsmaulHusna },
+      { path: "asma-ul-husna", Component: AsmaulHusna },
       {
         path: "/quran",
         loader: async () => {
@@ -68,7 +78,40 @@ const router = createBrowserRouter([
       { path: "/disclaimer", Component: Disclaimer },
       { path: "/terms-of-use", Component: TermsOfUse },
       { path: "/namaz", Component: NamazHome },
-      { path: "/farz", Component: Farz },
+      { path: "/farz-namaz", Component: FarzNamaz },
+      {
+        path: "/wajib-namaz",
+        Component: WajibNamaz,
+      },
+      {
+        path: "/eid-namaz",
+        Component: EidNamaz,
+      },
+      {
+        path: "/watib-namaz",
+        Component: WatibNamaz,
+      },
+      {
+        path: "/nafl-namaz",
+        Component: NaflNamaz,
+      },
+      {
+        path: "tahajjud-namaz",
+        Component: TahajjudNamaz,
+      },
+      {
+        path: "ishraq-namaz",
+        Component: IshraqNamaz,
+      },
+      {
+        path: "istikhara-namaz",
+        Component: IstikharaNamaz,
+      },
+      {
+        path: "/other-namaz",
+        Component: OtherNamaz,
+      },
+      { path: "/fix-mistakes-of-prayer", Component: FixMistakesOfPrayer },
 
       {
         path: "/user-profile",
@@ -76,7 +119,7 @@ const router = createBrowserRouter([
           <ProtectedRoute>
             <UserProfile></UserProfile>
           </ProtectedRoute>
-        )
+        ),
       },
       {
         path: "/auth",
@@ -86,7 +129,6 @@ const router = createBrowserRouter([
           { path: "login", Component: LoginForm },
         ],
       },
-      
     ],
   },
 ]);

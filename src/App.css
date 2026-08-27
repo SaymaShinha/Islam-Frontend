@@ -2,6 +2,11 @@
   color:green;
 }
 
+h1, h2{
+  color: green;
+  font-weight: bold;
+}
+
 @media print {
   /* Hide elements marked no-print */
   .no-print {
