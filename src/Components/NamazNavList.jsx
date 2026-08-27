@@ -27,7 +27,7 @@ export default function NamazNavList() {
                         Namaz
                     </summary>
                     <li>
-                        <a href="/namaz w-28">
+                        <a href="/namaz">
                             Introductory
                         </a>
                     </li>
