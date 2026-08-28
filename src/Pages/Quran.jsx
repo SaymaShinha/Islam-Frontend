@@ -22,10 +22,26 @@ function Quran() {
     (a, b) => a.ayah_number - b.ayah_number,
   );
 
+  /*
+   * ==========================================
+   * LANGUAGE
+   * ==========================================
+   *
+   * Read the saved language ONLY when the
+   * component initializes.
+   *
+   * If there is no saved language, use:
+   * en__saheeh__international
+   */
+  const [lang, setLang] = useState(() => {
+    const savedLang = localStorage.getItem("transLang");
+
+    return savedLang || "en__saheeh__international";
+  });
+
   const [surahData, setSurahData] = useState(data);
   const [quran, setQuran] = useState([]);
   const [searchedQuranAyah, setSearchedQuranAyah] = useState([]);
-  const [lang, setLang] = useState("");
   const [searchedWord, setSearchedWord] = useState("");
   const [loading, setLoading] = useState(false);
   const [showTop, setShowTop] = useState(false);
@@ -33,7 +49,7 @@ function Quran() {
   const navigate = useNavigate();
 
   /* --------------------------------
-     Initial data
+     Initial Surah data
   -------------------------------- */
 
   useEffect(() => {
@@ -45,27 +61,51 @@ function Quran() {
   -------------------------------- */
 
   useEffect(() => {
+    // Never fetch if lang is empty
+    if (!lang) return;
+
     const fetchData = async () => {
       try {
         setLoading(true);
 
-        let quranArray = [];
+        const quranArray = await getTransQuranData(lang);
 
-        quranArray = await getTransQuranData(lang);
+        const translationData = quranArray?.quranData || [];
 
-        setQuran(quranArray.quranData || []);
-        setSearchedQuranAyah(quranArray.quranData || []);
+        setQuran(translationData);
+        setSearchedQuranAyah(translationData);
       } catch (error) {
         console.error("Failed to load Quran:", error);
+
+        setQuran([]);
+        setSearchedQuranAyah([]);
       } finally {
         setLoading(false);
       }
     };
 
     fetchData();
-
-    localStorage.setItem("transLang", lang);
   }, [lang]);
+
+  /* --------------------------------
+     Change language
+  -------------------------------- */
+
+  const handleLanguageChange = (e) => {
+    const value = e.target.value;
+
+    // Do not allow empty value
+    if (!value) return;
+
+    // Update React state
+    setLang(value);
+
+    // Save selected translation
+    localStorage.setItem("transLang", value);
+
+    // Clear current search when language changes
+    setSearchedWord("");
+  };
 
   /* --------------------------------
      Scroll to top button
@@ -78,7 +118,9 @@ function Quran() {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const scrollToTop = () => {
@@ -103,7 +145,9 @@ function Quran() {
       );
 
       if (!res.ok) {
-        throw new Error("Failed to fetch Quran data According To Revelation.");
+        throw new Error(
+          "Failed to fetch Quran data According To Revelation.",
+        );
       }
 
       const jsonData = await res.json();
@@ -127,23 +171,31 @@ function Quran() {
   };
 
   const getSurahByMinToMaxSurahTotalAyah = () => {
-    const sorted = [...data].sort((a, b) => a.total_ayah - b.total_ayah);
+    const sorted = [...data].sort(
+      (a, b) => a.total_ayah - b.total_ayah,
+    );
 
     setSurahData(sorted);
   };
 
   const getSurahByMaxToMinSurahTotalAyah = () => {
-    const sorted = [...data].sort((a, b) => b.total_ayah - a.total_ayah);
+    const sorted = [...data].sort(
+      (a, b) => b.total_ayah - a.total_ayah,
+    );
 
     setSurahData(sorted);
   };
 
   const getMeccanSurah = () => {
-    setSurahData(data.filter((surah) => surah.revelation_type === "Meccan"));
+    setSurahData(
+      data.filter((surah) => surah.revelation_type === "Meccan"),
+    );
   };
 
   const getMedinanSurah = () => {
-    setSurahData(data.filter((surah) => surah.revelation_type === "Medinan"));
+    setSurahData(
+      data.filter((surah) => surah.revelation_type === "Medinan"),
+    );
   };
 
   /* --------------------------------
@@ -161,7 +213,9 @@ function Quran() {
     const filtered = data.filter(
       (surah) =>
         surah.surah_en_name?.toLowerCase().includes(value) ||
-        surah.surah_en_name_translation?.toLowerCase().includes(value) ||
+        surah.surah_en_name_translation
+          ?.toLowerCase()
+          .includes(value) ||
         surah.surah_ar_name?.includes(value),
     );
 
@@ -182,21 +236,23 @@ function Quran() {
       return;
     }
 
-    setLoading(true);
-
     const filteredData = quran.filter((ayah) =>
-      ayah.text?.toLowerCase().includes(value.toLowerCase()),
+      ayah.text
+        ?.toLowerCase()
+        .includes(value.toLowerCase()),
     );
 
     setSearchedQuranAyah(filteredData);
-
-    setLoading(false);
   };
 
   return (
     <>
       <div className="drawer lg:drawer-open bg-base-200 min-h-screen">
-        <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+        <input
+          id="my-drawer-4"
+          type="checkbox"
+          className="drawer-toggle"
+        />
 
         {/* =====================================
             MAIN CONTENT
@@ -209,6 +265,7 @@ function Quran() {
 
           <nav className="navbar sticky top-0 z-40 bg-base-100/95 backdrop-blur-md border-b border-base-300 px-4 shadow-sm">
             {/* Mobile menu */}
+
             <div className="flex-none lg:hidden">
               <label
                 htmlFor="my-drawer-4"
@@ -218,7 +275,9 @@ function Quran() {
                 <Menu size={22} />
               </label>
             </div>
+
             {/* Logo */}
+
             <div className="flex-1">
               <a
                 href="/"
@@ -231,7 +290,9 @@ function Quran() {
                 <span>Furqan Life</span>
               </a>
             </div>
+
             {/* Page title */}
+
             <div className="hidden md:flex items-center gap-2 text-base-content/70">
               <BookOpen size={20} />
               <span>Quran</span>
@@ -266,14 +327,19 @@ function Quran() {
 
                 <select
                   value={lang}
-                  onChange={(e) => setLang(e.target.value)}
+                  onChange={handleLanguageChange}
                   className="select select-bordered w-full md:w-64 rounded-xl"
                   aria-label="Quran translation"
                 >
-                  <option value="">Select Translation</option>
+                  <option value="">
+                    Select Translation
+                  </option>
 
                   {existingQuranDataInfo.map((item) => (
-                    <option key={item.id} value={item.value_double}>
+                    <option
+                      key={item.id}
+                      value={item.value_double}
+                    >
                       {item.language} — {item.name}
                     </option>
                   ))}
@@ -326,10 +392,15 @@ function Quran() {
                 {searchedQuranAyah.length === 0 && !loading && (
                   <div className="text-center py-20">
                     <div className="w-16 h-16 mx-auto rounded-full bg-base-300 flex items-center justify-center mb-4">
-                      <Search size={28} className="text-base-content/50" />
+                      <Search
+                        size={28}
+                        className="text-base-content/50"
+                      />
                     </div>
 
-                    <h2 className="text-xl font-semibold">No verses found</h2>
+                    <h2 className="text-xl font-semibold">
+                      No verses found
+                    </h2>
 
                     <p className="text-base-content/60 mt-2">
                       Try searching with another word or phrase.
@@ -350,7 +421,8 @@ function Quran() {
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <h2 className="font-semibold text-primary group-hover:text-green-700 transition">
-                          {ayah.surah_number}. {ayah.surah_en_name}
+                          {ayah.surah_number}.{" "}
+                          {ayah.surah_en_name}
                         </h2>
 
                         <p className="text-xs text-base-content/50 mt-1">
@@ -377,14 +449,19 @@ function Quran() {
               <section className="print-content">
                 <div className="mb-8">
                   <div className="flex items-center gap-3 mb-2">
-                    <BookOpen className="text-primary" size={28} />
+                    <BookOpen
+                      className="text-primary"
+                      size={28}
+                    />
 
-                    <h1 className="text-2xl md:text-3xl font-bold">Quran</h1>
+                    <h1 className="text-2xl md:text-3xl font-bold">
+                      Quran
+                    </h1>
                   </div>
 
                   <p className="text-base-content/60">
-                    Explore the Quran by Surah, revelation, or search for a
-                    specific chapter.
+                    Explore the Quran by Surah, revelation, or
+                    search for a specific chapter.
                   </p>
                 </div>
 
@@ -394,7 +471,11 @@ function Quran() {
                   {surahData.map((surah) => (
                     <article
                       key={surah.id}
-                      onClick={() => navigate(`/surah/${surah.surah_number}`)}
+                      onClick={() =>
+                        navigate(
+                          `/surah/${surah.surah_number}`,
+                        )
+                      }
                       className="group bg-base-100 border border-base-300 rounded-2xl p-5 cursor-pointer shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-primary/40 transition-all duration-200"
                     >
                       <div className="flex items-start justify-between gap-3">
@@ -414,13 +495,19 @@ function Quran() {
                           </div>
                         </div>
 
-                        <span className="text-xl">{surah.surah_ar_name}</span>
+                        <span className="text-xl">
+                          {surah.surah_ar_name}
+                        </span>
                       </div>
 
                       <div className="mt-4 pt-4 border-t border-base-300 flex justify-between text-xs text-base-content/60">
-                        <span>{surah.total_ayah} Ayahs</span>
+                        <span>
+                          {surah.total_ayah} Ayahs
+                        </span>
 
-                        <span>{surah.revelation_type}</span>
+                        <span>
+                          {surah.revelation_type}
+                        </span>
                       </div>
                     </article>
                   ))}
@@ -447,9 +534,14 @@ function Quran() {
             <div className="sticky top-0 z-10 bg-base-100 border-b border-base-300 p-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <BookOpen size={22} className="text-primary" />
+                  <BookOpen
+                    size={22}
+                    className="text-primary"
+                  />
 
-                  <h2 className="font-bold text-lg">Surahs</h2>
+                  <h2 className="font-bold text-lg">
+                    Surahs
+                  </h2>
                 </div>
 
                 <label
@@ -561,7 +653,9 @@ function Quran() {
                         </div>
                       </div>
 
-                      <span className="text-lg">{surah.surah_ar_name}</span>
+                      <span className="text-lg">
+                        {surah.surah_ar_name}
+                      </span>
                     </div>
                   </a>
                 </li>

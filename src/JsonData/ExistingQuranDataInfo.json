@@ -1,83 +1,155 @@
 [
   {
-    "id": 1,
-    "language": "Indonesian",
-    "code": "id",
-    "value": "id_quraish_shihab",
-    "value_double": "id__muhammad__quraish__shihab_et_al",
-    "name": "Quraish Shihab"
+    "id": 59,
+    "language": "Azerbaijani",
+    "code": "az",
+    "value": "az_musayev",
+    "value_double": "az__alikhan__musayev",
+    "name": "Musayev"
   },
   {
-    "id": 2,
-    "language": "Indonesian",
-    "code": "id",
-    "value": "id_bahasa_indonesia",
-    "value_double": "id__bahasa__indonesia",
-    "name": "Bahasa Indonesia"
+    "id": 60,
+    "language": "Azerbaijani",
+    "code": "az",
+    "value": "az_mammadaliyev_bunyadov",
+    "value_double": "az__vasim__mammadaliyev_and__ziya__bunyadov",
+    "name": "Məmmədəliyev & Bünyadov"
   },
   {
-    "id": 3,
-    "language": "Malay",
-    "code": "ms",
-    "value": "ms__abdullah__muhammad__basmeih",
-    "value_double": "ms__abdullah__muhammad__basmeih",
-    "name": "Basmeih"
+    "id": 32,
+    "language": "Arabic",
+    "code": "ar",
+    "value": "ar_simple",
+    "value_double": "ar__simple",
+    "name": "Simple"
   },
   {
-    "id": 4,
-    "language": "Russian",
-    "code": "ru",
-    "value": "ru__ignaty__yulianovich__krachkovsky",
-    "value_double": "ru__ignaty__yulianovich__krachkovsky",
-    "name": "Крачковский"
+    "id": 131,
+    "language": "Arabic",
+    "code": "ar",
+    "value": "ar_corpus",
+    "value_double": "ar__corpus",
+    "name": "Corpus"
   },
   {
-    "id": 5,
-    "language": "Russian",
-    "code": "ru",
-    "value": "ru_abu_adel",
-    "value_double": "ru__abu__adel",
-    "name": "Абу Адель"
+    "id": 133,
+    "language": "Arabic",
+    "code": "ar",
+    "value": "ar_buck",
+    "value_double": "ar__buck",
+    "name": "Buck"
   },
   {
-    "id": 6,
-    "language": "Russian",
-    "code": "ru",
-    "value": "ru__elmir__kuliev",
-    "value_double": "ru__elmir__kuliev",
-    "name": "Аль-Мунтахаб"
+    "id": 130,
+    "language": "Arabic",
+    "code": "ar",
+    "value": "ar_kids",
+    "value_double": "ar__kids",
+    "name": "Kids"
   },
   {
-    "id": 7,
-    "language": "Russian",
-    "code": "ru",
-    "value": "ru__gordy__semyonovich__sablukov",
-    "value_double": "ru__gordy__semyonovich__sablukov",
-    "name": "Саблуков"
+    "id": 35,
+    "language": "Arabic",
+    "code": "ar",
+    "value": "ar_simple_clean",
+    "value_double": "ar__simple__clean",
+    "name": "Simple Clean"
   },
   {
-    "id": 8,
-    "language": "Russian",
-    "code": "ru",
-    "value": "ru_kuliev",
-    "value_double": "ru__elmir__kuliev",
-    "name": "Кулиев"
+    "id": 36,
+    "language": "Arabic",
+    "code": "ar",
+    "value": "ar_simple_enhanced",
+    "value_double": "ar__simple__enhanced",
+    "name": "Simple Enhanced"
   },
   {
-    "id": 9,
-    "language": "Russian",
-    "code": "ru",
-    "value": "ru_osmanov",
-    "value_double": "ru__magomed__nuri__osmanovich__osmanov",
-    "name": "Османов"
+    "id": 37,
+    "language": "Arabic",
+    "code": "ar",
+    "value": "ar_simple_minimal",
+    "value_double": "ar__simple__minimal",
+    "name": "Simple Minimal"
   },
   {
-    "id": 10,
-    "language": "Russian",
-    "code": "ru",
-    "value": "ru_porokhova",
-    "value_double": "ru_V__porokhova",
-    "name": "Порохова"
+    "id": 33,
+    "language": "Arabic",
+    "code": "ar",
+    "value": "ar_tajweed",
+    "value_double": "ar__tajweed",
+    "name": "Tajweed"
+  },
+  {
+    "id": 34,
+    "language": "Arabic",
+    "code": "ar",
+    "value": "ar_uthmani",
+    "value_double": "ar__uthmani",
+    "name": "Uthamani"
+  },
+  {
+    "id": 38,
+    "language": "Arabic",
+    "code": "ar",
+    "value": "ar_uthmani_minimal",
+    "value_double": "ar__uthmani__minimal",
+    "name": "Uthmani Minimal"
+  },
+  {
+    "id": 84,
+    "language": "Albanian",
+    "code": "sq",
+    "value": "sq_sherif_ahmeti",
+    "value_double": "sq__sherif__ahmeti",
+    "name": "Sherif Ahmeti"
+  },
+  {
+    "id": 85,
+    "language": "Albanian",
+    "code": "sq",
+    "value": "sq_feti_mehdiu",
+    "value_double": "sq__feti__mehdiu",
+    "name": "Feti Mehdiu"
+  },
+  {
+    "id": 86,
+    "language": "Albanian",
+    "code": "sq",
+    "value": "sq_efendi_nahi",
+    "value_double": "sq__hasan__efendi__nahi",
+    "name": "Efendi Nahi"
+  },
+  {
+    "id": 30,
+    "language": "Bosnian",
+    "code": "bs",
+    "value": "bs_korkut",
+    "value_double": "bs__besim__korkut",
+    "name": "Korkut"
+  },
+  {
+    "id": 31,
+    "language": "Bosnian",
+    "code": "bs",
+    "value": "bs_mlivo",
+    "value_double": "bs__mustafa__mlivo",
+    "name": "Mlivo"
+  },
+  {
+    "id": 42,
+    "language": "Bangla",
+    "code": "bn",
+    "value": "bn_muhiuddin_khan",
+    "value_double": "bn__muhiuddin__khan",
+    "name": "মুহিউদ্দীন খান"
+  },
+  {
+    "id": 61,
+    "language": "Bulgarian",
+    "code": "bg",
+    "value": "bg_teofanov",
+    "value_double": "bg__tzvetan__theophanov",
+    "name": "Теофанов"
   },
   {
     "id": 11,
@@ -88,52 +160,108 @@
     "name": "Ma Jian"
   },
   {
-    "id": 12,
-    "language": "Urdu",
-    "code": "ur",
-    "value": "ur_muhammad_junagarhi",
-    "value_double": "ur__muhammad__junagarhi",
-    "name": "محمد جوناگڑھی"
+    "id": 134,
+    "language": "Chinese",
+    "code": "zh",
+    "value": "zh_ma_zhong_gang",
+    "value_double": "zh__ma__jian",
+    "name": "Ma Zhong Gang"
   },
   {
-    "id": 14,
-    "language": "Urdu",
-    "code": "ur",
-    "value": "ur_abul_ala_maududi",
-    "value_double": "ur__abul_A_ala__maududi",
-    "name": "ابوالاعلی مودودی"
+    "id": 57,
+    "language": "Czech",
+    "code": "cs",
+    "value": "cs_hrbek",
+    "value_double": "cs__preklad_I__hrbek",
+    "name": "Hrbek"
   },
   {
-    "id": 15,
-    "language": "Urdu",
-    "code": "ur",
-    "value": "ur_ahmad_ali",
-    "value_double": "ur__ahmad__ali",
-    "name": "احمد علی"
+    "id": 58,
+    "language": "Czech",
+    "code": "cs",
+    "value": "cs_nykl",
+    "value_double": "cs_A_R__nykl",
+    "name": "Nykl"
   },
   {
-    "id": 17,
-    "language": "Urdu",
-    "code": "ur",
-    "value": "ur_ahmad_raza_khan",
-    "value_double": "ur__ahmed__raza__khan",
-    "name": "احمد رضا خان"
+    "id": 77,
+    "language": "Dutch",
+    "code": "nl",
+    "value": "nl_keyzer",
+    "value_double": "nl__salomo__keyzer",
+    "name": "Keyzer"
   },
   {
-    "id": 18,
-    "language": "Urdu",
-    "code": "ur",
-    "value": "ur_allama_jawadi",
-    "value_double": "ur__syed__zeeshan__haider__jawadi",
-    "name": "علامہ جوادی"
+    "id": 68,
+    "language": "Maldivian",
+    "code": "dv",
+    "value": "dv_dhivehi",
+    "value_double": "dv__office_of_the__president_of__maldives",
+    "name": "ދިވެހި"
   },
   {
-    "id": 19,
-    "language": "Urdu",
-    "code": "ur",
-    "value": "ur_tahir_ul_qadri",
-    "value_double": "ur__tahir_ul__qadri",
-    "name": "طاہر القادری"
+    "id": 105,
+    "language": "Italian",
+    "code": "it",
+    "value": "it_piccardo",
+    "value_double": "it__hamza__roberto__piccardo",
+    "name": "Piccardo"
+  },
+  {
+    "id": 73,
+    "language": "Japanese",
+    "code": "ja",
+    "value": "ja_japanese",
+    "value_double": "ja_japanese",
+    "name": "Japanese"
+  },
+  {
+    "id": 74,
+    "language": "Korean",
+    "code": "ko",
+    "value": "ko_korean",
+    "value_double": "ko_korean",
+    "name": "Korean"
+  },
+  {
+    "id": 75,
+    "language": "Kurdish",
+    "code": "ku",
+    "value": "ku__burhan__muhammad__amin",
+    "value_double": "ku__burhan__muhammad__amin",
+    "name": "ته‌فسیری ئاسان"
+  },
+  {
+    "id": 76,
+    "language": "Malayalam",
+    "code": "ml",
+    "value": "ml_abdul_hameed_parappoor",
+    "value_double": "ml__cheriyamundam__abdul__hameed_and__kunhi__mohammed__parappoo",
+    "name": "അബ്ദുല്‍ ഹമീദ് & പറപ്പൂര്‍"
+  },
+  {
+    "id": 3,
+    "language": "Malay",
+    "code": "ms",
+    "value": "ms__abdullah__muhammad__basmeih",
+    "value_double": "ms__abdullah__muhammad__basmeih",
+    "name": "Basmeih"
+  },
+  {
+    "id": 81,
+    "language": "Moldovan",
+    "code": "ro",
+    "value": "ro_grigore",
+    "value_double": "ro__george__grigore",
+    "name": "Grigore"
+  },
+  {
+    "id": 78,
+    "language": "Norwegian",
+    "code": "no",
+    "value": "no_einar_berg",
+    "value_double": "no__einar__berg",
+    "name": "Einar Berg"
   },
   {
     "id": 20,
@@ -216,84 +344,260 @@
     "name": "مجتبوی"
   },
   {
-    "id": 30,
-    "language": "Bosnian",
-    "code": "bs",
-    "value": "bs_korkut",
-    "value_double": "bs__besim__korkut",
-    "name": "Korkut"
+    "id": 79,
+    "language": "Polish",
+    "code": "pl",
+    "value": "pl_bielawskiego",
+    "value_double": "pl__jozefa__bielawskiego",
+    "name": "Bielawskiego"
   },
   {
-    "id": 31,
-    "language": "Bosnian",
-    "code": "bs",
-    "value": "bs_mlivo",
-    "value_double": "bs__mustafa__mlivo",
-    "name": "Mlivo"
+    "id": 80,
+    "language": "Portuguese",
+    "code": "pt",
+    "value": "pt_el_hayek",
+    "value_double": "pt__samir__el__hayek",
+    "name": "El-Hayek"
   },
   {
-    "id": 32,
-    "language": "Arabic",
-    "code": "ar",
-    "value": "ar_simple",
-    "value_double": "ar__simple",
-    "name": "Simple"
+    "id": 4,
+    "language": "Russian",
+    "code": "ru",
+    "value": "ru__ignaty__yulianovich__krachkovsky",
+    "value_double": "ru__ignaty__yulianovich__krachkovsky",
+    "name": "Крачковский"
   },
   {
-    "id": 33,
-    "language": "Arabic",
-    "code": "ar",
-    "value": "ar_tajweed",
-    "value_double": "ar__tajweed",
-    "name": "Tajweed"
+    "id": 5,
+    "language": "Russian",
+    "code": "ru",
+    "value": "ru_abu_adel",
+    "value_double": "ru__abu__adel",
+    "name": "Абу Адель"
   },
   {
-    "id": 34,
-    "language": "Arabic",
-    "code": "ar",
-    "value": "ar_uthmani",
-    "value_double": "ar__uthmani",
-    "name": "Uthamani"
+    "id": 6,
+    "language": "Russian",
+    "code": "ru",
+    "value": "ru__elmir__kuliev",
+    "value_double": "ru__elmir__kuliev",
+    "name": "Аль-Мунтахаб"
   },
   {
-    "id": 35,
-    "language": "Arabic",
-    "code": "ar",
-    "value": "ar_simple_clean",
-    "value_double": "ar__simple__clean",
-    "name": "Simple Clean"
+    "id": 7,
+    "language": "Russian",
+    "code": "ru",
+    "value": "ru__gordy__semyonovich__sablukov",
+    "value_double": "ru__gordy__semyonovich__sablukov",
+    "name": "Саблуков"
   },
   {
-    "id": 36,
-    "language": "Arabic",
-    "code": "ar",
-    "value": "ar_simple_enhanced",
-    "value_double": "ar__simple__enhanced",
-    "name": "Simple Enhanced"
+    "id": 8,
+    "language": "Russian",
+    "code": "ru",
+    "value": "ru_kuliev",
+    "value_double": "ru__elmir__kuliev",
+    "name": "Кулиев"
   },
   {
-    "id": 37,
-    "language": "Arabic",
-    "code": "ar",
-    "value": "ar_simple_minimal",
-    "value_double": "ar__simple__minimal",
-    "name": "Simple Minimal"
+    "id": 9,
+    "language": "Russian",
+    "code": "ru",
+    "value": "ru_osmanov",
+    "value_double": "ru__magomed__nuri__osmanovich__osmanov",
+    "name": "Османов"
   },
   {
-    "id": 38,
-    "language": "Arabic",
-    "code": "ar",
-    "value": "ar_uthmani_minimal",
-    "value_double": "ar__uthmani__minimal",
-    "name": "Uthmani Minimal"
+    "id": 10,
+    "language": "Russian",
+    "code": "ru",
+    "value": "ru_porokhova",
+    "value_double": "ru_V__porokhova",
+    "name": "Порохова"
   },
   {
-    "id": 42,
-    "language": "Bangla",
-    "code": "bn",
-    "value": "bn_muhiuddin_khan",
-    "value_double": "bn__muhiuddin__khan",
-    "name": "মুহিউদ্দীন খান"
+    "id": 132,
+    "language": "Sinhala",
+    "code": "si",
+    "value": "si_naseem_ismail",
+    "value_double": "si__naseem__isamil_and__masoor__maulana__kaleel",
+    "name": "Naseem Ismail"
+  },
+  {
+    "id": 82,
+    "language": "Sindhi",
+    "code": "sd",
+    "value": "sd_amroti",
+    "value_double": "sd__taj__mehmood__amroti",
+    "name": "امروٽي"
+  },
+  {
+    "id": 83,
+    "language": "Somali",
+    "code": "so",
+    "value": "so_abduh",
+    "value_double": "so__mahmud__muhammad__abduh",
+    "name": "Abduh"
+  },
+  {
+    "id": 66,
+    "language": "Spanish",
+    "code": "es",
+    "value": "es_cortes",
+    "value_double": "es__saheeh__cortes",
+    "name": "Cortes"
+  },
+  {
+    "id": 67,
+    "language": "Spanish",
+    "code": "es",
+    "value": "es_asad",
+    "value_double": "es__muhammad__asad__abdurrasak__perez",
+    "name": "Asad"
+  },
+  {
+    "id": 101,
+    "language": "Thai",
+    "code": "th",
+    "value": "th_thai",
+    "value_double": "th__king__fahad__quran__complex",
+    "name": "ภาษาไทย"
+  },
+  {
+    "id": 102,
+    "language": "Tatar",
+    "code": "tt",
+    "value": "tt_yakub_ibn_nugman",
+    "value_double": "tt__yakub__ibn__nugman",
+    "name": "Yakub Ibn Nugman"
+  },
+  {
+    "id": 90,
+    "language": "Turkish",
+    "code": "tr",
+    "value": "tr_suleyman_ates",
+    "value_double": "tr__suleyman__ates",
+    "name": "Süleyman Ateş"
+  },
+  {
+    "id": 91,
+    "language": "Turkish",
+    "code": "tr",
+    "value": "tr_ali_bulac",
+    "value_double": "tr__ali__bulac",
+    "name": "Alİ Bulaç"
+  },
+  {
+    "id": 92,
+    "language": "Turkish",
+    "code": "tr",
+    "value": "tr_diyanet_isleri",
+    "value_double": "tr__diyanet__isleri",
+    "name": "Diyanet İşleri"
+  },
+  {
+    "id": 93,
+    "language": "Turkish",
+    "code": "tr",
+    "value": "tr_abdulbaki_golpinarli",
+    "value_double": "tr__abdulbaki__golpinarli",
+    "name": "Abdulbakî Gölpınarlı"
+  },
+  {
+    "id": 94,
+    "language": "Turkish",
+    "code": "tr",
+    "value": "tr_ozturk",
+    "value_double": "tr__yasar__nuri__ozturk",
+    "name": "Öztürk"
+  },
+  {
+    "id": 95,
+    "language": "Turkish",
+    "code": "tr",
+    "value": "tr_edip_yuksel",
+    "value_double": "tr__edip__yuksel",
+    "name": "Edip Yüksel"
+  },
+  {
+    "id": 97,
+    "language": "Turkish",
+    "code": "tr",
+    "value": "tr_diyanet_vakfi",
+    "value_double": "tr__diyanet__vakfi",
+    "name": "Diyanet Vakfı"
+  },
+  {
+    "id": 98,
+    "language": "Turkish",
+    "code": "tr",
+    "value": "tr_elmalili_hamdi_yazir",
+    "value_double": "tr__elmalili__hamdi__yazir",
+    "name": "Elmalılı Hamdi Yazır"
+  },
+  {
+    "id": 99,
+    "language": "Turkish",
+    "code": "tr",
+    "value": "tr_suat_yildirim",
+    "value_double": "tr__suat__yildirim",
+    "name": "Suat Yıldırım"
+  },
+  {
+    "id": 14,
+    "language": "Urdu",
+    "code": "ur",
+    "value": "ur_abul_ala_maududi",
+    "value_double": "ur__abul_A_ala__maududi",
+    "name": "ابوالاعلی مودودی"
+  },
+  {
+    "id": 15,
+    "language": "Urdu",
+    "code": "ur",
+    "value": "ur_ahmad_ali",
+    "value_double": "ur__ahmad__ali",
+    "name": "احمد علی"
+  },
+  {
+    "id": 17,
+    "language": "Urdu",
+    "code": "ur",
+    "value": "ur_ahmad_raza_khan",
+    "value_double": "ur__ahmed__raza__khan",
+    "name": "احمد رضا خان"
+  },
+  {
+    "id": 18,
+    "language": "Urdu",
+    "code": "ur",
+    "value": "ur_allama_jawadi",
+    "value_double": "ur__syed__zeeshan__haider__jawadi",
+    "name": "علامہ جوادی"
+  },
+  {
+    "id": 12,
+    "language": "Urdu",
+    "code": "ur",
+    "value": "ur_muhammad_junagarhi",
+    "value_double": "ur__muhammad__junagarhi",
+    "name": "محمد جوناگڑھی"
+  },
+  {
+    "id": 19,
+    "language": "Urdu",
+    "code": "ur",
+    "value": "ur_tahir_ul_qadri",
+    "value_double": "ur__tahir_ul__qadri",
+    "name": "طاہر القادری"
+  },
+  {
+    "id": 104,
+    "language": "Uzbek",
+    "code": "uz",
+    "value": "uz_muhammad_sodiq",
+    "value_double": "uz__muhammad__sodik__muhammad__yusuf",
+    "name": "Мухаммад Содик"
   },
   {
     "id": 43,
@@ -408,46 +712,6 @@
     "name": "Transliteration"
   },
   {
-    "id": 57,
-    "language": "Czech",
-    "code": "cs",
-    "value": "cs_hrbek",
-    "value_double": "cs__preklad_I__hrbek",
-    "name": "Hrbek"
-  },
-  {
-    "id": 58,
-    "language": "Czech",
-    "code": "cs",
-    "value": "cs_nykl",
-    "value_double": "cs_A_R__nykl",
-    "name": "Nykl"
-  },
-  {
-    "id": 59,
-    "language": "Azerbaijani",
-    "code": "az",
-    "value": "az_musayev",
-    "value_double": "az__alikhan__musayev",
-    "name": "Musayev"
-  },
-  {
-    "id": 60,
-    "language": "Azerbaijani",
-    "code": "az",
-    "value": "az_mammadaliyev_bunyadov",
-    "value_double": "az__vasim__mammadaliyev_and__ziya__bunyadov",
-    "name": "Məmmədəliyev & Bünyadov"
-  },
-  {
-    "id": 61,
-    "language": "Bulgarian",
-    "code": "bg",
-    "value": "bg_teofanov",
-    "value_double": "bg__tzvetan__theophanov",
-    "name": "Теофанов"
-  },
-  {
     "id": 62,
     "language": "German",
     "code": "de",
@@ -480,30 +744,6 @@
     "name": "Bubenheim & Elyas"
   },
   {
-    "id": 66,
-    "language": "Spanish",
-    "code": "es",
-    "value": "es_cortes",
-    "value_double": "es__saheeh__cortes",
-    "name": "Cortes"
-  },
-  {
-    "id": 67,
-    "language": "Spanish",
-    "code": "es",
-    "value": "es_asad",
-    "value_double": "es__muhammad__asad__abdurrasak__perez",
-    "name": "Asad"
-  },
-  {
-    "id": 68,
-    "language": "Maldivian",
-    "code": "dv",
-    "value": "dv_dhivehi",
-    "value_double": "dv__office_of_the__president_of__maldives",
-    "name": "ދިވެހި"
-  },
-  {
     "id": 69,
     "language": "French",
     "code": "fr",
@@ -534,271 +774,5 @@
     "value": "hi_farooq_khan_ahmad",
     "value_double": "hi__muhammad__farooq__khan_and__muhammad__ahmed",
     "name": "फ़ारूक़ ख़ान & अहमद"
-  },
-  {
-    "id": 73,
-    "language": "Japanese",
-    "code": "ja",
-    "value": "ja_japanese",
-    "value_double": "ja_japanese",
-    "name": "Japanese"
-  },
-  {
-    "id": 74,
-    "language": "Korean",
-    "code": "ko",
-    "value": "ko_korean",
-    "value_double": "ko_korean",
-    "name": "Korean"
-  },
-  {
-    "id": 75,
-    "language": "Kurdish",
-    "code": "ku",
-    "value": "ku__burhan__muhammad__amin",
-    "value_double": "ku__burhan__muhammad__amin",
-    "name": "ته‌فسیری ئاسان"
-  },
-  {
-    "id": 76,
-    "language": "Malayalam",
-    "code": "ml",
-    "value": "ml_abdul_hameed_parappoor",
-    "value_double": "ml__cheriyamundam__abdul__hameed_and__kunhi__mohammed__parappoo",
-    "name": "അബ്ദുല്‍ ഹമീദ് & പറപ്പൂര്‍"
-  },
-  {
-    "id": 77,
-    "language": "Dutch",
-    "code": "nl",
-    "value": "nl_keyzer",
-    "value_double": "nl__salomo__keyzer",
-    "name": "Keyzer"
-  },
-  {
-    "id": 78,
-    "language": "Norwegian",
-    "code": "no",
-    "value": "no_einar_berg",
-    "value_double": "no__einar__berg",
-    "name": "Einar Berg"
-  },
-  {
-    "id": 79,
-    "language": "Polish",
-    "code": "pl",
-    "value": "pl_bielawskiego",
-    "value_double": "pl__jozefa__bielawskiego",
-    "name": "Bielawskiego"
-  },
-  {
-    "id": 80,
-    "language": "Portuguese",
-    "code": "pt",
-    "value": "pt_el_hayek",
-    "value_double": "pt__samir__el__hayek",
-    "name": "El-Hayek"
-  },
-  {
-    "id": 81,
-    "language": "Moldovan",
-    "code": "ro",
-    "value": "ro_grigore",
-    "value_double": "ro__george__grigore",
-    "name": "Grigore"
-  },
-  {
-    "id": 82,
-    "language": "Sindhi",
-    "code": "sd",
-    "value": "sd_amroti",
-    "value_double": "sd__taj__mehmood__amroti",
-    "name": "امروٽي"
-  },
-  {
-    "id": 83,
-    "language": "Somali",
-    "code": "so",
-    "value": "so_abduh",
-    "value_double": "so__mahmud__muhammad__abduh",
-    "name": "Abduh"
-  },
-  {
-    "id": 84,
-    "language": "Albanian",
-    "code": "sq",
-    "value": "sq_sherif_ahmeti",
-    "value_double": "sq__sherif__ahmeti",
-    "name": "Sherif Ahmeti"
-  },
-  {
-    "id": 85,
-    "language": "Albanian",
-    "code": "sq",
-    "value": "sq_feti_mehdiu",
-    "value_double": "sq__feti__mehdiu",
-    "name": "Feti Mehdiu"
-  },
-  {
-    "id": 86,
-    "language": "Albanian",
-    "code": "sq",
-    "value": "sq_efendi_nahi",
-    "value_double": "sq__hasan__efendi__nahi",
-    "name": "Efendi Nahi"
-  },
-
-  {
-    "id": 90,
-    "language": "Turkish",
-    "code": "tr",
-    "value": "tr_suleyman_ates",
-    "value_double": "tr__suleyman__ates",
-    "name": "Süleyman Ateş"
-  },
-  {
-    "id": 91,
-    "language": "Turkish",
-    "code": "tr",
-    "value": "tr_ali_bulac",
-    "value_double": "tr__ali__bulac",
-    "name": "Alİ Bulaç"
-  },
-  {
-    "id": 92,
-    "language": "Turkish",
-    "code": "tr",
-    "value": "tr_diyanet_isleri",
-    "value_double": "tr__diyanet__isleri",
-    "name": "Diyanet İşleri"
-  },
-  {
-    "id": 93,
-    "language": "Turkish",
-    "code": "tr",
-    "value": "tr_abdulbaki_golpinarli",
-    "value_double": "tr__abdulbaki__golpinarli",
-    "name": "Abdulbakî Gölpınarlı"
-  },
-  {
-    "id": 94,
-    "language": "Turkish",
-    "code": "tr",
-    "value": "tr_ozturk",
-    "value_double": "tr__yasar__nuri__ozturk",
-    "name": "Öztürk"
-  },
-  {
-    "id": 95,
-    "language": "Turkish",
-    "code": "tr",
-    "value": "tr_edip_yuksel",
-    "value_double": "tr__edip__yuksel",
-    "name": "Edip Yüksel"
-  },
-  {
-    "id": 97,
-    "language": "Turkish",
-    "code": "tr",
-    "value": "tr_diyanet_vakfi",
-    "value_double": "tr__diyanet__vakfi",
-    "name": "Diyanet Vakfı"
-  },
-  {
-    "id": 98,
-    "language": "Turkish",
-    "code": "tr",
-    "value": "tr_elmalili_hamdi_yazir",
-    "value_double": "tr__elmalili__hamdi__yazir",
-    "name": "Elmalılı Hamdi Yazır"
-  },
-  {
-    "id": 99,
-    "language": "Turkish",
-    "code": "tr",
-    "value": "tr_suat_yildirim",
-    "value_double": "tr__suat__yildirim",
-    "name": "Suat Yıldırım"
-  },
-  {
-    "id": 101,
-    "language": "Thai",
-    "code": "th",
-    "value": "th_thai",
-    "value_double": "th__king__fahad__quran__complex",
-    "name": "ภาษาไทย"
-  },
-  {
-    "id": 102,
-    "language": "Tatar",
-    "code": "tt",
-    "value": "tt_yakub_ibn_nugman",
-    "value_double": "tt__yakub__ibn__nugman",
-    "name": "Yakub Ibn Nugman"
-  },
-  {
-    "id": 103,
-    "language": "Uyghur",
-    "code": "ug",
-    "value": "ug_muhammad_salih",
-    "value_double": "ug__muhammad__saleh",
-    "name": "محمد صالح"
-  },
-  {
-    "id": 104,
-    "language": "Uzbek",
-    "code": "uz",
-    "value": "uz_muhammad_sodiq",
-    "value_double": "uz__muhammad__sodik__muhammad__yusuf",
-    "name": "Мухаммад Содик"
-  },
-  {
-    "id": 105,
-    "language": "Italian",
-    "code": "it",
-    "value": "it_piccardo",
-    "value_double": "it__hamza__roberto__piccardo",
-    "name": "Piccardo"
-  },
-
-  {
-    "id": 130,
-    "language": "Arabic",
-    "code": "ar",
-    "value": "ar_kids",
-    "value_double": "ar__kids",
-    "name": "Kids"
-  },
-  {
-    "id": 131,
-    "language": "Arabic",
-    "code": "ar",
-    "value": "ar_corpus",
-    "value_double": "ar__corpus",
-    "name": "Corpus"
-  },
-  {
-    "id": 132,
-    "language": "Sinhala",
-    "code": "si",
-    "value": "si_naseem_ismail",
-    "value_double": "si__naseem__isamil_and__masoor__maulana__kaleel",
-    "name": "Naseem Ismail"
-  },
-  {
-    "id": 133,
-    "language": "Arabic",
-    "code": "ar",
-    "value": "ar_buck",
-    "value_double": "ar__buck",
-    "name": "Buck"
-  },
-  {
-    "id": 134,
-    "language": "Chinese",
-    "code": "zh",
-    "value": "zh_ma_zhong_gang",
-    "value_double": "zh__ma__jian",
-    "name": "Ma Zhong Gang"
   }
 ]
