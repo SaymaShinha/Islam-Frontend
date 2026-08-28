@@ -1,3 +1,4 @@
+
 const getQuranData = async () => {
   try {
     const res = await fetch(
@@ -32,25 +33,42 @@ const getSurahData = async (id) => {
   }
 };
 
-const getTransSurahData = async (transLang, id = 1) => {
+const getTransQuranData = async (transLang) => {
   try {
-    console.log(transLang, id);
+    const res = await fetch(
+      `https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/master/islam_public_${transLang}.json`,
+    );
 
-    let getTransSurah = [];
-
-    switch (transLang) {
-      case "en":
-        getTransSurah = await getEnglishTranslationSurah(id);
-        break;
-      case "bn":
-        getTransSurah = await getBanglaTranslationSurah(id);
-        break;
-      default:
-        getTransSurah = await getEnglishTranslationSurah(id);
-        break;
+    if (!res.ok) {
+      throw new Error("Failed to fetch Surah data");
     }
 
-    return { getTransSurah };
+    const quranData = await res.json();
+    console.log(quranData);
+    return { quranData };
+  } catch (error) {
+    console.error("API Error:", error);
+    throw error;
+  }
+};
+
+
+const getTransSurahData = async (transLang, id = 1) => {
+  try {
+    console.log(
+      `https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/master/${transLang}/${id}.json`,
+    );
+    const res = await fetch(
+      `https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/master/${transLang}/${id}.json`,
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch Surah data");
+    }
+
+    const quranData = await res.json();
+    console.log(quranData);
+    return { quranData };
   } catch (error) {
     console.error("API Error:", error);
     throw error;
@@ -147,6 +165,24 @@ const getBanglaTranslationQuran = async () => {
   }
 };
 
+/////////////////////////////////////////
+const getExistingQuranTranslationData = async () => {
+  try {
+    const res = await fetch(
+      "https://raw.githubusercontent.com/SaymaShinha/islamDB/refs/heads/master/language.json",
+    );
+
+    if (!res.ok) {
+      throw new Error("Failed to fetch Quran data");
+    }
+
+    const data = await res.json();
+    return { data };
+  } catch (error) {
+    throw error;
+  }
+};
+
 export {
   getQuranData,
   getSurahData,
@@ -154,4 +190,7 @@ export {
   getEnglishTransliteration,
   getEnglishTranslationQuran,
   getBanglaTranslationQuran,
+  getExistingQuranTranslationData,
+  getTransQuranData,
+  
 };

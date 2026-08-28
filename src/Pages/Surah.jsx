@@ -32,7 +32,7 @@ const Surah = () => {
   );
 
   const [transLang, setTranslang] = useState(
-    localStorage.getItem("transLang") || "en",
+    localStorage.getItem("transLang") || "en__saheeh__international",
   );
 
   const [loading, setLoading] = useState(true);
@@ -60,7 +60,8 @@ const Surah = () => {
   -------------------------------- */
 
   useEffect(() => {
-    const lang = localStorage.getItem("transLang") || "en";
+    const lang =
+      localStorage.getItem("transLang") || "en__saheeh__international";
 
     setTranslang(lang);
 
@@ -70,7 +71,7 @@ const Surah = () => {
 
         const result = await getTransSurahData(lang, surahNumber);
 
-        setTransSurah(result?.getTransSurah?.quranData || []);
+        setTransSurah(result?.quranData || []);
       } catch (error) {
         console.error("Translation error:", error);
         setTransSurah([]);
@@ -86,18 +87,34 @@ const Surah = () => {
      Scroll to selected Ayah
   -------------------------------- */
 
-  useEffect(() => {
-    if (!ayahNumber) return;
+useEffect(() => {
+  if (!ayahNumber) return;
 
-    const timeout = setTimeout(() => {
-      document.getElementById(`ayah-${ayahNumber}`)?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-    }, 300);
+  const scrollToAyah = () => {
+    const element = document.getElementById(`ayah-${ayahNumber}`);
 
-    return () => clearTimeout(timeout);
-  }, [ayahNumber]);
+    if (!element) {
+      console.log(`Ayah ${ayahNumber} not found`);
+      return;
+    }
+
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+  };
+
+  const timeout = setTimeout(() => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(scrollToAyah);
+    });
+  }, 500);
+
+  return () => clearTimeout(timeout);
+}, [ayahNumber]);
+
+
+
 
   const previousSurah = surahNumber === 1 ? 114 : surahNumber - 1;
 
@@ -140,11 +157,11 @@ const Surah = () => {
               Surah {surahNumber}
             </span>
 
-            <h1 className="mt-3 text-4xl font-bold md:text-5xl">
+            <h1 className="mt-3 text-4xl font-bold md:text-3xl">
               {surah.surah_en_name}
             </h1>
 
-            <p className="mt-2 text-4xl font-semibold text-primary md:text-5xl">
+            <p className="mt-2 text-4xl font-semibold text-primary md:text-3xl">
               {surah.surah_ar_name}
             </p>
 
@@ -200,7 +217,7 @@ const Surah = () => {
           </div>
 
           <span className="badge badge-primary badge-outline">
-            {transLang === "bn" ? "বাংলা" : "English"}
+            {transLang}
           </span>
         </div>
 
@@ -210,7 +227,7 @@ const Surah = () => {
           {getSurah.map((ayah, i) => (
             <article
               key={ayah.id}
-              id={`ayah-${ayah.ayah_number}`}
+              id={`ayah-${i+1}`}
               className={`
                 scroll-mt-28
                 rounded-2xl
@@ -243,7 +260,7 @@ const Surah = () => {
 
               <p
                 dir="rtl"
-                className="text-right text-3xl font-medium leading-[2.2] md:text-4xl"
+                className="text-right text-3xl font-medium leading-[2.2] md:text-2xl"
               >
                 {ayah.text}
               </p>

@@ -10,10 +10,8 @@ import {
   ArrowUp,
 } from "lucide-react";
 
-import {
-  getEnglishTranslationQuran,
-  getBanglaTranslationQuran,
-} from "../Functions/getDataFromJsonFile.js";
+import { getTransQuranData } from "../Functions/getDataFromJsonFile.js";
+import existingQuranDataInfo from "../JsonData/ExistingQuranDataInfo.json";
 
 import Spinner from "../Components/Spinner.jsx";
 
@@ -27,7 +25,7 @@ function Quran() {
   const [surahData, setSurahData] = useState(data);
   const [quran, setQuran] = useState([]);
   const [searchedQuranAyah, setSearchedQuranAyah] = useState([]);
-  const [lang, setLang] = useState("en");
+  const [lang, setLang] = useState("");
   const [searchedWord, setSearchedWord] = useState("");
   const [loading, setLoading] = useState(false);
   const [showTop, setShowTop] = useState(false);
@@ -53,11 +51,7 @@ function Quran() {
 
         let quranArray = [];
 
-        if (lang === "bn") {
-          quranArray = await getBanglaTranslationQuran();
-        } else {
-          quranArray = await getEnglishTranslationQuran();
-        }
+        quranArray = await getTransQuranData(lang);
 
         setQuran(quranArray.quranData || []);
         setSearchedQuranAyah(quranArray.quranData || []);
@@ -213,7 +207,7 @@ function Quran() {
               TOP NAVBAR
           ================================= */}
 
-          <nav className="navbar sticky top-0 z-50 bg-base-100/95 backdrop-blur-md border-b border-base-300 px-4 shadow-sm">
+          <nav className="navbar sticky top-0 z-40 bg-base-100/95 backdrop-blur-md border-b border-base-300 px-4 shadow-sm">
             {/* Mobile menu */}
             <div className="flex-none lg:hidden">
               <label
@@ -224,7 +218,6 @@ function Quran() {
                 <Menu size={22} />
               </label>
             </div>
-
             {/* Logo */}
             <div className="flex-1">
               <a
@@ -238,7 +231,6 @@ function Quran() {
                 <span>Furqan Life</span>
               </a>
             </div>
-
             {/* Page title */}
             <div className="hidden md:flex items-center gap-2 text-base-content/70">
               <BookOpen size={20} />
@@ -250,7 +242,7 @@ function Quran() {
               STICKY TOOLBAR
           ===================================== */}
 
-          <div className="sticky top-[64px] z-40 bg-base-100/95 backdrop-blur-md border-b border-base-300 shadow-sm">
+          <div className="sticky top-[64px] z-30 bg-base-100/95 backdrop-blur-md border-b border-base-300 shadow-sm">
             <div className="max-w-7xl mx-auto px-4 py-3">
               <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3">
                 {/* Search Ayah */}
@@ -275,11 +267,16 @@ function Quran() {
                 <select
                   value={lang}
                   onChange={(e) => setLang(e.target.value)}
-                  className="select select-bordered w-full md:w-36 rounded-xl"
-                  aria-label="Quran translation language"
+                  className="select select-bordered w-full md:w-64 rounded-xl"
+                  aria-label="Quran translation"
                 >
-                  <option value="en">English</option>
-                  <option value="bn">Bangla</option>
+                  <option value="">Select Translation</option>
+
+                  {existingQuranDataInfo.map((item) => (
+                    <option key={item.id} value={item.value_double}>
+                      {item.language} — {item.name}
+                    </option>
+                  ))}
                 </select>
 
                 {/* Print */}
