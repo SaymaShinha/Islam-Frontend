@@ -30,14 +30,6 @@ import TahajjudNamaz from "../Pages/Namaz/Nafl/TahajjudNamaz.jsx";
 import IshraqNamaz from "../Pages/Namaz/Nafl/IshraqNamaz.jsx";
 import IstikharaNamaz from "../Pages/Namaz/Nafl/IstikharaNamaz.jsx";
 
-{
-  /* user */
-}
-import ProtectedRoute from "./ProtectedRoute.jsx";
-import AuthLayout from "../auth/AuthLayout.jsx";
-import LoginForm from "../auth/LoginForm.jsx";
-import RegistrationForm from "../auth/RegistrationForm.jsx";
-import UserProfile from "../auth/UserProfile.jsx";
 import FixMistakesOfPrayer from "../Pages/Namaz/FixMistakesOfPrayer.jsx";
 
 const router = createBrowserRouter([
@@ -112,23 +104,6 @@ const router = createBrowserRouter([
         Component: OtherNamaz,
       },
       { path: "/fix-mistakes-of-prayer", Component: FixMistakesOfPrayer },
-
-      {
-        path: "/user-profile",
-        element: (
-          <ProtectedRoute>
-            <UserProfile></UserProfile>
-          </ProtectedRoute>
-        ),
-      },
-      {
-        path: "/auth",
-        Component: AuthLayout,
-        children: [
-          { index: true, Component: RegistrationForm },
-          { path: "login", Component: LoginForm },
-        ],
-      },
     ],
   },
 ]);
