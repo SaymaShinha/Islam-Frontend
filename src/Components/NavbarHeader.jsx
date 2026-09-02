@@ -12,7 +12,7 @@ import {
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import NamazNavList from "./NamazNavList.jsx";
-import UserProfileNavList from "./UserProfileNavList.jsx";
+// import UserProfileNavList from "./UserProfileNavList.jsx";
 
 function NavbarHeader() {
   const [theme, setTheme] = useState(
