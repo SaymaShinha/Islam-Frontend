@@ -12,7 +12,6 @@ import {
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import NamazNavList from "./NamazNavList.jsx";
-// import UserProfileNavList from "./UserProfileNavList.jsx";
 
 function NavbarHeader() {
   const [theme, setTheme] = useState(
@@ -161,9 +160,6 @@ function NavbarHeader() {
             </ul>
           </div>
 
-          {/* User */}
-
-          {/* <UserProfileNavList /> */}
         </div>
       </div>
     </header>
