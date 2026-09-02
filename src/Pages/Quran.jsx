@@ -484,11 +484,7 @@ function Quran() {
           ===================================== */}
 
           <main className="mx-auto w-full max-w-7xl min-w-0 px-4 py-8">
-            {loading && (
-              <div className="flex justify-center py-10">
-                <Spinner text="Loading Quran..." />
-              </div>
-            )}
+            {loading && <Spinner text="Loading Quran..." />}
 
             {/* =================================
                 SEARCH RESULTS
