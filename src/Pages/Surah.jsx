@@ -13,6 +13,8 @@ import {
   getEnglishTransliteration,
 } from "../Functions/getDataFromJsonFile.js";
 
+import scrollToTop from "../utils/scrollToTop.js";
+
 const Surah = () => {
   const { surahData } = useLoaderData();
 
@@ -40,6 +42,9 @@ const Surah = () => {
   /* --------------------------------
      Transliteration
   -------------------------------- */
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -87,34 +92,31 @@ const Surah = () => {
      Scroll to selected Ayah
   -------------------------------- */
 
-useEffect(() => {
-  if (!ayahNumber) return;
+  useEffect(() => {
+    if (!ayahNumber) return;
 
-  const scrollToAyah = () => {
-    const element = document.getElementById(`ayah-${ayahNumber}`);
+    const scrollToAyah = () => {
+      const element = document.getElementById(`ayah-${ayahNumber}`);
 
-    if (!element) {
-      console.log(`Ayah ${ayahNumber} not found`);
-      return;
-    }
+      if (!element) {
+        console.log(`Ayah ${ayahNumber} not found`);
+        return;
+      }
 
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-    });
-  };
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    };
 
-  const timeout = setTimeout(() => {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(scrollToAyah);
-    });
-  }, 500);
+    const timeout = setTimeout(() => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(scrollToAyah);
+      });
+    }, 500);
 
-  return () => clearTimeout(timeout);
-}, [ayahNumber]);
-
-
-
+    return () => clearTimeout(timeout);
+  }, [ayahNumber]);
 
   const previousSurah = surahNumber === 1 ? 114 : surahNumber - 1;
 
@@ -216,9 +218,7 @@ useEffect(() => {
             <span className="font-medium">Translation</span>
           </div>
 
-          <span className="badge badge-primary badge-outline">
-            {transLang}
-          </span>
+          <span className="badge badge-primary badge-outline">{transLang}</span>
         </div>
 
         {/* Ayahs */}
@@ -227,7 +227,7 @@ useEffect(() => {
           {getSurah.map((ayah, i) => (
             <article
               key={ayah.id}
-              id={`ayah-${i+1}`}
+              id={`ayah-${i + 1}`}
               className={`
                 scroll-mt-28
                 rounded-2xl
@@ -248,7 +248,7 @@ useEffect(() => {
 
               <div className="mb-6 flex items-center justify-between">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
-                  {i+1}
+                  {i + 1}
                 </span>
 
                 <span className="text-xs uppercase tracking-wider opacity-40">

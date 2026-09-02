@@ -9,8 +9,11 @@ import {
 } from "lucide-react";
 
 import Divider from "../Components/Divider.jsx";
+import { useNavigate } from "react-router";
 
 function Home() {
+  const navigate = useNavigate();
+
   const features = [
     {
       icon: BookOpen,
@@ -171,6 +174,7 @@ function Home() {
               <div
                 key={index}
                 className="group bg-base-100 border border-base-300 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-primary/30 transition-all duration-300"
+                onClick={() => navigate("/quran")}
               >
                 {/* Icon */}
 

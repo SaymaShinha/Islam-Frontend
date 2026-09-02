@@ -179,6 +179,12 @@ function AsmaulHusna() {
             </div>
           </div>
 
+          {loading && (
+            <div className="flex justify-center py-16">
+              <Spinner text="Loading the beautiful names..." />
+            </div>
+          )}
+
           <p className="text-primary font-semibold tracking-wide uppercase text-sm">
             Beautiful Names of Allah
           </p>
@@ -267,12 +273,6 @@ function AsmaulHusna() {
 
       <main className="max-w-6xl mx-auto px-4 py-10">
         {/* Loading */}
-
-        {loading && (
-          <div className="flex justify-center py-16">
-            <Spinner text="Loading the beautiful names..." />
-          </div>
-        )}
 
         {/* Empty */}
 

@@ -30,8 +30,8 @@ function NavbarHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-base-300 bg-base-100/95 shadow-sm backdrop-blur">
-      <div className="navbar mx-auto max-w-[1600px] px-4 md:px-6">
+    <header className="sticky top-0 z-50 w-full max-w-full border-b border-base-300 bg-base-100/95 shadow-sm backdrop-blur">
+      <div className="navbar mx-auto w-full max-w-[1600px] overflow-visible px-4 md:px-6">
         {/* Logo */}
 
         <div className="flex-1">
@@ -104,9 +104,8 @@ function NavbarHeader() {
 
         {/* Right */}
 
-        <div className="flex items-center gap-1">
+        <div className="ml-auto flex shrink-0 items-center gap-1">
           {/* Theme */}
-
 
           {/* Mobile */}
 
@@ -164,7 +163,7 @@ function NavbarHeader() {
 
           {/* User */}
 
-          <UserProfileNavList />
+          {/* <UserProfileNavList /> */}
         </div>
       </div>
     </header>

@@ -1,19 +1,13 @@
 import { useLoaderData, useNavigate } from "react-router";
 import { useEffect, useState } from "react";
-import {
-  Search,
-  SlidersHorizontal,
-  Printer,
-  Menu,
-  X,
-  BookOpen,
-  ArrowUp,
-} from "lucide-react";
 
 import { getTransQuranData } from "../Functions/getDataFromJsonFile.js";
 import existingQuranDataInfo from "../JsonData/ExistingQuranDataInfo.json";
 
-import Spinner from "../Components/Spinner.jsx";
+import Spinner from "../components/Spinner.jsx";
+
+import getSurahAyahNumber from "../utils/getSurahAyahNumber.js";
+import scrollToTop from "../utils/scrollToTop.js";
 
 function Quran() {
   const { quranData } = useLoaderData();
@@ -26,13 +20,8 @@ function Quran() {
    * ==========================================
    * LANGUAGE
    * ==========================================
-   *
-   * Read the saved language ONLY when the
-   * component initializes.
-   *
-   * If there is no saved language, use:
-   * en__saheeh__international
    */
+
   const [lang, setLang] = useState(() => {
     const savedLang = localStorage.getItem("transLang");
 
@@ -46,22 +35,33 @@ function Quran() {
   const [loading, setLoading] = useState(false);
   const [showTop, setShowTop] = useState(false);
 
+  /*
+   * Translation dropdown
+   */
+
+  const [translationOpen, setTranslationOpen] = useState(false);
+  const [translationSearch, setTranslationSearch] = useState("");
+
   const navigate = useNavigate();
 
-  /* --------------------------------
-     Initial Surah data
-  -------------------------------- */
+  /*
+   * ==========================================
+   * INITIAL SURAH DATA
+   * ==========================================
+   */
 
   useEffect(() => {
+    scrollToTop();
     setSurahData(data);
   }, []);
 
-  /* --------------------------------
-     Load Quran translation
-  -------------------------------- */
+  /*
+   * ==========================================
+   * LOAD QURAN TRANSLATION
+   * ==========================================
+   */
 
   useEffect(() => {
-    // Never fetch if lang is empty
     if (!lang) return;
 
     const fetchData = async () => {
@@ -87,29 +87,58 @@ function Quran() {
     fetchData();
   }, [lang]);
 
-  /* --------------------------------
-     Change language
-  -------------------------------- */
+  /*
+   * ==========================================
+   * SELECTED TRANSLATION
+   * ==========================================
+   */
 
-  const handleLanguageChange = (e) => {
-    const value = e.target.value;
+  const selectedTranslation = existingQuranDataInfo.find(
+    (item) => item.value_double === lang,
+  );
 
-    // Do not allow empty value
+  /*
+   * ==========================================
+   * FILTER TRANSLATIONS
+   * ==========================================
+   */
+
+  const filteredTranslations = existingQuranDataInfo.filter((item) => {
+    const search = translationSearch.toLowerCase().trim();
+
+    if (!search) return true;
+
+    return (
+      item.language?.toLowerCase().includes(search) ||
+      item.name?.toLowerCase().includes(search) ||
+      item.value_double?.toLowerCase().includes(search)
+    );
+  });
+
+  /*
+   * ==========================================
+   * CHANGE LANGUAGE
+   * ==========================================
+   */
+
+  const handleLanguageChange = (value) => {
     if (!value) return;
 
-    // Update React state
     setLang(value);
 
-    // Save selected translation
     localStorage.setItem("transLang", value);
 
-    // Clear current search when language changes
     setSearchedWord("");
+
+    setTranslationOpen(false);
+    setTranslationSearch("");
   };
 
-  /* --------------------------------
-     Scroll to top button
-  -------------------------------- */
+  /*
+   * ==========================================
+   * SCROLL TO TOP
+   * ==========================================
+   */
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,16 +152,13 @@ function Quran() {
     };
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
 
-  /* --------------------------------
-     Sorting
-  -------------------------------- */
+
+  /*
+   * ==========================================
+   * SORTING
+   * ==========================================
+   */
 
   const getSurahByTraditionalOrder = () => {
     setSurahData(data);
@@ -145,9 +171,7 @@ function Quran() {
       );
 
       if (!res.ok) {
-        throw new Error(
-          "Failed to fetch Quran data According To Revelation.",
-        );
+        throw new Error("Failed to fetch Quran data According To Revelation.");
       }
 
       const jsonData = await res.json();
@@ -171,36 +195,30 @@ function Quran() {
   };
 
   const getSurahByMinToMaxSurahTotalAyah = () => {
-    const sorted = [...data].sort(
-      (a, b) => a.total_ayah - b.total_ayah,
-    );
+    const sorted = [...data].sort((a, b) => a.total_ayah - b.total_ayah);
 
     setSurahData(sorted);
   };
 
   const getSurahByMaxToMinSurahTotalAyah = () => {
-    const sorted = [...data].sort(
-      (a, b) => b.total_ayah - a.total_ayah,
-    );
+    const sorted = [...data].sort((a, b) => b.total_ayah - a.total_ayah);
 
     setSurahData(sorted);
   };
 
   const getMeccanSurah = () => {
-    setSurahData(
-      data.filter((surah) => surah.revelation_type === "Meccan"),
-    );
+    setSurahData(data.filter((surah) => surah.revelation_type === "Meccan"));
   };
 
   const getMedinanSurah = () => {
-    setSurahData(
-      data.filter((surah) => surah.revelation_type === "Medinan"),
-    );
+    setSurahData(data.filter((surah) => surah.revelation_type === "Medinan"));
   };
 
-  /* --------------------------------
-     Search Surah
-  -------------------------------- */
+  /*
+   * ==========================================
+   * SEARCH SURAH
+   * ==========================================
+   */
 
   const searchQuran = (e) => {
     const value = e.target.value.toLowerCase().trim();
@@ -213,18 +231,18 @@ function Quran() {
     const filtered = data.filter(
       (surah) =>
         surah.surah_en_name?.toLowerCase().includes(value) ||
-        surah.surah_en_name_translation
-          ?.toLowerCase()
-          .includes(value) ||
+        surah.surah_en_name_translation?.toLowerCase().includes(value) ||
         surah.surah_ar_name?.includes(value),
     );
 
     setSurahData(filtered);
   };
 
-  /* --------------------------------
-     Search Ayah
-  -------------------------------- */
+  /*
+   * ==========================================
+   * SEARCH AYAH
+   * ==========================================
+   */
 
   const searchWordAyah = (e) => {
     const value = e.target.value;
@@ -237,9 +255,7 @@ function Quran() {
     }
 
     const filteredData = quran.filter((ayah) =>
-      ayah.text
-        ?.toLowerCase()
-        .includes(value.toLowerCase()),
+      ayah.text?.toLowerCase().includes(value.toLowerCase()),
     );
 
     setSearchedQuranAyah(filteredData);
@@ -247,23 +263,19 @@ function Quran() {
 
   return (
     <>
-      <div className="drawer lg:drawer-open bg-base-200 min-h-screen">
-        <input
-          id="my-drawer-4"
-          type="checkbox"
-          className="drawer-toggle"
-        />
+      <div className="drawer lg:drawer-open min-h-screen w-full max-w-full overflow-x-hidden bg-base-200">
+        <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
 
         {/* =====================================
             MAIN CONTENT
         ===================================== */}
 
-        <div className="drawer-content">
-          {/* ================================
+        <div className="drawer-content min-w-0 w-full">
+          {/* =====================================
               TOP NAVBAR
-          ================================= */}
+          ===================================== */}
 
-          <nav className="navbar sticky top-0 z-40 bg-base-100/95 backdrop-blur-md border-b border-base-300 px-4 shadow-sm">
+          <nav className="navbar sticky top-0 z-40 w-full max-w-full border-b border-base-300 bg-base-100/95 px-4 shadow-sm backdrop-blur-md">
             {/* Mobile menu */}
 
             <div className="flex-none lg:hidden">
@@ -272,29 +284,44 @@ function Quran() {
                 className="btn btn-square btn-ghost"
                 aria-label="Open Quran menu"
               >
-                <Menu size={22} />
+                ☰
               </label>
             </div>
 
             {/* Logo */}
 
-            <div className="flex-1">
+            <div className="min-w-0 flex-1">
               <a
                 href="/"
                 className="flex items-center gap-2 text-xl font-bold text-primary"
               >
-                <span className="w-9 h-9 rounded-full bg-green-600 flex items-center justify-center text-lg">
+                <span className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-green-600 text-lg">
                   🕌
                 </span>
 
-                <span>Furqan Life</span>
+                <span className="truncate">Furqan Life</span>
               </a>
             </div>
 
             {/* Page title */}
 
-            <div className="hidden md:flex items-center gap-2 text-base-content/70">
-              <BookOpen size={20} />
+            <div className="hidden shrink-0 items-center gap-2 text-base-content/70 md:flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-book-open"
+                aria-hidden="true"
+              >
+                <path d="M12 5v16"></path>
+                <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"></path>
+              </svg>
               <span>Quran</span>
             </div>
           </nav>
@@ -303,47 +330,111 @@ function Quran() {
               STICKY TOOLBAR
           ===================================== */}
 
-          <div className="sticky top-[64px] z-30 bg-base-100/95 backdrop-blur-md border-b border-base-300 shadow-sm">
-            <div className="max-w-7xl mx-auto px-4 py-3">
-              <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3">
+          <div className="sticky top-[64px] z-30 w-full max-w-full border-b border-base-300 bg-base-100/95 shadow-sm backdrop-blur-md">
+            <div className="mx-auto w-full max-w-7xl px-4 py-3">
+              <div className="flex flex-col items-stretch gap-3 md:flex-row md:items-center">
                 {/* Search Ayah */}
 
-                <div className="relative flex-1">
-                  <Search
-                    size={19}
-                    className="absolute left-3 top-1/2 -translate-y-1/2 text-base-content/50"
-                  />
+                <div className="relative min-w-0 flex-1">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-base-content/50">
+                    🔍
+                  </span>
 
                   <input
                     type="text"
                     value={searchedWord}
                     onChange={searchWordAyah}
                     placeholder="Search Quran verses..."
-                    className="input input-bordered w-full pl-10 rounded-xl focus:outline-none focus:border-primary"
+                    className="input input-bordered w-full rounded-xl pl-10 focus:border-primary focus:outline-none"
                   />
                 </div>
 
-                {/* Language */}
+                {/* =================================
+                    SEARCHABLE TRANSLATION
+                ================================= */}
 
-                <select
-                  value={lang}
-                  onChange={handleLanguageChange}
-                  className="select select-bordered w-full md:w-64 rounded-xl"
-                  aria-label="Quran translation"
-                >
-                  <option value="">
-                    Select Translation
-                  </option>
+                <div className="relative w-full md:w-64">
+                  <button
+                    type="button"
+                    onClick={() => setTranslationOpen((previous) => !previous)}
+                    className="flex h-12 w-full items-center justify-between gap-2 rounded-xl border border-base-300 bg-base-100 px-4 text-left"
+                  >
+                    <span className="min-w-0 flex-1 truncate">
+                      {selectedTranslation
+                        ? `${selectedTranslation.language} — ${selectedTranslation.name}`
+                        : "Select Translation"}
+                    </span>
 
-                  {existingQuranDataInfo.map((item) => (
-                    <option
-                      key={item.id}
-                      value={item.value_double}
-                    >
-                      {item.language} — {item.name}
-                    </option>
-                  ))}
-                </select>
+                    <span className="flex-none">
+                      {translationOpen ? "▲" : "▼"}
+                    </span>
+                  </button>
+
+                  {translationOpen && (
+                    <div className="absolute left-0 top-full z-[100] mt-2 w-full overflow-hidden rounded-xl border border-base-300 bg-base-100 shadow-xl">
+                      {/* Search */}
+
+                      <div className="border-b border-base-300 p-2">
+                        <div className="flex items-center rounded-lg border border-base-300 px-3">
+                          <span className="text-base-content/50">🔍</span>
+
+                          <input
+                            type="text"
+                            value={translationSearch}
+                            onChange={(e) =>
+                              setTranslationSearch(e.target.value)
+                            }
+                            placeholder="Search translation..."
+                            className="w-full bg-transparent px-2 py-2 text-sm outline-none"
+                            autoFocus
+                          />
+                        </div>
+                      </div>
+
+                      {/* Translation list */}
+
+                      <div className="max-h-72 overflow-y-auto p-1">
+                        {filteredTranslations.length > 0 ? (
+                          filteredTranslations.map((item) => (
+                            <button
+                              key={item.id}
+                              type="button"
+                              onClick={() =>
+                                handleLanguageChange(item.value_double)
+                              }
+                              className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm hover:bg-base-200 ${
+                                lang === item.value_double
+                                  ? "bg-primary/10 text-primary"
+                                  : ""
+                              }`}
+                            >
+                              <span className="min-w-0 truncate">
+                                <span className="font-medium">
+                                  {item.language}
+                                </span>
+
+                                <span className="opacity-70">
+                                  {" "}
+                                  — {item.name}
+                                </span>
+                              </span>
+
+                              {lang === item.value_double && (
+                                <span className="ml-2 flex-none font-bold">
+                                  ✓
+                                </span>
+                              )}
+                            </button>
+                          ))
+                        ) : (
+                          <div className="px-3 py-6 text-center text-sm text-base-content/60">
+                            No translation found
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
 
                 {/* Print */}
 
@@ -351,7 +442,23 @@ function Quran() {
                   onClick={() => window.print()}
                   className="btn btn-primary rounded-xl no-print"
                 >
-                  <Printer size={18} />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-printer"
+                    aria-hidden="true"
+                  >
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"></path>
+                    <rect x="6" y="14" width="12" height="8" rx="1"></rect>
+                  </svg>
                   <span>Print</span>
                 </button>
               </div>
@@ -376,33 +483,28 @@ function Quran() {
               CONTENT
           ===================================== */}
 
-          <main className="max-w-7xl mx-auto w-full px-4 py-8">
+          <main className="mx-auto w-full max-w-7xl min-w-0 px-4 py-8">
             {loading && (
               <div className="flex justify-center py-10">
                 <Spinner text="Loading Quran..." />
               </div>
             )}
 
-            {/* ================================
+            {/* =================================
                 SEARCH RESULTS
             ================================= */}
 
             {searchedWord.trim() ? (
-              <section className="space-y-4 print-content">
+              <section className="print-content space-y-4">
                 {searchedQuranAyah.length === 0 && !loading && (
-                  <div className="text-center py-20">
-                    <div className="w-16 h-16 mx-auto rounded-full bg-base-300 flex items-center justify-center mb-4">
-                      <Search
-                        size={28}
-                        className="text-base-content/50"
-                      />
+                  <div className="py-20 text-center">
+                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-base-300">
+                      <span className="text-2xl">🔍</span>
                     </div>
 
-                    <h2 className="text-xl font-semibold">
-                      No verses found
-                    </h2>
+                    <h2 className="text-xl font-semibold">No verses found</h2>
 
-                    <p className="text-base-content/60 mt-2">
+                    <p className="mt-2 text-base-content/60">
                       Try searching with another word or phrase.
                     </p>
                   </div>
@@ -413,101 +515,115 @@ function Quran() {
                     key={ayah.id}
                     onClick={() =>
                       navigate(
-                        `/Surah/${ayah.surah_number}/${ayah.ayah_number}`,
+                        `/Surah/${ayah.surah_number}/${getSurahAyahNumber(
+                          quran,
+                          ayah.ayah_number,
+                          ayah.surah_number,
+                        )}`,
                       )
                     }
-                    className="group bg-base-100 rounded-2xl border border-base-300 p-5 md:p-6 cursor-pointer shadow-sm hover:shadow-lg hover:border-primary/40 transition-all duration-200"
+                    className="group cursor-pointer rounded-2xl border border-base-300 bg-base-100 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg md:p-6"
                   >
                     <div className="flex items-start justify-between gap-4">
-                      <div>
-                        <h2 className="font-semibold text-primary group-hover:text-green-700 transition">
-                          {ayah.surah_number}.{" "}
-                          {ayah.surah_en_name}
+                      <div className="min-w-0">
+                        <h2 className="font-semibold text-primary transition group-hover:text-green-700">
+                          {ayah.surah_number}. {ayah.surah_en_name}
                         </h2>
 
-                        <p className="text-xs text-base-content/50 mt-1">
-                          Ayah {ayah.ayah_number}
+                        <p className="mt-1 text-xs text-base-content/50">
+                          Ayah{" "}
+                          {getSurahAyahNumber(
+                            quran,
+                            ayah.ayah_number,
+                            ayah.surah_number,
+                          )}
                         </p>
                       </div>
 
-                      <span className="badge badge-primary badge-outline">
-                        {ayah.ayah_number}
+                      <span className="badge badge-primary badge-outline shrink-0">
+                        {getSurahAyahNumber(
+                          quran,
+                          ayah.ayah_number,
+                          ayah.surah_number,
+                        )}
                       </span>
                     </div>
 
-                    <p className="mt-4 leading-8 text-base-content/80">
+                    <p className="mt-4 break-words leading-8 text-base-content/80">
                       {ayah.text}
                     </p>
                   </article>
                 ))}
               </section>
             ) : (
-              /* ================================
+              /* =================================
                   DEFAULT QURAN LANDING
               ================================= */
 
               <section className="print-content">
                 <div className="mb-8">
-                  <div className="flex items-center gap-3 mb-2">
-                    <BookOpen
-                      className="text-primary"
-                      size={28}
-                    />
+                  <div className="mb-2 flex items-center gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-book-open"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 5v16"></path>
+                      <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"></path>
+                    </svg>
 
-                    <h1 className="text-2xl md:text-3xl font-bold">
-                      Quran
-                    </h1>
+                    <h1 className="text-2xl font-bold md:text-3xl">Quran</h1>
                   </div>
 
                   <p className="text-base-content/60">
-                    Explore the Quran by Surah, revelation, or
-                    search for a specific chapter.
+                    Explore the Quran by Surah, revelation, or search for a
+                    specific chapter.
                   </p>
                 </div>
 
                 {/* Surah cards */}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                   {surahData.map((surah) => (
                     <article
                       key={surah.id}
-                      onClick={() =>
-                        navigate(
-                          `/surah/${surah.surah_number}`,
-                        )
-                      }
-                      className="group bg-base-100 border border-base-300 rounded-2xl p-5 cursor-pointer shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-primary/40 transition-all duration-200"
+                      onClick={() => navigate(`/surah/${surah.surah_number}`)}
+                      className="group cursor-pointer rounded-2xl border border-base-300 bg-base-100 p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
                     >
                       <div className="flex items-start justify-between gap-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold">
+                        <div className="flex min-w-0 items-center gap-3">
+                          <div className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-primary/10 font-bold text-primary">
                             {surah.surah_number}
                           </div>
 
-                          <div>
-                            <h2 className="font-semibold group-hover:text-primary transition">
+                          <div className="min-w-0">
+                            <h2 className="truncate font-semibold transition group-hover:text-primary">
                               {surah.surah_en_name}
                             </h2>
 
-                            <p className="text-xs text-base-content/50">
+                            <p className="truncate text-xs text-base-content/50">
                               {surah.surah_en_name_translation}
                             </p>
                           </div>
                         </div>
 
-                        <span className="text-xl">
+                        <span className="shrink-0 text-xl">
                           {surah.surah_ar_name}
                         </span>
                       </div>
 
-                      <div className="mt-4 pt-4 border-t border-base-300 flex justify-between text-xs text-base-content/60">
-                        <span>
-                          {surah.total_ayah} Ayahs
-                        </span>
+                      <div className="mt-4 flex justify-between border-t border-base-300 pt-4 text-xs text-base-content/60">
+                        <span>{surah.total_ayah} Ayahs</span>
 
-                        <span>
-                          {surah.revelation_type}
-                        </span>
+                        <span>{surah.revelation_type}</span>
                       </div>
                     </article>
                   ))}
@@ -528,52 +644,61 @@ function Quran() {
             className="drawer-overlay"
           />
 
-          <aside className="w-80 min-h-full bg-base-100 border-r border-base-300">
+          <aside className="min-h-full w-80 border-r border-base-300 bg-base-100">
             {/* Sidebar header */}
 
-            <div className="sticky top-0 z-10 bg-base-100 border-b border-base-300 p-4">
+            <div className="sticky top-0 z-10 border-b border-base-300 bg-base-100 p-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <BookOpen
-                    size={22}
-                    className="text-primary"
-                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-book-open"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 5v16"></path>
+                    <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"></path>
+                  </svg>
 
-                  <h2 className="font-bold text-lg">
-                    Surahs
-                  </h2>
+                  <h2 className="text-lg font-bold">Surahs</h2>
                 </div>
 
                 <label
                   htmlFor="my-drawer-4"
                   className="btn btn-sm btn-circle btn-ghost lg:hidden"
                 >
-                  <X size={18} />
+                  ✕
                 </label>
               </div>
 
               {/* Search Surah */}
 
               <div className="relative mt-4">
-                <Search
-                  size={17}
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-base-content/50"
-                />
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-base-content/50">
+                  🔍
+                </span>
 
                 <input
                   type="text"
                   onChange={searchQuran}
                   placeholder="Search Surah..."
-                  className="input input-bordered input-sm w-full pl-9 rounded-lg"
+                  className="input input-bordered input-sm w-full rounded-lg pl-9"
                 />
               </div>
             </div>
 
             {/* Sorting */}
 
-            <div className="p-4 border-b border-base-300">
-              <div className="flex items-center gap-2 mb-3 text-sm font-semibold">
-                <SlidersHorizontal size={17} />
+            <div className="border-b border-base-300 p-4">
+              <div className="mb-3 flex items-center gap-2 text-sm font-semibold">
+                <span>☷</span>
                 Sort Surahs
               </div>
 
@@ -631,29 +756,29 @@ function Quran() {
 
             {/* Sidebar Surah list */}
 
-            <ul className="menu p-3 gap-1">
+            <ul className="menu gap-1 p-3">
               {surahData.map((surah) => (
                 <li key={surah.id}>
                   <a
                     href={`/surah/${surah.surah_number}`}
                     className="rounded-xl"
                   >
-                    <div className="flex items-center gap-3 w-full">
-                      <span className="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center text-xs font-bold">
+                    <div className="flex w-full min-w-0 items-center gap-3">
+                      <span className="flex h-8 w-8 flex-none items-center justify-center rounded-lg bg-primary/10 text-xs font-bold text-primary">
                         {surah.surah_number}
                       </span>
 
-                      <div className="flex-1 min-w-0">
-                        <div className="font-medium truncate">
+                      <div className="min-w-0 flex-1">
+                        <div className="truncate font-medium">
                           {surah.surah_en_name}
                         </div>
 
-                        <div className="text-xs text-base-content/50 truncate">
+                        <div className="truncate text-xs text-base-content/50">
                           {surah.surah_en_name_translation}
                         </div>
                       </div>
 
-                      <span className="text-lg">
+                      <span className="shrink-0 text-lg">
                         {surah.surah_ar_name}
                       </span>
                     </div>
@@ -665,15 +790,17 @@ function Quran() {
         </div>
       </div>
 
-      {/* Scroll to top */}
+      {/* =====================================
+          SCROLL TO TOP
+      ===================================== */}
 
       {showTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 btn btn-circle btn-primary shadow-lg no-print"
+          className="btn btn-circle btn-primary no-print fixed bottom-6 right-6 z-50 shadow-lg"
           aria-label="Scroll to top"
         >
-          <ArrowUp size={20} />
+          ↑
         </button>
       )}
     </>

@@ -14,7 +14,7 @@ export default function UserProfileNavList() {
   };
 
   return (
-    <div className="relative dropdown dropdown-end">
+    <div className="dropdown dropdown-left">
       <button
         tabIndex={0}
         className="btn btn-circle btn-ghost"
@@ -25,7 +25,10 @@ export default function UserProfileNavList() {
         </div>
       </button>
 
-      <ul className="menu dropdown-content absolute left-0 top-full z-[9999] mt-2 w-56 rounded-box border border-base-300 bg-base-100 p-2 shadow-xl">
+      <ul
+        tabIndex={0}
+        className="menu dropdown-content z-[9999] mt-2 w-56 rounded-box border border-base-300 bg-base-100 p-2 shadow-xl"
+      >
         <li>
           <Link to="/user-profile">
             <UserRound size={17} />
