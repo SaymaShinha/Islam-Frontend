@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import { getTransQuranData } from "../Functions/getDataFromJsonFile.js";
 import existingQuranDataInfo from "../JsonData/ExistingQuranDataInfo.json";
 
-import Spinner from "../components/Spinner.jsx";
-
 import getSurahAyahNumber from "../utils/getSurahAyahNumber.js";
 import scrollToTop from "../utils/scrollToTop.js";
 
@@ -484,7 +482,6 @@ function Quran() {
           ===================================== */}
 
           <main className="mx-auto w-full max-w-7xl min-w-0 px-4 py-8">
-            {loading && <Spinner text="Loading Quran..." />}
 
             {/* =================================
                 SEARCH RESULTS
