@@ -34,9 +34,41 @@
   </url>
 
   <url>
-    <loc>https://furqanlife.vercel.app/cookie-policy</loc>
+    <loc>https://furqanlife.vercel.app/cookie-policy</loc>  
   </url>
-
+  <url>
+    <loc>https://furqanlife.vercel.app/namaz</loc>
+  </url>
+  
+  <url>
+    <loc>https://furqanlife.vercel.app/farz-namaz</loc>  
+  </url>
+  <url>
+    <loc>https://furqanlife.vercel.app/wajib-namaz</loc>  
+  </url>
+  <url>
+    <loc>https://furqanlife.vercel.app/eid-namaz</loc>  
+  </url>
+  <url>
+    <loc>https://furqanlife.vercel.app/watib-namaz</loc>  
+  </url>
+  <url>
+    <loc>https://furqanlife.vercel.app/nafl-namaz</loc>  
+  </url>
+  <url>
+    <loc>https://furqanlife.vercel.app/tahajjud-namaz</loc>  
+  </url>
+  <url>
+    <loc>https://furqanlife.vercel.app/ishraq-namaz</loc>  
+  </url>
+  <url>
+    <loc>https://furqanlife.vercel.app/istikhara-namaz</loc>  
+  </url>
+  <url>
+    <loc>https://furqanlife.vercel.app/other-namaz</loc>  
+  </url>
+    <url>
+    <loc>https://furqanlife.vercel.app/fix-mistakes-of-prayer</loc>  
+  </url>
 </urlset>
-
 

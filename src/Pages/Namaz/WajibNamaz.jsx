@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
+import SEO from "../../components/SEO";
+
 export default function WajibNamaz() {
   const [openPrayer, setOpenPrayer] = useState(null);
   const navigate = useNavigate();
@@ -80,176 +82,190 @@ export default function WajibNamaz() {
   ];
 
   return (
-    <div className="min-h-screen bg-base-200 px-4 py-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <div className="text-4xl mb-3">🤲</div>
+    <>
+      {wajibPrayers.map((prayer) => {
+        <SEO
+          key={prayer.id}
+          title={`${prayer.name} ${prayer.time}`}
+          description={ `${prayer.procedure} ${prayer.purpose}`}
+          path={`/${prayer.link}`}
+          type="article"
+        />;
+      })}
 
-          <h1 className="text-3xl md:text-4xl font-bold text-primary">
-            Wajib Salah
-          </h1>
+      <div className="min-h-screen bg-base-200 px-4 py-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <div className="text-4xl mb-3">🤲</div>
 
-          <p className="max-w-3xl mx-auto mt-3 text-base-content/70">
-            A guide to prayers classified as Wajib in some schools of Islamic
-            jurisprudence.
-          </p>
-        </div>
+            <h1 className="text-3xl md:text-4xl font-bold text-primary">
+              Wajib Salah
+            </h1>
 
-        {/* Fiqh Notice */}
-        <div className="alert alert-warning mb-8">
-          <div>
-            <h3 className="font-bold">Important Fiqh Note</h3>
-
-            <p className="text-sm">
-              The classification of some prayers as Wajib, Sunnah Mu'akkadah or
-              another category differs between schools of Islamic jurisprudence.
-              The information below identifies those differences rather than
-              presenting one school as universal.
+            <p className="max-w-3xl mx-auto mt-3 text-base-content/70">
+              A guide to prayers classified as Wajib in some schools of Islamic
+              jurisprudence.
             </p>
           </div>
-        </div>
 
-        {/* Cards */}
-        <div className="space-y-4">
-          {wajibPrayers.map((prayer) => {
-            const isOpen = openPrayer === prayer.id;
+          {/* Fiqh Notice */}
+          <div className="alert alert-warning mb-8">
+            <div>
+              <h3 className="font-bold">Important Fiqh Note</h3>
 
-            return (
-              <div
-                key={prayer.id}
-                className="card bg-base-100 shadow-md border border-base-300"
-                onClick={() => navigate(`/${prayer.link}`)}
-              >
-                {/* Header */}
-                <button
-                  onClick={() => setOpenPrayer(isOpen ? null : prayer.id)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-base-200 transition rounded-xl"
+              <p className="text-sm">
+                The classification of some prayers as Wajib, Sunnah Mu'akkadah
+                or another category differs between schools of Islamic
+                jurisprudence. The information below identifies those
+                differences rather than presenting one school as universal.
+              </p>
+            </div>
+          </div>
+
+          {/* Cards */}
+          <div className="space-y-4">
+            {wajibPrayers.map((prayer) => {
+              const isOpen = openPrayer === prayer.id;
+
+              return (
+                <div
+                  key={prayer.id}
+                  className="card bg-base-100 shadow-md border border-base-300"
+                  onClick={() => navigate(`/${prayer.link}`)}
                 >
-                  <div>
-                    <h2 className="text-xl font-bold text-primary">
-                      {prayer.name}
-                    </h2>
-
-                    <p className="text-lg opacity-70 mt-1">{prayer.arabic}</p>
-
-                    <span className="badge badge-warning mt-2">
-                      {prayer.classification}
-                    </span>
-                  </div>
-
-                  <span
-                    className={`text-2xl transition-transform ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
+                  {/* Header */}
+                  <button
+                    onClick={() => setOpenPrayer(isOpen ? null : prayer.id)}
+                    className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-base-200 transition rounded-xl"
                   >
-                    ↓
-                  </span>
-                </button>
+                    <div>
+                      <h2 className="text-xl font-bold text-primary">
+                        {prayer.name}
+                      </h2>
 
-                {/* Basic Info */}
-                <div className="px-5 pb-5">
-                  <div className="grid md:grid-cols-3 gap-4">
-                    <div className="bg-base-200 rounded-xl p-4">
-                      <h3 className="font-bold text-primary">Time</h3>
+                      <p className="text-lg opacity-70 mt-1">{prayer.arabic}</p>
 
-                      <p className="text-sm mt-2">{prayer.time}</p>
+                      <span className="badge badge-warning mt-2">
+                        {prayer.classification}
+                      </span>
                     </div>
 
-                    <div className="bg-base-200 rounded-xl p-4">
-                      <h3 className="font-bold text-primary">Rak'ahs</h3>
+                    <span
+                      className={`text-2xl transition-transform ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    >
+                      ↓
+                    </span>
+                  </button>
 
-                      <p className="text-sm mt-2">{prayer.rakats}</p>
-                    </div>
+                  {/* Basic Info */}
+                  <div className="px-5 pb-5">
+                    <div className="grid md:grid-cols-3 gap-4">
+                      <div className="bg-base-200 rounded-xl p-4">
+                        <h3 className="font-bold text-primary">Time</h3>
 
-                    <div className="bg-base-200 rounded-xl p-4">
-                      <h3 className="font-bold text-primary">Purpose</h3>
+                        <p className="text-sm mt-2">{prayer.time}</p>
+                      </div>
 
-                      <p className="text-sm mt-2">{prayer.purpose}</p>
-                    </div>
-                  </div>
-                </div>
+                      <div className="bg-base-200 rounded-xl p-4">
+                        <h3 className="font-bold text-primary">Rak'ahs</h3>
 
-                {/* Procedure */}
-                {isOpen && (
-                  <div className="border-t border-base-300 p-5">
-                    <h3 className="text-xl font-bold text-primary mb-4">
-                      How to Offer
-                    </h3>
+                        <p className="text-sm mt-2">{prayer.rakats}</p>
+                      </div>
 
-                    <ol className="space-y-3">
-                      {prayer.procedure.map((step, index) => (
-                        <li key={index} className="flex gap-3">
-                          <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary text-primary-content flex items-center justify-center text-sm font-bold">
-                            {index + 1}
-                          </span>
+                      <div className="bg-base-200 rounded-xl p-4">
+                        <h3 className="font-bold text-primary">Purpose</h3>
 
-                          <p className="leading-relaxed">{step}</p>
-                        </li>
-                      ))}
-                    </ol>
-
-                    <div className="alert alert-info mt-6">
-                      <div>
-                        <h3 className="font-bold">Note</h3>
-
-                        <p className="text-sm">{prayer.notes}</p>
+                        <p className="text-sm mt-2">{prayer.purpose}</p>
                       </div>
                     </div>
                   </div>
-                )}
+
+                  {/* Procedure */}
+                  {isOpen && (
+                    <div className="border-t border-base-300 p-5">
+                      <h3 className="text-xl font-bold text-primary mb-4">
+                        How to Offer
+                      </h3>
+
+                      <ol className="space-y-3">
+                        {prayer.procedure.map((step, index) => (
+                          <li key={index} className="flex gap-3">
+                            <span className="flex-shrink-0 w-7 h-7 rounded-full bg-primary text-primary-content flex items-center justify-center text-sm font-bold">
+                              {index + 1}
+                            </span>
+
+                            <p className="leading-relaxed">{step}</p>
+                          </li>
+                        ))}
+                      </ol>
+
+                      <div className="alert alert-info mt-6">
+                        <div>
+                          <h3 className="font-bold">Note</h3>
+
+                          <p className="text-sm">{prayer.notes}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Wajib vs Farz */}
+          <div className="card bg-base-100 shadow-md mt-8">
+            <div className="card-body">
+              <h2 className="card-title text-primary">Farz vs Wajib</h2>
+
+              <div className="overflow-x-auto mt-3">
+                <table className="table table-zebra">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Farz</th>
+                      <th>Wajib</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <th>Meaning</th>
+                      <td>
+                        An obligatory act established with strong evidence.
+                      </td>
+
+                      <td>
+                        A legally required act in schools that distinguish Wajib
+                        from Farz.
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <th>Example</th>
+                      <td>The five daily obligatory prayers.</td>
+
+                      <td>Witr according to the Hanafi school.</td>
+                    </tr>
+
+                    <tr>
+                      <th>Fiqh</th>
+                      <td>Obligatory.</td>
+
+                      <td>
+                        The terminology and legal consequences vary by madhhab.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-            );
-          })}
-        </div>
-
-        {/* Wajib vs Farz */}
-        <div className="card bg-base-100 shadow-md mt-8">
-          <div className="card-body">
-            <h2 className="card-title text-primary">Farz vs Wajib</h2>
-
-            <div className="overflow-x-auto mt-3">
-              <table className="table table-zebra">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Farz</th>
-                    <th>Wajib</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <tr>
-                    <th>Meaning</th>
-                    <td>An obligatory act established with strong evidence.</td>
-
-                    <td>
-                      A legally required act in schools that distinguish Wajib
-                      from Farz.
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <th>Example</th>
-                    <td>The five daily obligatory prayers.</td>
-
-                    <td>Witr according to the Hanafi school.</td>
-                  </tr>
-
-                  <tr>
-                    <th>Fiqh</th>
-                    <td>Obligatory.</td>
-
-                    <td>
-                      The terminology and legal consequences vary by madhhab.
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

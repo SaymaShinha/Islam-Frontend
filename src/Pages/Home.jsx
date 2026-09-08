@@ -11,6 +11,9 @@ import {
 import Divider from "../Components/Divider.jsx";
 import { useNavigate } from "react-router";
 
+import SEO from "../components/SEO";
+import { SEO_DATA } from "../seo/seoData";
+
 function Home() {
   const navigate = useNavigate();
 
@@ -55,6 +58,7 @@ function Home() {
 
   return (
     <>
+      <SEO {...SEO_DATA.home} />
       {/* =====================================
           HERO SECTION
       ===================================== */}

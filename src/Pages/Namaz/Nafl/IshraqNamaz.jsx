@@ -1,19 +1,29 @@
+import SEO from "../../../components/SEO";
+
 export default function IshraqNamaz() {
   return (
-    <PrayerPage
-      icon="🌅"
-      title="Ishraq Prayer"
-      subtitle="A voluntary prayer performed after sunrise."
-      time="After the sun has risen and the prohibited sunrise period has passed, until before Zawal."
-      rakahs="2 or more"
-      steps={[
-        "Wait until after sunrise and the prohibited period immediately around sunrise has ended.",
-        "Make the intention in your heart for Ishraq prayer.",
-        "Pray two rak‘ahs.",
-        "Recite Surah al-Fatihah followed by another portion of the Quran.",
-        "Complete Ruku, Sajdah and the remaining actions normally.",
-      ]}
-    />
+    <>
+      <SEO
+        title="Ishraq Prayer"
+        description="Ishraq Prayer A voluntary prayer performed after sunrise."
+        path="/ishraq-namaz"
+      />
+
+      <PrayerPage
+        icon="🌅"
+        title="Ishraq Prayer"
+        subtitle="A voluntary prayer performed after sunrise."
+        time="After the sun has risen and the prohibited sunrise period has passed, until before Zawal."
+        rakahs="2 or more"
+        steps={[
+          "Wait until after sunrise and the prohibited period immediately around sunrise has ended.",
+          "Make the intention in your heart for Ishraq prayer.",
+          "Pray two rak‘ahs.",
+          "Recite Surah al-Fatihah followed by another portion of the Quran.",
+          "Complete Ruku, Sajdah and the remaining actions normally.",
+        ]}
+      />
+    </>
   );
 }
 

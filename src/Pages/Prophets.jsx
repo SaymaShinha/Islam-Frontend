@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router";
+import SEO from "../components/SEO";
+import { SEO_DATA } from "../seo/seoData";
 
 function Prophets() {
   const navigate = useNavigate();
@@ -193,79 +195,93 @@ function Prophets() {
   ];
 
   return (
-    <div className="min-h-screen bg-base-100 px-4 py-8">
-      {/* Header */}
-      <div className="max-w-4xl mx-auto text-center mb-10">
-        <div className="text-4xl mb-3">☪️</div>
+    <>
+    <SEO {...SEO_DATA.prophets}/>
+    
+    {prophets.map((prophet)=>{
+      <SEO
+        key={prophet.id}
+        title={`${prophet.arabic} ${prophet.name} ${prophet.surah} ${prophet.surah}`}
+        description={prophet.text || `${prophet.description}`}
+        path={`/prophets`}
+        type="article"
+      />;
+    })}
 
-        <h1 className="text-3xl md:text-4xl font-bold text-primary">
-          Prophets Mentioned in the Quran
-        </h1>
+      <div className="min-h-screen bg-base-100 px-4 py-8">
+        {/* Header */}
+        <div className="max-w-4xl mx-auto text-center mb-10">
+          <div className="text-4xl mb-3">☪️</div>
 
-        <p className="mt-3 text-base-content/70 leading-relaxed">
-          The Quran mentions the names of twenty-five prophets. Explore their
-          names and some of the places where they are mentioned in the Quran.
-        </p>
-      </div>
+          <h1 className="text-3xl md:text-4xl font-bold text-primary">
+            Prophets Mentioned in the Quran
+          </h1>
 
-      {/* Prophet Cards */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        {prophets.map((prophet) => (
-          <div
-            key={prophet.id}
-            className="card bg-base-100 border border-base-300 shadow-sm
+          <p className="mt-3 text-base-content/70 leading-relaxed">
+            The Quran mentions the names of twenty-five prophets. Explore their
+            names and some of the places where they are mentioned in the Quran.
+          </p>
+        </div>
+
+        {/* Prophet Cards */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          {prophets.map((prophet) => (
+            <div
+              key={prophet.id}
+              className="card bg-base-100 border border-base-300 shadow-sm
                                    hover:shadow-lg hover:-translate-y-1
                                    transition-all duration-300"
-          >
-            <div className="card-body">
-              {/* Number */}
-              <div className="flex justify-between items-start">
-                <span className="badge badge-primary badge-outline">
-                  {prophet.id}
-                </span>
+            >
+              <div className="card-body">
+                {/* Number */}
+                <div className="flex justify-between items-start">
+                  <span className="badge badge-primary badge-outline">
+                    {prophet.id}
+                  </span>
 
-                <span className="text-2xl font-semibold" dir="rtl">
-                  {prophet.arabic}
-                </span>
-              </div>
+                  <span className="text-2xl font-semibold" dir="rtl">
+                    {prophet.arabic}
+                  </span>
+                </div>
 
-              {/* Name */}
-              <h2 className="card-title text-xl text-primary mt-2">
-                {prophet.name}
-              </h2>
+                {/* Name */}
+                <h2 className="card-title text-xl text-primary mt-2">
+                  {prophet.name}
+                </h2>
 
-              {/* Description */}
-              <p className="text-sm text-base-content/70 leading-relaxed">
-                {prophet.description}
-              </p>
-
-              {/* Reference */}
-              <div className="mt-3 p-2 rounded-lg bg-base-200">
-                <p className="text-xs font-medium">Quran Reference</p>
-
-                <p className="text-xs text-base-content/70 mt-1">
-                  {prophet.surah}
+                {/* Description */}
+                <p className="text-sm text-base-content/70 leading-relaxed">
+                  {prophet.description}
                 </p>
+
+                {/* Reference */}
+                <div className="mt-3 p-2 rounded-lg bg-base-200">
+                  <p className="text-xs font-medium">Quran Reference</p>
+
+                  <p className="text-xs text-base-content/70 mt-1">
+                    {prophet.surah}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* Bottom Note */}
-      <div className="max-w-4xl mx-auto mt-10">
-        <div className="alert alert-success">
-          <div>
-            <h3 className="font-bold">The Prophets of Allah</h3>
+        {/* Bottom Note */}
+        <div className="max-w-4xl mx-auto mt-10">
+          <div className="alert alert-success">
+            <div>
+              <h3 className="font-bold">The Prophets of Allah</h3>
 
-            <p className="text-sm leading-relaxed">
-              Muslims believe in all of Allah's prophets and messengers. We do
-              not reject any of the prophets sent by Allah.
-            </p>
+              <p className="text-sm leading-relaxed">
+                Muslims believe in all of Allah's prophets and messengers. We do
+                not reject any of the prophets sent by Allah.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

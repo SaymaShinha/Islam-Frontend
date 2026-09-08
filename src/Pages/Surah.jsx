@@ -15,6 +15,8 @@ import {
 
 import scrollToTop from "../utils/scrollToTop.js";
 
+import SEO from "../components/SEO.jsx";
+
 const Surah = () => {
   const { surahData } = useLoaderData();
 
@@ -123,112 +125,125 @@ const Surah = () => {
   const nextSurah = surahNumber === 114 ? 1 : surahNumber + 1;
 
   return (
-    <main className="min-h-screen bg-base-200">
-      {/* --------------------------------
+    <>
+      <SEO
+        title={`${surah.identifier} ${surah.surah_en_name} ${surah.surah_en_name_translation}`}
+        description={
+          surah.text ||
+          `Read ${surah.surah_en_name}, Surah ${surah.surahNumber}, and explore its meaning and Islamic teachings.`
+        }
+        path={`/surah/${surah.surahNumber}`}
+        type="article"
+      />
+
+      <main className="min-h-screen bg-base-200">
+        {/* --------------------------------
           Surah Header
       -------------------------------- */}
 
-      <section className="border-b border-base-300 bg-base-100">
-        <div className="mx-auto max-w-5xl px-4 py-8 md:py-12">
-          {/* Navigation */}
+        <section className="border-b border-base-300 bg-base-100">
+          <div className="mx-auto max-w-5xl px-4 py-8 md:py-12">
+            {/* Navigation */}
 
-          <div className="mb-7 flex items-center justify-between">
-            <button
-              onClick={() => navigate(`/surah/${previousSurah}`)}
-              className="btn btn-outline btn-sm rounded-xl"
-            >
-              <ChevronLeft size={18} />
+            <div className="mb-7 flex items-center justify-between">
+              <button
+                onClick={() => navigate(`/surah/${previousSurah}`)}
+                className="btn btn-outline btn-sm rounded-xl"
+              >
+                <ChevronLeft size={18} />
 
-              <span className="hidden sm:inline">Previous</span>
-            </button>
+                <span className="hidden sm:inline">Previous</span>
+              </button>
 
-            <button
-              onClick={() => navigate(`/surah/${nextSurah}`)}
-              className="btn btn-outline btn-sm rounded-xl"
-            >
-              <span className="hidden sm:inline">Next</span>
+              <button
+                onClick={() => navigate(`/surah/${nextSurah}`)}
+                className="btn btn-outline btn-sm rounded-xl"
+              >
+                <span className="hidden sm:inline">Next</span>
 
-              <ChevronRight size={18} />
-            </button>
-          </div>
-
-          {/* Surah information */}
-
-          <div className="text-center">
-            <span className="text-sm font-semibold uppercase tracking-widest text-primary">
-              Surah {surahNumber}
-            </span>
-
-            <h1 className="mt-3 text-4xl font-bold md:text-3xl">
-              {surah.surah_en_name}
-            </h1>
-
-            <p className="mt-2 text-4xl font-semibold text-primary md:text-3xl">
-              {surah.surah_ar_name}
-            </p>
-
-            <p className="mt-4 text-sm opacity-60">
-              {surah.surah_en_name_translation}
-            </p>
-
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
-              <span className="badge badge-outline">
-                {surah.revelation_type}
-              </span>
-
-              <span className="badge badge-outline">
-                {getSurah.length} Ayahs
-              </span>
+                <ChevronRight size={18} />
+              </button>
             </div>
 
-            {surah.note && (
-              <p className="mx-auto mt-4 max-w-2xl text-sm italic opacity-50">
-                {surah.note}
-              </p>
-            )}
-          </div>
-        </div>
-      </section>
+            {/* Surah information */}
 
-      {/* --------------------------------
+            <div className="text-center">
+              <span className="text-sm font-semibold uppercase tracking-widest text-primary">
+                Surah {surahNumber}
+              </span>
+
+              <h1 className="mt-3 text-4xl font-bold md:text-3xl">
+                {surah.surah_en_name}
+              </h1>
+
+              <p className="mt-2 text-4xl font-semibold text-primary md:text-3xl">
+                {surah.surah_ar_name}
+              </p>
+
+              <p className="mt-4 text-sm opacity-60">
+                {surah.surah_en_name_translation}
+              </p>
+
+              <div className="mt-4 flex flex-wrap items-center justify-center gap-2">
+                <span className="badge badge-outline">
+                  {surah.revelation_type}
+                </span>
+
+                <span className="badge badge-outline">
+                  {getSurah.length} Ayahs
+                </span>
+              </div>
+
+              {surah.note && (
+                <p className="mx-auto mt-4 max-w-2xl text-sm italic opacity-50">
+                  {surah.note}
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* --------------------------------
           Reader
       -------------------------------- */}
 
-      <section className="mx-auto max-w-5xl px-4 py-8 md:py-12">
-        {/* Bismillah */}
+        <section className="mx-auto max-w-5xl px-4 py-8 md:py-12">
+          {/* Bismillah */}
 
-        <div className="mb-8 rounded-2xl border border-primary/10 bg-primary/5 p-7 text-center">
-          <p className="mb-4 text-sm opacity-60">
-            أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ
-          </p>
-
-          {surahNumber !== 9 && (
-            <p className="text-3xl font-semibold leading-loose text-primary">
-              بِسْمِ ٱللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+          <div className="mb-8 rounded-2xl border border-primary/10 bg-primary/5 p-7 text-center">
+            <p className="mb-4 text-sm opacity-60">
+              أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ
             </p>
-          )}
-        </div>
 
-        {/* Translation indicator */}
-
-        <div className="mb-5 flex items-center justify-between rounded-xl border border-base-300 bg-base-100 px-4 py-3">
-          <div className="flex items-center gap-2 text-sm">
-            <Languages size={17} className="text-primary" />
-
-            <span className="font-medium">Translation</span>
+            {surahNumber !== 9 && (
+              <p className="text-3xl font-semibold leading-loose text-primary">
+                بِسْمِ ٱللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+              </p>
+            )}
           </div>
 
-          <span className="badge badge-primary badge-outline">{transLang}</span>
-        </div>
+          {/* Translation indicator */}
 
-        {/* Ayahs */}
+          <div className="mb-5 flex items-center justify-between rounded-xl border border-base-300 bg-base-100 px-4 py-3">
+            <div className="flex items-center gap-2 text-sm">
+              <Languages size={17} className="text-primary" />
 
-        <div className="space-y-5">
-          {getSurah.map((ayah, i) => (
-            <article
-              key={ayah.id}
-              id={`ayah-${i + 1}`}
-              className={`
+              <span className="font-medium">Translation</span>
+            </div>
+
+            <span className="badge badge-primary badge-outline">
+              {transLang}
+            </span>
+          </div>
+
+          {/* Ayahs */}
+
+          <div className="space-y-5">
+            {getSurah.map((ayah, i) => (
+              <article
+                key={ayah.id}
+                id={`ayah-${i + 1}`}
+                className={`
                 scroll-mt-28
                 rounded-2xl
                 border
@@ -243,85 +258,86 @@ const Surah = () => {
                     : "border-base-300"
                 }
               `}
-            >
-              {/* Ayah number */}
-
-              <div className="mb-6 flex items-center justify-between">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
-                  {i + 1}
-                </span>
-
-                <span className="text-xs uppercase tracking-wider opacity-40">
-                  Ayah
-                </span>
-              </div>
-
-              {/* Arabic */}
-
-              <p
-                dir="rtl"
-                className="text-right text-3xl font-medium leading-[2.2] md:text-2xl"
               >
-                {ayah.text}
-              </p>
+                {/* Ayah number */}
 
-              {/* Transliteration */}
+                <div className="mb-6 flex items-center justify-between">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                    {i + 1}
+                  </span>
 
-              {englishTransliterationData[i]?.text && (
-                <div className="mt-7 rounded-xl bg-primary/5 p-4">
-                  <p className="text-sm leading-7 italic text-primary/80">
-                    {englishTransliterationData[i]?.text}
-                  </p>
+                  <span className="text-xs uppercase tracking-wider opacity-40">
+                    Ayah
+                  </span>
                 </div>
-              )}
 
-              {/* Translation */}
+                {/* Arabic */}
 
-              {transSurah[i]?.text && (
-                <div className="mt-4">
-                  <p className="text-base leading-8 opacity-75 md:text-lg">
-                    {transSurah[i]?.text}
-                  </p>
-                </div>
-              )}
-            </article>
-          ))}
-        </div>
+                <p
+                  dir="rtl"
+                  className="text-right text-3xl font-medium leading-[2.2] md:text-2xl"
+                >
+                  {ayah.text}
+                </p>
 
-        {/* Bottom navigation */}
+                {/* Transliteration */}
 
-        <div className="mt-10 flex items-center justify-between">
-          <button
-            onClick={() => navigate(`/surah/${previousSurah}`)}
-            className="btn btn-outline rounded-xl"
-          >
-            <ChevronLeft size={18} />
-            Previous
-          </button>
+                {englishTransliterationData[i]?.text && (
+                  <div className="mt-7 rounded-xl bg-primary/5 p-4">
+                    <p className="text-sm leading-7 italic text-primary/80">
+                      {englishTransliterationData[i]?.text}
+                    </p>
+                  </div>
+                )}
 
-          <button
-            onClick={() =>
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              })
-            }
-            className="btn btn-circle btn-ghost"
-            title="Back to top"
-          >
-            <ArrowUp size={18} />
-          </button>
+                {/* Translation */}
 
-          <button
-            onClick={() => navigate(`/surah/${nextSurah}`)}
-            className="btn btn-primary rounded-xl"
-          >
-            Next
-            <ChevronRight size={18} />
-          </button>
-        </div>
-      </section>
-    </main>
+                {transSurah[i]?.text && (
+                  <div className="mt-4">
+                    <p className="text-base leading-8 opacity-75 md:text-lg">
+                      {transSurah[i]?.text}
+                    </p>
+                  </div>
+                )}
+              </article>
+            ))}
+          </div>
+
+          {/* Bottom navigation */}
+
+          <div className="mt-10 flex items-center justify-between">
+            <button
+              onClick={() => navigate(`/surah/${previousSurah}`)}
+              className="btn btn-outline rounded-xl"
+            >
+              <ChevronLeft size={18} />
+              Previous
+            </button>
+
+            <button
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })
+              }
+              className="btn btn-circle btn-ghost"
+              title="Back to top"
+            >
+              <ArrowUp size={18} />
+            </button>
+
+            <button
+              onClick={() => navigate(`/surah/${nextSurah}`)}
+              className="btn btn-primary rounded-xl"
+            >
+              Next
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </section>
+      </main>
+    </>
   );
 };
 

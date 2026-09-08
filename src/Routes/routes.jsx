@@ -89,15 +89,15 @@ const router = createBrowserRouter([
         Component: NaflNamaz,
       },
       {
-        path: "tahajjud-namaz",
+        path: "/tahajjud-namaz",
         Component: TahajjudNamaz,
       },
       {
-        path: "ishraq-namaz",
+        path: "/ishraq-namaz",
         Component: IshraqNamaz,
       },
       {
-        path: "istikhara-namaz",
+        path: "/istikhara-namaz",
         Component: IstikharaNamaz,
       },
       {

@@ -1,3 +1,5 @@
+import SEO from "../../components/SEO";
+
 export default function FixMistakesOfPrayer() {
   const mistakes = [
     {
@@ -82,199 +84,208 @@ export default function FixMistakesOfPrayer() {
   ];
 
   return (
-    <div className="min-h-screen bg-base-100">
-      {/* Header */}
-      <section className="px-4 py-10 md:py-14 text-center bg-base-200">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-primary font-semibold mb-2">
-            Salah • Prayer Guide
-          </p>
+    <>
+      <SEO
+        title="Fix Mistakes Of Prayer"
+        description="Common Mistakes in Prayer
+Prayer is one of the most important acts of worship in Islam. Learning the common mistakes can help us improve the quality, concentration, and correctness of our Salah."
+        path="/fix-mistakes-of-prayer"
+      />
 
-          <h1 className="text-3xl md:text-5xl font-bold text-base-content mb-4">
-            Common Mistakes in Prayer
-          </h1>
+      <div className="min-h-screen bg-base-100">
+        {/* Header */}
+        <section className="px-4 py-10 md:py-14 text-center bg-base-200">
+          <div className="max-w-4xl mx-auto">
+            <p className="text-primary font-semibold mb-2">
+              Salah • Prayer Guide
+            </p>
 
-          <p className="max-w-2xl mx-auto text-base-content/70 leading-relaxed">
-            Prayer is one of the most important acts of worship in Islam.
-            Learning the common mistakes can help us improve the quality,
-            concentration, and correctness of our Salah.
-          </p>
-        </div>
-      </section>
+            <h1 className="text-3xl md:text-5xl font-bold text-base-content mb-4">
+              Common Mistakes in Prayer
+            </h1>
 
-      {/* Important Note */}
-      <section className="max-w-5xl mx-auto px-4 py-8">
-        <div className="alert alert-info shadow-sm">
-          <div>
-            <h2 className="font-bold text-lg mb-1">Important Reminder</h2>
-
-            <p className="text-sm leading-relaxed">
-              Not every mistake has the same ruling. Some mistakes may affect
-              the validity of prayer, while others may affect its perfection or
-              concentration. For questions about a specific situation, consult a
-              qualified Islamic scholar.
+            <p className="max-w-2xl mx-auto text-base-content/70 leading-relaxed">
+              Prayer is one of the most important acts of worship in Islam.
+              Learning the common mistakes can help us improve the quality,
+              concentration, and correctness of our Salah.
             </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Mistakes */}
-      <section className="max-w-6xl mx-auto px-4 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {mistakes.map((mistake) => (
-            <article
-              key={mistake.number}
-              className="card bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition"
-            >
-              <div className="card-body">
-                <div className="flex items-start gap-4">
-                  {/* Number */}
-                  <div className="flex-none">
-                    <div className="w-10 h-10 rounded-full bg-primary text-primary-content flex items-center justify-center font-bold">
-                      {mistake.number}
+        {/* Important Note */}
+        <section className="max-w-5xl mx-auto px-4 py-8">
+          <div className="alert alert-info shadow-sm">
+            <div>
+              <h2 className="font-bold text-lg mb-1">Important Reminder</h2>
+
+              <p className="text-sm leading-relaxed">
+                Not every mistake has the same ruling. Some mistakes may affect
+                the validity of prayer, while others may affect its perfection
+                or concentration. For questions about a specific situation,
+                consult a qualified Islamic scholar.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Mistakes */}
+        <section className="max-w-6xl mx-auto px-4 pb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {mistakes.map((mistake) => (
+              <article
+                key={mistake.number}
+                className="card bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition"
+              >
+                <div className="card-body">
+                  <div className="flex items-start gap-4">
+                    {/* Number */}
+                    <div className="flex-none">
+                      <div className="w-10 h-10 rounded-full bg-primary text-primary-content flex items-center justify-center font-bold">
+                        {mistake.number}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Content */}
-                  <div>
-                    <h2 className="card-title text-lg md:text-xl">
-                      {mistake.title}
-                    </h2>
+                    {/* Content */}
+                    <div>
+                      <h2 className="card-title text-lg md:text-xl">
+                        {mistake.title}
+                      </h2>
 
-                    <p className="text-base-content/70 mt-2 leading-relaxed">
-                      {mistake.description}
-                    </p>
-
-                    <div className="mt-4 p-4 rounded-lg bg-base-200">
-                      <p className="text-sm font-semibold text-primary mb-1">
-                        How to improve
+                      <p className="text-base-content/70 mt-2 leading-relaxed">
+                        {mistake.description}
                       </p>
 
-                      <p className="text-sm text-base-content/80 leading-relaxed">
-                        {mistake.correction}
-                      </p>
+                      <div className="mt-4 p-4 rounded-lg bg-base-200">
+                        <p className="text-sm font-semibold text-primary mb-1">
+                          How to improve
+                        </p>
+
+                        <p className="text-sm text-base-content/80 leading-relaxed">
+                          {mistake.correction}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      {/* Before Prayer */}
-      <section className="bg-base-200">
-        <div className="max-w-5xl mx-auto px-4 py-12">
+        {/* Before Prayer */}
+        <section className="bg-base-200">
+          <div className="max-w-5xl mx-auto px-4 py-12">
+            <div className="text-center mb-8">
+              <p className="text-primary font-semibold">Before Salah</p>
+
+              <h2 className="text-2xl md:text-3xl font-bold mt-2">
+                Prepare Yourself for Prayer
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="p-5 rounded-xl bg-base-100 border border-base-300">
+                <h3 className="font-bold mb-2">1. Purity</h3>
+                <p className="text-sm text-base-content/70">
+                  Make sure you have the required purification before prayer.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-xl bg-base-100 border border-base-300">
+                <h3 className="font-bold mb-2">2. Clothing</h3>
+                <p className="text-sm text-base-content/70">
+                  Ensure your clothing meets the requirements for Salah.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-xl bg-base-100 border border-base-300">
+                <h3 className="font-bold mb-2">3. Qibla</h3>
+                <p className="text-sm text-base-content/70">
+                  Face the Qibla before beginning the prayer.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-xl bg-base-100 border border-base-300">
+                <h3 className="font-bold mb-2">4. Intention</h3>
+                <p className="text-sm text-base-content/70">
+                  Know which prayer you are performing and begin with sincere
+                  intention.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* During Prayer */}
+        <section className="max-w-5xl mx-auto px-4 py-12">
           <div className="text-center mb-8">
-            <p className="text-primary font-semibold">Before Salah</p>
+            <p className="text-primary font-semibold">During Salah</p>
 
             <h2 className="text-2xl md:text-3xl font-bold mt-2">
-              Prepare Yourself for Prayer
+              Keep These Things in Mind
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="p-5 rounded-xl bg-base-100 border border-base-300">
-              <h3 className="font-bold mb-2">1. Purity</h3>
-              <p className="text-sm text-base-content/70">
-                Make sure you have the required purification before prayer.
-              </p>
+          <div className="space-y-4">
+            <div className="flex gap-4 items-start p-5 rounded-xl border border-base-300 bg-base-100">
+              <span className="text-primary text-xl">✓</span>
+
+              <div>
+                <h3 className="font-semibold">Pray with calmness</h3>
+                <p className="text-sm text-base-content/70 mt-1">
+                  Avoid rushing from one position to another.
+                </p>
+              </div>
             </div>
 
-            <div className="p-5 rounded-xl bg-base-100 border border-base-300">
-              <h3 className="font-bold mb-2">2. Clothing</h3>
-              <p className="text-sm text-base-content/70">
-                Ensure your clothing meets the requirements for Salah.
-              </p>
+            <div className="flex gap-4 items-start p-5 rounded-xl border border-base-300 bg-base-100">
+              <span className="text-primary text-xl">✓</span>
+
+              <div>
+                <h3 className="font-semibold">Focus on your worship</h3>
+                <p className="text-sm text-base-content/70 mt-1">
+                  Try to keep your heart and mind focused on Allah.
+                </p>
+              </div>
             </div>
 
-            <div className="p-5 rounded-xl bg-base-100 border border-base-300">
-              <h3 className="font-bold mb-2">3. Qibla</h3>
-              <p className="text-sm text-base-content/70">
-                Face the Qibla before beginning the prayer.
-              </p>
+            <div className="flex gap-4 items-start p-5 rounded-xl border border-base-300 bg-base-100">
+              <span className="text-primary text-xl">✓</span>
+
+              <div>
+                <h3 className="font-semibold">Follow the correct sequence</h3>
+                <p className="text-sm text-base-content/70 mt-1">
+                  Perform the movements and recitations in their proper order.
+                </p>
+              </div>
             </div>
 
-            <div className="p-5 rounded-xl bg-base-100 border border-base-300">
-              <h3 className="font-bold mb-2">4. Intention</h3>
-              <p className="text-sm text-base-content/70">
-                Know which prayer you are performing and begin with sincere
-                intention.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+            <div className="flex gap-4 items-start p-5 rounded-xl border border-base-300 bg-base-100">
+              <span className="text-primary text-xl">✓</span>
 
-      {/* During Prayer */}
-      <section className="max-w-5xl mx-auto px-4 py-12">
-        <div className="text-center mb-8">
-          <p className="text-primary font-semibold">During Salah</p>
-
-          <h2 className="text-2xl md:text-3xl font-bold mt-2">
-            Keep These Things in Mind
-          </h2>
-        </div>
-
-        <div className="space-y-4">
-          <div className="flex gap-4 items-start p-5 rounded-xl border border-base-300 bg-base-100">
-            <span className="text-primary text-xl">✓</span>
-
-            <div>
-              <h3 className="font-semibold">Pray with calmness</h3>
-              <p className="text-sm text-base-content/70 mt-1">
-                Avoid rushing from one position to another.
-              </p>
+              <div>
+                <h3 className="font-semibold">Avoid unnecessary movement</h3>
+                <p className="text-sm text-base-content/70 mt-1">
+                  Keep your body still unless movement is required.
+                </p>
+              </div>
             </div>
           </div>
+        </section>
 
-          <div className="flex gap-4 items-start p-5 rounded-xl border border-base-300 bg-base-100">
-            <span className="text-primary text-xl">✓</span>
+        {/* Quran Reminder */}
+        <section className="px-4 pb-14">
+          <div className="max-w-4xl mx-auto text-center rounded-2xl bg-primary text-primary-content p-8 md:p-10 shadow">
+            <div className="text-3xl mb-4">🕌</div>
 
-            <div>
-              <h3 className="font-semibold">Focus on your worship</h3>
-              <p className="text-sm text-base-content/70 mt-1">
-                Try to keep your heart and mind focused on Allah.
-              </p>
-            </div>
+            <p className="text-lg md:text-xl font-medium leading-relaxed">
+              "Indeed, prayer prohibits immorality and wrongdoing."
+            </p>
+
+            <p className="mt-3 text-sm opacity-80">Surah Al-Ankabut — 29:45</p>
           </div>
-
-          <div className="flex gap-4 items-start p-5 rounded-xl border border-base-300 bg-base-100">
-            <span className="text-primary text-xl">✓</span>
-
-            <div>
-              <h3 className="font-semibold">Follow the correct sequence</h3>
-              <p className="text-sm text-base-content/70 mt-1">
-                Perform the movements and recitations in their proper order.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex gap-4 items-start p-5 rounded-xl border border-base-300 bg-base-100">
-            <span className="text-primary text-xl">✓</span>
-
-            <div>
-              <h3 className="font-semibold">Avoid unnecessary movement</h3>
-              <p className="text-sm text-base-content/70 mt-1">
-                Keep your body still unless movement is required.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quran Reminder */}
-      <section className="px-4 pb-14">
-        <div className="max-w-4xl mx-auto text-center rounded-2xl bg-primary text-primary-content p-8 md:p-10 shadow">
-          <div className="text-3xl mb-4">🕌</div>
-
-          <p className="text-lg md:text-xl font-medium leading-relaxed">
-            "Indeed, prayer prohibits immorality and wrongdoing."
-          </p>
-
-          <p className="mt-3 text-sm opacity-80">Surah Al-Ankabut — 29:45</p>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   );
 }

@@ -3,9 +3,11 @@ import "./App.css";
 import NavbarHeader from "./Components/NavbarHeader.jsx";
 import WebFooter from "./Components/WebFooter.jsx";
 
+
 function App() {
   return (
     <>
+
       <NavbarHeader></NavbarHeader>
       <div className="flex flex-col min-h-screen">
         <div className="flex-1">
@@ -14,7 +16,7 @@ function App() {
         <WebFooter></WebFooter>
       </div>
     </>
-  )
+  );
 }
 
 export default App

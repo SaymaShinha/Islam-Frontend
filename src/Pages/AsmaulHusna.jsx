@@ -11,6 +11,8 @@ import {
 import { asmaUlHusna } from "../Functions/getDataFromAPI.js";
 import Spinner from "../Components/Spinner.jsx";
 import Divider from "../Components/Divider.jsx";
+import SEO from "../components/SEO.jsx";
+import { SEO_DATA } from "../seo/seoData.js";
 
 function AsmaulHusna() {
   const [names, setNames] = useState([]);
@@ -166,223 +168,237 @@ function AsmaulHusna() {
   });
 
   return (
-    <div className="min-h-screen bg-base-200">
-      {/* =====================================
+    <>
+    <SEO {...SEO_DATA.asma} />
+    
+      {filteredNames.map((name) => (
+        <SEO
+          key={name.number}
+          title={`${name.number} ${name.meaning} ${name.transliteration} ${name.translation}`}
+          description={name.meaning || `Asma ul husna, 99 beautiful names of Allah.`}
+          path={`/asma-ul-husna`}
+          type="article"
+        />
+      ))}
+
+      <div className="min-h-screen bg-base-200">
+        {/* =====================================
           HERO
       ===================================== */}
 
-      <section className="relative overflow-hidden bg-base-100">
-        <div className="max-w-6xl mx-auto px-4 py-14 md:py-20 text-center">
-          <div className="flex justify-center mb-5">
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
-              <Sparkles size={32} />
+        <section className="relative overflow-hidden bg-base-100">
+          <div className="max-w-6xl mx-auto px-4 py-14 md:py-20 text-center">
+            <div className="flex justify-center mb-5">
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                <Sparkles size={32} />
+              </div>
+            </div>
+
+            {loading && (
+              <div className="flex justify-center py-16">
+                <Spinner text="Loading the beautiful names..." />
+              </div>
+            )}
+
+            <p className="text-primary font-semibold tracking-wide uppercase text-sm">
+              Beautiful Names of Allah
+            </p>
+
+            <h1 className="mt-3 text-4xl md:text-5xl font-bold text-base-content">
+              Asma ul Husna
+            </h1>
+
+            <p className="mt-4 text-base-content/60 max-w-2xl mx-auto text-base md:text-lg">
+              Explore the 99 beautiful names of Allah, their meanings,
+              translations, and pronunciation.
+            </p>
+
+            <div className="mt-6">
+              <Divider />
             </div>
           </div>
+        </section>
 
-          {loading && (
-            <div className="flex justify-center py-16">
-              <Spinner text="Loading the beautiful names..." />
-            </div>
-          )}
-
-          <p className="text-primary font-semibold tracking-wide uppercase text-sm">
-            Beautiful Names of Allah
-          </p>
-
-          <h1 className="mt-3 text-4xl md:text-5xl font-bold text-base-content">
-            Asma ul Husna
-          </h1>
-
-          <p className="mt-4 text-base-content/60 max-w-2xl mx-auto text-base md:text-lg">
-            Explore the 99 beautiful names of Allah, their meanings,
-            translations, and pronunciation.
-          </p>
-
-          <div className="mt-6">
-            <Divider />
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================
+        {/* =====================================
           STICKY TOOLBAR
       ===================================== */}
 
-      <div className="sticky top-0 z-40 bg-base-100/95 backdrop-blur-md border-b border-base-300 shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-3">
-          <div className="flex flex-col md:flex-row gap-3 items-stretch md:items-center">
-            {/* Search */}
+        <div className="sticky top-0 z-40 bg-base-100/95 backdrop-blur-md border-b border-base-300 shadow-sm">
+          <div className="max-w-6xl mx-auto px-4 py-3">
+            <div className="flex flex-col md:flex-row gap-3 items-stretch md:items-center">
+              {/* Search */}
 
-            <div className="relative flex-1">
-              <Search
-                size={19}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-base-content/50"
-              />
+              <div className="relative flex-1">
+                <Search
+                  size={19}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-base-content/50"
+                />
 
-              <input
-                type="text"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search a name or meaning..."
-                className="input input-bordered w-full pl-10 rounded-xl focus:outline-none focus:border-primary"
-              />
+                <input
+                  type="text"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Search a name or meaning..."
+                  className="input input-bordered w-full pl-10 rounded-xl focus:outline-none focus:border-primary"
+                />
+              </div>
+
+              {/* Language */}
+
+              <div className="relative">
+                <Languages
+                  size={18}
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-base-content/50 pointer-events-none"
+                />
+
+                <select
+                  value={lang}
+                  onChange={(e) => setLang(e.target.value)}
+                  className="select select-bordered w-full md:w-64 pl-10 rounded-xl"
+                  aria-label="Select language"
+                >
+                  {languages.map((language) => (
+                    <option key={language.code} value={language.code}>
+                      {language.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
             </div>
 
-            {/* Language */}
+            {/* Search count */}
 
-            <div className="relative">
-              <Languages
-                size={18}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-base-content/50 pointer-events-none"
-              />
-
-              <select
-                value={lang}
-                onChange={(e) => setLang(e.target.value)}
-                className="select select-bordered w-full md:w-64 pl-10 rounded-xl"
-                aria-label="Select language"
-              >
-                {languages.map((language) => (
-                  <option key={language.code} value={language.code}>
-                    {language.name}
-                  </option>
-                ))}
-              </select>
-            </div>
+            {search.trim() && (
+              <p className="text-sm text-base-content/60 mt-3">
+                <span className="font-semibold text-primary">
+                  {filteredNames.length}
+                </span>{" "}
+                {filteredNames.length === 1 ? "name" : "names"} found for{" "}
+                <span className="font-semibold text-base-content">
+                  "{search}"
+                </span>
+              </p>
+            )}
           </div>
-
-          {/* Search count */}
-
-          {search.trim() && (
-            <p className="text-sm text-base-content/60 mt-3">
-              <span className="font-semibold text-primary">
-                {filteredNames.length}
-              </span>{" "}
-              {filteredNames.length === 1 ? "name" : "names"} found for{" "}
-              <span className="font-semibold text-base-content">
-                "{search}"
-              </span>
-            </p>
-          )}
         </div>
-      </div>
 
-      {/* =====================================
+        {/* =====================================
           MAIN CONTENT
       ===================================== */}
 
-      <main className="max-w-6xl mx-auto px-4 py-10">
-        {/* Loading */}
+        <main className="max-w-6xl mx-auto px-4 py-10">
+          {/* Loading */}
 
-        {/* Empty */}
+          {/* Empty */}
 
-        {!loading && filteredNames.length === 0 && (
-          <div className="text-center py-20">
-            <div className="w-16 h-16 mx-auto rounded-full bg-base-300 flex items-center justify-center mb-4">
-              <Search size={28} className="text-base-content/50" />
+          {!loading && filteredNames.length === 0 && (
+            <div className="text-center py-20">
+              <div className="w-16 h-16 mx-auto rounded-full bg-base-300 flex items-center justify-center mb-4">
+                <Search size={28} className="text-base-content/50" />
+              </div>
+
+              <h2 className="text-xl font-semibold">No names found</h2>
+
+              <p className="text-base-content/60 mt-2">
+                Try searching with another word.
+              </p>
             </div>
+          )}
 
-            <h2 className="text-xl font-semibold">No names found</h2>
-
-            <p className="text-base-content/60 mt-2">
-              Try searching with another word.
-            </p>
-          </div>
-        )}
-
-        {/* =====================================
+          {/* =====================================
             CARDS
         ===================================== */}
 
-        {!loading && filteredNames.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {filteredNames.map((name) => (
-              <article
-                key={name.number}
-                className="group bg-base-100 rounded-2xl border border-base-300 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
-              >
-                {/* Card header */}
+          {!loading && filteredNames.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+              {filteredNames.map((name) => (
+                <article
+                  key={name.number}
+                  className="group bg-base-100 rounded-2xl border border-base-300 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                >
+                  {/* Card header */}
 
-                <div className="p-5">
-                  <div className="flex items-center justify-between">
-                    <span className="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
-                      {name.number}
-                    </span>
+                  <div className="p-5">
+                    <div className="flex items-center justify-between">
+                      <span className="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-bold text-sm">
+                        {name.number}
+                      </span>
 
-                    <Heart
-                      size={18}
-                      className="text-base-content/20 group-hover:text-primary transition"
-                    />
-                  </div>
-
-                  {/* Arabic / Main name */}
-
-                  <div className="text-center py-6">
-                    <h2
-                      dir="rtl"
-                      className="text-3xl md:text-4xl font-semibold text-primary leading-relaxed"
-                    >
-                      {name.name}
-                    </h2>
-                  </div>
-
-                  {/* Transliteration */}
-
-                  <p className="text-center font-medium text-base-content">
-                    {name.transliteration}
-                  </p>
-
-                  {/* Translation */}
-
-                  <p className="text-center text-primary mt-2 font-medium">
-                    {name.translation}
-                  </p>
-
-                  {/* Meaning */}
-
-                  <div className="mt-5 pt-4 border-t border-base-300">
-                    <p className="text-sm leading-6 text-base-content/65 text-center">
-                      {name.meaning}
-                    </p>
-                  </div>
-
-                  {/* Audio */}
-
-                  <div className="mt-5">
-                    <div className="flex items-center gap-2 text-xs text-base-content/50 mb-2">
-                      <Volume2 size={15} />
-                      <span>Listen</span>
+                      <Heart
+                        size={18}
+                        className="text-base-content/20 group-hover:text-primary transition"
+                      />
                     </div>
 
-                    <audio controls preload="none" className="w-full h-9">
-                      <source
-                        src={`https://islamicapi.com/${name.audio}`}
-                        type="audio/mp3"
-                      />
-                      Your browser does not support audio.
-                    </audio>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        )}
-      </main>
+                    {/* Arabic / Main name */}
 
-      {/* =====================================
+                    <div className="text-center py-6">
+                      <h2
+                        dir="rtl"
+                        className="text-3xl md:text-4xl font-semibold text-primary leading-relaxed"
+                      >
+                        {name.name}
+                      </h2>
+                    </div>
+
+                    {/* Transliteration */}
+
+                    <p className="text-center font-medium text-base-content">
+                      {name.transliteration}
+                    </p>
+
+                    {/* Translation */}
+
+                    <p className="text-center text-primary mt-2 font-medium">
+                      {name.translation}
+                    </p>
+
+                    {/* Meaning */}
+
+                    <div className="mt-5 pt-4 border-t border-base-300">
+                      <p className="text-sm leading-6 text-base-content/65 text-center">
+                        {name.meaning}
+                      </p>
+                    </div>
+
+                    {/* Audio */}
+
+                    <div className="mt-5">
+                      <div className="flex items-center gap-2 text-xs text-base-content/50 mb-2">
+                        <Volume2 size={15} />
+                        <span>Listen</span>
+                      </div>
+
+                      <audio controls preload="none" className="w-full h-9">
+                        <source
+                          src={`https://islamicapi.com/${name.audio}`}
+                          type="audio/mp3"
+                        />
+                        Your browser does not support audio.
+                      </audio>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+        </main>
+
+        {/* =====================================
           SCROLL TOP
       ===================================== */}
 
-      {showTop && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 btn btn-circle btn-primary shadow-lg no-print"
-          aria-label="Scroll to top"
-        >
-          <ArrowUp size={20} />
-        </button>
-      )}
-    </div>
+        {showTop && (
+          <button
+            onClick={scrollToTop}
+            className="fixed bottom-6 right-6 z-50 btn btn-circle btn-primary shadow-lg no-print"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp size={20} />
+          </button>
+        )}
+      </div>
+    </>
   );
 }
 

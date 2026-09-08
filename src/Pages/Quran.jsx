@@ -9,6 +9,9 @@ import scrollToTop from "../utils/scrollToTop.js";
 
 import highlightText from "../utils/highlightText.jsx";
 
+import SEO from "../components/SEO.jsx";
+import { SEO_DATA } from "../seo/seoData.js";
+
 function Quran() {
   const { quranData } = useLoaderData();
 
@@ -263,6 +266,22 @@ function Quran() {
 
   return (
     <>
+    <SEO {...SEO_DATA.quran}/>
+
+    {surahData.map((surah)=>{
+      <SEO
+        key={surah.id}
+        title={`${surah.identifier} ${surah.surah_en_name} ${surah.surah_ar_name} ${surah.surah_en_name_translation}`}
+        description={
+          surah.text ||
+          `Read ${surah.surah_en_name}, Surah ${surah.surahNumber}, ${surah.revelation_type} ( ${surah.total_ayah} ) and explore its meaning and Islamic teachings.`
+        }
+        path={`/quran`}
+        type="article"
+      />;
+    })}
+
+
       <div className="drawer lg:drawer-open min-h-screen w-full max-w-full overflow-x-hidden bg-base-200">
         <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
 
@@ -484,7 +503,6 @@ function Quran() {
           ===================================== */}
 
           <main className="mx-auto w-full max-w-7xl min-w-0 px-4 py-8">
-
             {/* =================================
                 SEARCH RESULTS
             ================================= */}
@@ -545,7 +563,7 @@ function Quran() {
                     </div>
 
                     <p className="mt-4 break-words leading-8 text-base-content/80">
-                      {highlightText(ayah.text, searchedWord) }
+                      {highlightText(ayah.text, searchedWord)}
                     </p>
                   </article>
                 ))}

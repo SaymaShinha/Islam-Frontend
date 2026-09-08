@@ -1,67 +1,77 @@
+import SEO
+ from "../../../components/SEO";
 export default function TahajjudNamaz() {
   return (
-    <div className="max-w-5xl mx-auto p-4 md:p-6">
-      <Header
-        icon="🌙"
+    <>
+      <SEO
         title="Tahajjud Prayer"
-        subtitle="A voluntary night prayer and an opportunity for quiet worship."
+        description="Tahajjud is a voluntary prayer performed during the night after sleeping. Its time continues until the beginning of Fajr."
+        path="/tahajjud-namaz"
       />
 
-      <Info type="success">
-        Tahajjud is a voluntary prayer performed during the night after
-        sleeping. Its time continues until the beginning of Fajr.
-      </Info>
-
-      <Section title="Basic Information">
-        <Table
-          rows={[
-            ["Type", "Nafl / voluntary prayer"],
-            ["Time", "After Isha and preferably after sleeping, until Fajr"],
-            ["Rak‘ahs", "At least 2; additional rak‘ahs may be prayed"],
-            ["Congregation", "Normally prayed individually"],
-            ["Best Time", "The last third of the night"],
-          ]}
+      <div className="max-w-5xl mx-auto p-4 md:p-6">
+        <Header
+          icon="🌙"
+          title="Tahajjud Prayer"
+          subtitle="A voluntary night prayer and an opportunity for quiet worship."
         />
-      </Section>
 
-      <Section title="How to Pray Tahajjud">
-        <Step n="1" title="Sleep and wake">
-          Tahajjud is traditionally understood as night prayer performed after
-          sleeping and waking during the night.
-        </Step>
+        <Info type="success">
+          Tahajjud is a voluntary prayer performed during the night after
+          sleeping. Its time continues until the beginning of Fajr.
+        </Info>
 
-        <Step n="2" title="Make intention">
-          Make the intention in your heart to pray Tahajjud for Allah.
-        </Step>
+        <Section title="Basic Information">
+          <Table
+            rows={[
+              ["Type", "Nafl / voluntary prayer"],
+              ["Time", "After Isha and preferably after sleeping, until Fajr"],
+              ["Rak‘ahs", "At least 2; additional rak‘ahs may be prayed"],
+              ["Congregation", "Normally prayed individually"],
+              ["Best Time", "The last third of the night"],
+            ]}
+          />
+        </Section>
 
-        <Step n="3" title="Pray two rak‘ahs">
-          Begin with two rak‘ahs. You may pray additional rak‘ahs afterward.
-        </Step>
+        <Section title="How to Pray Tahajjud">
+          <Step n="1" title="Sleep and wake">
+            Tahajjud is traditionally understood as night prayer performed after
+            sleeping and waking during the night.
+          </Step>
 
-        <Step n="4" title="Recitation">
-          Recite Surah al-Fatihah followed by another portion of the Quran.
-        </Step>
+          <Step n="2" title="Make intention">
+            Make the intention in your heart to pray Tahajjud for Allah.
+          </Step>
 
-        <Step n="5" title="Complete the prayer">
-          Perform Ruku, Sajdah and the remaining actions normally.
-        </Step>
+          <Step n="3" title="Pray two rak‘ahs">
+            Begin with two rak‘ahs. You may pray additional rak‘ahs afterward.
+          </Step>
 
-        <Step n="6" title="Make dua">
-          Take time after the prayer to make sincere dua to Allah.
-        </Step>
-      </Section>
+          <Step n="4" title="Recitation">
+            Recite Surah al-Fatihah followed by another portion of the Quran.
+          </Step>
 
-      <Section title="Important Points">
-        <List
-          items={[
-            "Tahajjud is not one of the five obligatory prayers.",
-            "There is no fixed requirement to pray a specific number of rak‘ahs.",
-            "Pray according to your ability.",
-            "Witr is generally prayed after the night prayer.",
-          ]}
-        />
-      </Section>
-    </div>
+          <Step n="5" title="Complete the prayer">
+            Perform Ruku, Sajdah and the remaining actions normally.
+          </Step>
+
+          <Step n="6" title="Make dua">
+            Take time after the prayer to make sincere dua to Allah.
+          </Step>
+        </Section>
+
+        <Section title="Important Points">
+          <List
+            items={[
+              "Tahajjud is not one of the five obligatory prayers.",
+              "There is no fixed requirement to pray a specific number of rak‘ahs.",
+              "Pray according to your ability.",
+              "Witr is generally prayed after the night prayer.",
+            ]}
+          />
+        </Section>
+      </div>
+    </>
   );
 }
 

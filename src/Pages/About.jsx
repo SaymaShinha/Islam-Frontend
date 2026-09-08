@@ -8,9 +8,14 @@ import {
 } from "lucide-react";
 
 import Divider from "../Components/Divider.jsx";
+import SEO from "../components/SEO.jsx";
+import { SEO_DATA } from "../seo/seoData.js";
 
 function About() {
   return (
+    <>
+     <SEO {...SEO_DATA.about}/>
+
     <main className="min-h-screen bg-base-100">
       {/* ================= HERO ================= */}
       <section className="px-4 py-12 md:py-16">
@@ -201,6 +206,7 @@ function About() {
         </div>
       </section>
     </main>
+    </>
   );
 }
 
