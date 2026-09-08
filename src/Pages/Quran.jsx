@@ -7,6 +7,8 @@ import existingQuranDataInfo from "../JsonData/ExistingQuranDataInfo.json";
 import getSurahAyahNumber from "../utils/getSurahAyahNumber.js";
 import scrollToTop from "../utils/scrollToTop.js";
 
+import highlightText from "../utils/highlightText.jsx";
+
 function Quran() {
   const { quranData } = useLoaderData();
 
@@ -543,7 +545,7 @@ function Quran() {
                     </div>
 
                     <p className="mt-4 break-words leading-8 text-base-content/80">
-                      {ayah.text}
+                      {highlightText(ayah.text, searchedWord) }
                     </p>
                   </article>
                 ))}

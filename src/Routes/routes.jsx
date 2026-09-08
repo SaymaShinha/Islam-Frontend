@@ -14,7 +14,7 @@ import {
   getQuranData,
   getSurahData,
 } from "../Functions/getDataFromJsonFile.js";
-
+import NotFound from "../Pages/NotFound.jsx";
 
 {
   /* Namaz */
@@ -69,6 +69,7 @@ const router = createBrowserRouter([
       { path: "/privacy-policy", Component: PrivacyPolicy },
       { path: "/disclaimer", Component: Disclaimer },
       { path: "/terms-of-use", Component: TermsOfUse },
+      { path: "*", Component: NotFound },
       { path: "/namaz", Component: NamazHome },
       { path: "/farz-namaz", Component: FarzNamaz },
       {

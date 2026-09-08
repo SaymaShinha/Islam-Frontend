@@ -106,7 +106,7 @@ function Home() {
                 <div className="absolute -inset-5 bg-primary/10 rounded-[2rem] rotate-3" />
 
                 <img
-                  src="/quran-2.jpg"
+                  src="/images/quran.jpg"
                   alt="Open Quran"
                   className="relative w-64 md:w-80 lg:w-[420px] rounded-[2rem] shadow-xl object-cover"
                 />
