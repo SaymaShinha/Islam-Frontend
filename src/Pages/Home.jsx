@@ -11,8 +11,8 @@ import {
 import Divider from "../Components/Divider.jsx";
 import { useNavigate } from "react-router";
 
-import SEO from "../components/SEO";
-import { SEO_DATA } from "../seo/seoData";
+import SEO from "../components/SEO.jsx";
+import { SEO_DATA } from "../seo/seoData.js";
 
 function Home() {
   const navigate = useNavigate();
