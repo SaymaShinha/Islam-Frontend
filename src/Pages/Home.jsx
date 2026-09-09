@@ -8,7 +8,7 @@ import {
   Quote,
 } from "lucide-react";
 
-import Divider from "../Components/Divider.jsx";
+import Divider from "../components/Divider.jsx";
 import { useNavigate } from "react-router";
 
 import SEO from "../components/SEO.jsx";

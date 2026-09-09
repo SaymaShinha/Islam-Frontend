@@ -7,7 +7,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-import Divider from "../Components/Divider.jsx";
+import Divider from "../components/Divider.jsx";
 import SEO from "../components/SEO.jsx";
 import { SEO_DATA } from "../seo/seoData.js";
 

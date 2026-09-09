@@ -7,8 +7,8 @@ import {
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
-import Spinner from "../Components/Spinner.jsx";
-import Divider from "../Components/Divider.jsx";
+import Spinner from "../components/Spinner.jsx";
+import Divider from "../components/Divider.jsx";
 import SEO from "../components/SEO.jsx";
 
 export default function Contact() {
