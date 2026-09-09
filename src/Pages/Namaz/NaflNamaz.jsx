@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import SEO from "../../components/SEO";
+import SEO from "../../components/Seo.jsx";
 
 export default function NaflNamaz() {
   const [openPrayer, setOpenPrayer] = useState(null);

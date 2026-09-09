@@ -9,7 +9,7 @@ import scrollToTop from "../utils/scrollToTop.js";
 
 import highlightText from "../utils/highlightText.jsx";
 
-import SEO from "../components/SEO.jsx";
+import SEO from "../components/Seo.jsx";
 import { SEO_DATA } from "../seo/seoData.js";
 
 function Quran() {

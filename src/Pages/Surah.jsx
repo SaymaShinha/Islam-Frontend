@@ -15,7 +15,7 @@ import {
 
 import scrollToTop from "../utils/scrollToTop.js";
 
-import SEO from "../components/SEO.jsx";
+import SEO from "../components/Seo.jsx";
 
 const Surah = () => {
   const { surahData } = useLoaderData();

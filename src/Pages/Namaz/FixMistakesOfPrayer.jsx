@@ -1,4 +1,4 @@
-import SEO from "../../components/SEO.jsx";
+import SEO from "../../components/Seo.jsx";
 
 export default function FixMistakesOfPrayer() {
   const mistakes = [

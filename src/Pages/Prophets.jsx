@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import SEO from "../components/SEO";
+import SEO from "../components/Seo.jsx";
 import { SEO_DATA } from "../seo/seoData";
 
 function Prophets() {

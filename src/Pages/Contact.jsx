@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import Spinner from "../components/Spinner.jsx";
 import Divider from "../components/Divider.jsx";
-import SEO from "../components/SEO.jsx";
+import SEO from "../components/Seo.jsx";
 
 export default function Contact() {
   const userName = localStorage.getItem("userName") || "";

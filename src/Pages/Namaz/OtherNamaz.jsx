@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SEO from "../../components/SEO";
+import SEO from "../../components/Seo.jsx";
 
 export default function OtherNamaz() {
   const [openPrayer, setOpenPrayer] = useState(null);

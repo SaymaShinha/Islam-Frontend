@@ -1,5 +1,5 @@
 import { AlertTriangle, BookOpen, ShieldCheck } from "lucide-react";
-import Divider from "../Components/Divider.jsx";
+import Divider from "../components/Divider.jsx";
 
 export default function Disclaimer() {
   return (

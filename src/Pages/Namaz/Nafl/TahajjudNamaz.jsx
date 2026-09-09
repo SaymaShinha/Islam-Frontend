@@ -1,5 +1,5 @@
 import SEO
- from "../../../components/SEO";
+ from "../../../components/Seo.jsx";
 export default function TahajjudNamaz() {
   return (
     <>

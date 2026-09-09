@@ -7,8 +7,8 @@ import {
   Moon,
   ArrowRight,
 } from "lucide-react";
-import Divider from "../../Components/Divider.jsx";
-import SEO from "../../components/SEO.jsx";
+import Divider from "../../components/Divider.jsx";
+import SEO from "../../components/Seo.jsx";
 
 export default function Farz() {
   const farzNamazData = [

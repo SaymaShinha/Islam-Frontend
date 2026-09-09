@@ -6,7 +6,7 @@ import {
   Star,
   Sparkles,
 } from "lucide-react";
-import SEO from "../../components/SEO";
+import SEO from "../../components/Seo.jsx";
 import { SEO_DATA } from "../../seo/seoData";
 
 export default function NamazHome() {

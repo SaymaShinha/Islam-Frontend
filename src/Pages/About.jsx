@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 import Divider from "../components/Divider.jsx";
-import SEO from "../components/SEO.jsx";
+import SEO from "../components/Seo.jsx";
 import { SEO_DATA } from "../seo/seoData.js";
 
 function About() {
