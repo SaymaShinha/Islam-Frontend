@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import "./App.css";
-import NavbarHeader from "./Components/NavbarHeader.jsx";
-import WebFooter from "./Components/WebFooter.jsx";
+import NavbarHeader from "./components/NavbarHeader.jsx";
+import WebFooter from "./components/WebFooter.jsx";
 
 
 function App() {
