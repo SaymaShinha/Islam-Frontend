@@ -5,7 +5,7 @@ import {
   ExternalLink,
   FileCheck,
 } from "lucide-react";
-import Divider from "../Components/Divider.jsx";
+import Divider from "../components/Divider.jsx";
 
 export default function PrivacyPolicy() {
   return (

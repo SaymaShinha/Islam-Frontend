@@ -5,7 +5,7 @@ import {
   AlertTriangle,
   RefreshCw,
 } from "lucide-react";
-import Divider from "../Components/Divider.jsx";
+import Divider from "../components/Divider.jsx";
 
 export default function TermsOfUse() {
   return (
